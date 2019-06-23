@@ -1,0 +1,15 @@
+{
+  "name": "env-reporting-app",
+  "version": "1.0.0",
+  "description": "website to host enviromental issue reports",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "enviroment",
+    "issue"
+  ],
+  "author": "Vincent Santos",
+  "license": "ISC"
+}
