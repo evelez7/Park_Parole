@@ -45,5 +45,9 @@ app.get("/about/Kevin", function(req, res) {
   res.sendFile("public/pages/Kevin.html", { root: __dirname });
 });
 
+app.get("/about/Hector", function(req, res) {
+  res.sendFile("public/pages/Hector.html", { root: __dirname });
+});
+
 module.exports = app;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
