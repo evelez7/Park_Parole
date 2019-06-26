@@ -4,14 +4,14 @@ const app = express();
 const bodyParser = require('body-parser');
 const port = 3000; 
 
-
-
 // const aboutRoutes = require('src/api/routes/products'); 
 
 // app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static('public'))
+app.use('/images', express.static(__dirname + '/images'))
+app.use('/stylesheets', express.static(__dirname + '/stylesheets'))
 
 app.use((req, res, next) => { 
     res.header('Access-Control-Allow-Origin', '*');
