@@ -1,4 +1,4 @@
-$( document ).ready(funtion() {
+$( document ).ready(function() {
  <% for (var i = 0; i < searchResult.length; i++) { %>
     document.getElementById('result').innerHTML += '<p> <%= searchResult[i][ID] %>.<%= searchResult[i]['Name'] %></p>'
     
