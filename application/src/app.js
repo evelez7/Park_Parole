@@ -1,10 +1,9 @@
 const express = require('express');
 const app = express();    
 // const morgan = require('morgan'); 
+app.set('view engine', 'ejs');
 const bodyParser = require('body-parser');
 const port = 3000; 
-
-// const aboutRoutes = require('src/api/routes/products'); 
 
 // app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
