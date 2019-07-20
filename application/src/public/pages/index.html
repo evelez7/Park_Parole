@@ -1,89 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <head>
+        <meta charset="UTF-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+        <title>csc 648 Homepage</title>
 
-    <title>csc 648 Homepage</title>
-
-    <link rel="stylesheet" href="/application/src/public/stylesheets/style.css" />
-</head>
-
-<body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-            <a class="navbar-brand" href="#">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Log In <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Sign Up</a>
-                    <a class="nav-item nav-link" href="about.html">About</a>
-                </div>
-            </div>
-            <img src="http://placehold.it/150x50?text=Logo" alt="">
-        </nav>
-        <div class="sectionLight">
-            <div class="row">
-                <div class="col-sm-3 bg-light">
-                    <img src="http://placehold.it/150x150?text=Logo" alt="">
-                </div>
-                <div class="col-sm-9 bg-light">
-                    <div class="row bg-light">
-                        <div class="col-sm-12">
-                            <h3 class="text-center">Website Title</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h1></h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Fire</a>
-                                        <a class="dropdown-item" href="#">Oil Spill</a>
-                                        <a class="dropdown-item" href="#">Flood</a>
-                                        <a class="dropdown-item" href="#">Waste</a>
-                                    </div>
-                                </div>
-                                <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Enter the name of the park here">
-                                <button class="btn btn-outline-dark ">Search</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <link
+        href="/stylesheets/style.css" rel="stylesheet"/>
+        <!--<link href="/application/src/public/stylesheets/style.css" rel="stylesheet"/>-->
+        <script src="/scripts/render.js"></script>
+        <div class="navBar">
+            <a class="active" href="/">
+                Home</a>
+            <a href="about">About</a>
         </div>
+    </head>
+    <body>
+        <form>
+            <input id="search" name="search" placeholder="Search.." type="text" value="">
+            <select name="category" onchange="this.form.submit()">
+                <option value="">All Categories</option>
+                <option value="Category1">Fire</option>
+                <option value="Category2">Oil spill</option>
+                <option value="Category3">Waste Managment</option>
+                <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1</option>
+                <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2</option>
+                <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>Category2</option>
+            </select>
+        </form>
 
+        <div id="result"></div>
 
-        <!--
-         <div class="navBar">
-             <a class="active" href="/"> Home</a>
-             <a href="about">About</a>
-         </div>
-
-         <p>Homepage</p>
-
-        -->
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+    </body>
+    <footer>
+        <p>
+            “Website used only for education purposes.”
+            <br>
+            CSC 648 -San Francisco State University.
+            <br>
+            Summer 2019
+        </p>
+    </footer>
 </html>

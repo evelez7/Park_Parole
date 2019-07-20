@@ -2,15 +2,14 @@ const express = require('express');
 const app = express();    
 const morgan = require('morgan'); 
 const bodyParser = require('body-parser');
-
 const search = require('./api/middleware/search');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use(express.static('public'))
-app.use('/images', express.static(__dirname + '/images'))
-app.use('/stylesheets', express.static(__dirname + '/stylesheets'))
+app.use(express.static('public'));
+app.use('/images', express.static(__dirname + '/images'));
+app.use('/stylesheets', express.static(__dirname + '/stylesheets'));
 
 app.set('view engine', 'ejs');
 
