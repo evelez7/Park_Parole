@@ -1,81 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="ie=edge" http-equiv="X-UA-Compatible">
-        <title>Document</title>
-        <link
-        href="/application/src/public/stylesheets/style.css" rel="stylesheet"/>
-        <!--   Only used for server path
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+    <link href="/application/src/public/stylesheets/style.css" rel="stylesheet" type="text/css" />
+    <!-- added the following to get the css to link-->
+    <link href="../stylesheets/style.css" rel="stylesheet" type="text/css" />
+
+    <!--   Only used for server path
                                          <link href="/stylesheets/style.css" rel="stylesheet"/>
                                          <script src="/scripts/render.js"></script>
                                                         -->
-        <div class="navBar">
-            <a class="active" href="about">About</a>
-            <a href="post">Post</a>
-            <a href="contact">Contact</a>
-            <div class="navBar" id="rightSide">
-                <a href="logIn">Log In</a>
-                <a href="signUp">Sign Up</a>
-            </div>
-            <div class="navBar" id="search">
-                <form>
-                    <select name="category" onchange="this.form.submit()">
-                        <option value="">All Categories</option>
-                        <option value="Category1">Fire</option>
-                        <option value="Category2">Oil spill</option>
-                        <option value="Category3">Waste Managment</option>
-                        <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1</option>
-                        <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2</option>
+    <!-- added head in the following -->
+</head>
+<div class="navBar">
+    <a class="active" href="about">About</a>
+    <a href="post">Post</a>
+    <a href="contact">Contact</a>
+    <div class="navBar" id="rightSide">
+        <a href="logIn">Log In</a>
+        <a href="signUp">Sign Up</a>
+    </div>
+    <div class="navBar" id="search">
+        <form>
+            <select name="category" onchange="this.form.submit()">
+                <option value="">All Categories</option>
+                <option value="Category1">Fire</option>
+                <option value="Category2">Oil spill</option>
+                <option value="Category3">Waste Managment</option>
+                <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1</option>
+                    <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2</option>
                         <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>Category2</option>
-                    </select>
-                    <input id="search" name="search" placeholder="Search.." type="text" value="">
-                </form>
+            </select>
+            <input id="search" name="search" placeholder="Search.." type="text" value="">
+        </form>
+    </div>
+</div>
+<!--    </head>  -->
+<hr>
+
+<body>
+    <div class="wrapper-signup">
+    <div class="container-signup">
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" name="first-name" class="form-control" placeholder="">
+                required
             </div>
-        </div>
-    </head>
-    <hr>
-    <body>
-        <div class="container">
-               <form action="/login" method="post">
-                   <div class="form-group">
-                       <label for="first-name">First Name</label>
-                       <input type="text" name="first-name" class="form-control" placeholder="">
-                       required
-                   </div>
-                   <div class="form-group">
-                       <label for="last-name">Last Name</label>
-                       <input type="text" name="last-name" class="form-control" placeholder="">
-                       required
-                   </div>
-                   <div class="form-group">
-                       <label for="email">Email</label>
-                       <input type="text" name="email" class="form-control" placeholder="">
-                       required
-                   </div>
-                   <div class="form-group">
-                       <label for="password">Password</label>
-                       <input type="text" name="password" class="form-control" placeholder="">
-                       required
-                   </div>
-                   <div class="form-group">
-                       <label for="confirm-password">Confirm Password</label>
-                       <input type="text" name="confirm-password" class="form-control" placeholder="">
-                       required
-                   </div>
-                   <button type="submit">Create Account</button>
-               </form>
-        </div>
-    </body>
-    <hr>
-    <footer>
-        <p>
-            “Website used only for education purposes.”
-            <br>
-            CSC 648 -San Francisco State University.
-            <br>
-            Summer 2019
-        </p>
-    </footer>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" name="last-name" class="form-control" placeholder="">
+                required
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" class="form-control" placeholder="">
+                required
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="">
+                required
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" name="confirm-password" class="form-control" placeholder="">
+                required
+            </div>
+            <div class="wrapper-button">
+            <button type="submit">Create Account</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</body>
+<hr>
+<footer>
+    <p>
+        “Website used only for education purposes.”
+        <br>
+        CSC 648 -San Francisco State University.
+        <br>
+        Summer 2019
+    </p>
+</footer>
+
 </html>

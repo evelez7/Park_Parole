@@ -7,10 +7,13 @@
         <title>Document</title>
         <link
         href="/application/src/public/stylesheets/style.css" rel="stylesheet"/>
+        <!-- added the following to get the css to link-->
+    <link href="../stylesheets/style.css" rel="stylesheet" type="text/css" />
         <!--   Only used for server path
                                          <link href="/stylesheets/style.css" rel="stylesheet"/>
                                          <script src="/scripts/render.js"></script>
                                                         -->
+    </head>                                                    
         <div class="navBar">
             <a class="active" href="about">About</a>
             <a href="post">Post</a>
@@ -34,10 +37,11 @@
                 </form>
             </div>
         </div>
-    </head>
+<!--    </head>  -->
     <hr>
     <body>
-        <div class="container">
+       <div class="wrapper-login">
+        <div class="container-login">
                <form action="/login" method="post">
                    <div class="form-group">
                        <label for="username">Username</label>
@@ -45,12 +49,15 @@
                    </div>
                    <div class="form-group">
                        <label for="password">Password</label>
-                       <input type="text" name="password" class="form-control" placeholder="Password">
+                       <input type="password" name="password" class="form-control" placeholder="Password">
                    </div>
-                   <button type="submit">Submit</button>
-                   <p><a href="">New User/Create an Account</a></p>
-                   <p><a href="">Forgot Username/Password?</a></p>
+                   <div class="wrapper-button">
+                   <button type="submit" class="container-signup button">Submit</button>
+                   </div>
                </form>
+               <p><a href="">New User/Create an Account</a></p>
+               <p><a href="">Forgot Username/Password?</a></p>
+        </div>
         </div>
         
     </body>

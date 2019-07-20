@@ -93,3 +93,68 @@ footer {
   color: black;
   background-color: rgb(122, 122, 122);
 }
+/*----------------------------
+signup page css
+-----------------------------*/
+.wrapper-signup{
+    text-align: center;
+}
+.container-signup{
+    font-size: 20px;
+    background-color: rgb(122, 122, 122);
+    width: 40%;
+    display: inline-block;
+    text-align: left;
+    line-height: 175%;
+    border-radius: 35px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+.wrapper-button{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.container-signup button{
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 35px;
+    padding: 10px 75px 10px 75px;
+}
+/*----------------------------
+Login page css
+-----------------------------*/
+.wrapper-login{
+    text-align: center;
+}
+.container-login{
+    font-size: 20px;
+    background-color: rgb(122, 122, 122);
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+    line-height: 175%;
+    border-radius: 35px;
+    padding-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    
+}
+.wrapper-button-login{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.container-login button{
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 35px;
+    padding: 5px 50px 5px 50px;
+    background-color: white;
+    text-align: center;
+}
+
+.container-login p{
+    font-size: 16px;
+    text-align: center;     
+}
