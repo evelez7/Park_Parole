@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-        <meta charset="UTF-8"/>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
-
-        <title>csc 648 Homepage</title>
-        <!--<link
-                                                                                                                                                                                                                href="/stylesheets/style.css" rel="stylesheet"/>-->
-        <link href="/application/src/public/stylesheets/style.css" rel="stylesheet"/>
-        <script src="/scripts/render.js"></script>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <title>Document</title>
+        <link
+        href="/application/src/public/stylesheets/style.css" rel="stylesheet"/>
+        <!--   Only used for server path
+                                         <link href="/stylesheets/style.css" rel="stylesheet"/>
+                                         <script src="/scripts/render.js"></script>
+                                                        -->
         <div class="navBar">
             <a class="active" href="about">About</a>
             <a href="post">Post</a>
@@ -20,8 +20,7 @@
                 <a href="signUp">Sign Up</a>
             </div>
             <div class="navBar" id="search">
-                <form method="post">
-                    <input id="search" name="search" placeholder="Search.." type="text" value="">
+                <form>
                     <select name="category" onchange="this.form.submit()">
                         <option value="">All Categories</option>
                         <option value="Category1">Fire</option>
@@ -31,13 +30,12 @@
                         <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2</option>
                         <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>Category2</option>
                     </select>
+                    <input id="search" name="search" placeholder="Search.." type="text" value="">
                 </form>
             </div>
         </div>
     </head>
-    <body>
-        <div id="result"></div>
-    </body>
+    <body></body>
     <footer>
         <p>
             “Website used only for education purposes.”
