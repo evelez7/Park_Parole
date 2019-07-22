@@ -21,7 +21,8 @@
                 <a href="signUp">Sign Up</a>
             </div>
             <div class="navBar" id="search">
-                <form>
+                <form method="post">
+                    <input id="search" name="search" placeholder="Search.." type="text" value="">
                     <select name="category" onchange="this.form.submit()">
                         <option value="">All Categories</option>
                         <option value="Category1">Fire</option>
@@ -31,7 +32,6 @@
                         <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2</option>
                         <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>Category2</option>
                     </select>
-                    <input id="search" name="search" placeholder="Search.." type="text" value="">
                 </form>
             </div>
         </div>
