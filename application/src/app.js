@@ -1,32 +1,37 @@
 const express = require('express');
-const app = express();    
+const app = express();
 const morgan = require('morgan'); 
 const bodyParser = require('body-parser');
 const search = require('./api/middleware/search');
+const port = 3000;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.set('views', __dirname + '/views');
 app.use('/images', express.static(__dirname + '/images'));
 app.use('/stylesheets', express.static(__dirname + '/stylesheets'));
 
-app.set('view engine', 'ejs');
+app.engine('.html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 app.use((req, res, next) => { 
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', '*');
-    if(req.method == 'OPTIONS'){ 
+    if (req.method === 'OPTIONS') {
         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
         return res.status(200).json({});
     }
     next();
-})
+});
 
+app.get('/', (req, res) => {
+    res.sendFile('public/pages/index.html', {root: __dirname });
+});
 
-app.get('/', search, (req, res) => {
-    console.log(req.body.searchResult);
-    res.send(req.body.searchResult);
+app.post('/', (req, res) => {
+    res.redirect(302, '/results');
 });
 
 app.get('/about', function(req, res) {
@@ -58,4 +63,18 @@ app.get('/about/Jimmy', function(req, res) {
     res.sendFile('public/pages/Jimmy.html', {root: __dirname })
 });
 
+app.get('/results', search.issues, function(req, res) {
+    let searchResult = req.body.searchResult;
+    res.render('results.html', {
+        results : searchResult.length,
+        searchTerm : req.body.searchTerm,
+        searchResult : searchResult,
+        category : req.body.category
+    });
+});
+
 module.exports = app;
+
+app.listen(port, function () {
+    console.log("Listening on ${port}");
+});
