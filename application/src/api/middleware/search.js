@@ -7,6 +7,13 @@ module.exports = {
         var searchTerm = req.query.search;
         //user's selected category
         var category = req.query.category;
+        //users: function
+        var username = req.query.user;
+        // "myName"
+        var password = req.query.password;
+        // "password"
+
+        // req.query.search (looks for passward function)
 
         let query = 'SELECT * FROM Issue';
         if (searchTerm != null && category != null) {
