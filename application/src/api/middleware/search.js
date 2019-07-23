@@ -13,8 +13,6 @@ module.exports = {
         var password = req.query.password;
         // "password"
 
-        // req.query.search (looks for passward function)
-
         let query = 'SELECT * FROM Issue';
         if (searchTerm != null && category != null) {
             query = `SELECT * FROM Issue WHERE Category = '` + category + `' AND Location LIKE '%` + searchTerm + `%'`;
