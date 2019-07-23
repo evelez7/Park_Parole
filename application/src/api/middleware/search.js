@@ -8,10 +8,22 @@ module.exports = {
         //user's selected category
         var category = req.query.category;
         //users: function
-        var username = req.query.user;
+        var username = req.query.username || '';
         // "myName"
-        var password = req.query.password;
+        var password = req.query.password || '';
         // "password"
+
+        username = username.replace(/[!@#$%^&*]/g, '');
+        if (!username || !password || !users[username]) {
+            return res.sendStatus(400);
+          }
+          crypto.pbkdf2(password, users[username].salt, 10000, 512, function(err, hash) {
+            if (users[username].hash.toString() === hash.toString()) {
+              res.sendStatus(200);
+            } else {
+              res.sendStatus(401);
+            }
+          });
 
         let query = 'SELECT * FROM Issue';
         if (searchTerm != null && category != null) {
