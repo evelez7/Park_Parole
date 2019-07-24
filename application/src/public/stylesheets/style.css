@@ -4,6 +4,23 @@ body {
   text-align: center;
   font-size: 40px;
 }
+#map{
+  border: 1px solid black;
+  width: 900px;
+  height: 600px;
+  float: center;
+  margin-left: 50%;
+  margin-top: 15%;
+  position: auto;
+}
+#list{
+  border: 1px solid black;
+  width: 500px;
+  height: 600px;
+  margin-left: 15%;
+  margin-top: -31.8%;
+  position: auto;
+}
 
 a {
   color: black;
@@ -51,6 +68,7 @@ ul {
   overflow: hidden;
   text-align: center;
   margin-top: 0%;
+  padding-top: 1px;
 }
 /*---------------------------
 about page css
