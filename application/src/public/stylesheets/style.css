@@ -144,6 +144,7 @@ signup page css
 /*----------------------------
 Login page css
 -----------------------------*/
+<<<<<<< HEAD
 .wrapper-login {
   text-align: center;
 }
@@ -170,6 +171,36 @@ Login page css
   padding: 5px 50px 5px 50px;
   background-color: white;
   text-align: center;
+=======
+.wrapper-login{
+    text-align: center;
+}
+.container-login{
+    font-size: 20px;
+    background-color: rgb(122, 122, 122);
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+    line-height: 175%;
+    border-radius: 35px;
+    padding-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    
+}
+.wrapper-button-login{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.container-login-button{
+    
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 35px;
+    padding: 15px 50px 15px 50px;
+    background-color: white;
+    text-align: center;
+>>>>>>> 2c57e4a762d751ab37937c21d576129600c7a70c
 }
 
 .container-login p {
