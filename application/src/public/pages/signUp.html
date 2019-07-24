@@ -32,12 +32,16 @@
                 <option value="Category1">Fire</option>
                 <option value="Category2">Oil spill</option>
                 <option value="Category3">Waste Managment</option>
-                <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1</option>
-                    <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2</option>
-                        <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>Category2</option>
+                <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
+                    </option>
+                    <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2
+                        </option>
+                        <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
+                            Category2</option>
             </select>
             <input id="search" name="search" placeholder="Search.." type="text" value="">
         </form>
+        <button type="button">Search</button>
     </div>
 </div>
 <!--    </head>  -->
@@ -45,9 +49,9 @@
 
 <body>
     <div class="wrapper-signup">
-    <div class="container-signup">
-        <form action="/signUp.html" method="post" name="signUp">
-            <table align="center">
+        <div class="container-signup">
+            <form action="/signUp.html" method="post" name="signUp">
+                <table align="center">
 
                     <tr>
                         <td>First Name:</td>
@@ -72,26 +76,24 @@
                     </tr>
 
                 </table>
-            <div class="wrapper-button">
-            <button type="submit">Create Account</button>
-            </div>
-            <div class="wrapper-button">
-            <button type="submit">Cancel</button>
-            </div>
-        </form>
+                <div class="wrapper-button">
+                    <button type="submit">Create Account</button>
+                </div>
+                <div class="wrapper-button">
+                    <button type="submit">Cancel</button>
+                </div>
+            </form>
+        </div>
     </div>
-    </div>
-    
-    
+
+
 </body>
 <hr>
 <footer>
     <p>
         “Website used only for education purposes.”
-        <br>
-        CSC 648 -San Francisco State University.
-        <br>
-        Summer 2019
+        <br> CSC 648 -San Francisco State University.
+        <br> Summer 2019
     </p>
 </footer>
 

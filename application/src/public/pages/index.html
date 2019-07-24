@@ -6,7 +6,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
 
-<<<<<<< HEAD
     <title>csc 648 Homepage</title>
 
     <link href="/stylesheets/style.css" rel="stylesheet" />
@@ -63,55 +62,6 @@
                         },
                         zoom: 16,
                         mapTypeId: google.maps.mapTypeId.ROADMAP
-=======
-        <title>csc 648 Homepage</title>
-                                                                                                                                                                                                                href="/stylesheets/style.css" rel="stylesheet"/>-->
-        <link href="/stylesheets/style.css" rel="stylesheet"/>
-        <div class="navBar">
-            <a class="active" href="about">About</a>
-            <a href="post">Post</a>
-            <a href="contact">Contact</a>
-            <div class="navBar" id="rightSide">
-                <a href="logIn">Log In</a>
-                <a href="signUp">Sign Up</a>
-            </div>
-            <div class="navBar" id="search">
-                <form method="post">
-                    <input id="search" name="search" placeholder="Search.." type="text" value="">
-                    <select name="category" onchange="this.form.submit()">
-                            <option value="">All Categories</option>
-                            <option value="Category1">Fire</option>
-                            <option value="Category2">Oil spill</option>
-                            <option value="Category3">Waste Managment</option>
-                            <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1</option>
-                            <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2</option>
-                            <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>Category2</option>
-                    </select>
-                    <button type="button">Search</button>
-                </form>
-            </div>
-        </div>
-    </head>
-    <body>
-        <div id="result"></div>
-        <div id="map">
-            <script src="/application/src/public/scripts/key.js"></script>
-            <script>
-                let map;
-                document.addEventListener("DOMContentLoaded",()=>{
-                    let s = document.createElement("script");
-                    document.head.appendChild(s);
-                    s.addEventListener("load", () =>{
-                        console.log("script has loaded");
-                        map = new google.maps.Map(document.getElementById("map"), {
-                            center:{
-                                lat:37.7241,
-                                lng:122.4799
-                            }, 
-                            zoom:16,
-                            mapTypeId: google.maps.mapTypeId.ROADMAP
-                        });
->>>>>>> 2c57e4a762d751ab37937c21d576129600c7a70c
                     });
                 });
                 s.src = 'https://mapsgoogleapis.com/maps/api/js?key=${MAPKEY}';
@@ -123,10 +73,8 @@
 <footer>
     <p>
         “Website used only for education purposes.”
-        <br>
-        CSC 648 -San Francisco State University.
-        <br>
-        Summer 2019</p>
+        <br> CSC 648 -San Francisco State University.
+        <br> Summer 2019</p>
 </footer>
 
 </html>
