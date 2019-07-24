@@ -47,26 +47,20 @@
 <body>
     <div id="result"></div>
     <div id="map">
-        <script src="/application/src/public/scripts/key.js"></script>
         <script>
-            let map;
-            document.addEventListener("DOMContentLoaded", () => {
-                let s = document.createElement("script");
-                document.head.appendChild(s);
-                s.addEventListener("load", () => {
-                    console.log("script has loaded");
-                    map = new google.maps.Map(document.getElementById("map"), {
-                        center: {
-                            lat: 37.7241,
-                            lng: 122.4799
-                        },
-                        zoom: 16,
-                        mapTypeId: google.maps.mapTypeId.ROADMAP
-                    });
+            var map;
+
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {
+                        lat: 37.773972,
+                        lng: -122.431297
+                    },
+                    zoom: 13
                 });
-                s.src = 'https://mapsgoogleapis.com/maps/api/js?key=${MAPKEY}';
-            });
+            }
         </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>
     </div>
     <div id="list"></div>
 </body>
@@ -77,4 +71,4 @@
         <br> Summer 2019</p>
 </footer>
 
-</html>
+</html
