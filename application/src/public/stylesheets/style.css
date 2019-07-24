@@ -4,6 +4,23 @@ body {
   text-align: center;
   font-size: 40px;
 }
+#map{
+  border: 1px solid black;
+  width: 900px;
+  height: 600px;
+  float: center;
+  margin-left: 50%;
+  margin-top: 15%;
+  position: auto;
+}
+#list{
+  border: 1px solid black;
+  width: 500px;
+  height: 600px;
+  margin-left: 15%;
+  margin-top: -31.8%;
+  position: auto;
+}
 
 a {
   color: black;
@@ -13,9 +30,9 @@ Navigation Bar css
 --------------------------*/
 .navBar {
   background-color: grey;
-  overflow: hidden;
-  margin-left: 18%;
-  border-radius: 35px;
+  overflow: hidden;    
+  margin-left: 18%;    
+  border-radius: 35px; 
 }
 .navBar a {
   border-radius: 35px;
@@ -51,6 +68,7 @@ ul {
   overflow: hidden;
   text-align: center;
   margin-top: 0%;
+  padding-top: 1px;
 }
 /*---------------------------
 about page css
@@ -114,7 +132,7 @@ signup page css
 }
 .wrapper-button{
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 15px;
 }
 .container-signup button{
     margin-top: 20px;
@@ -145,11 +163,12 @@ Login page css
     text-align: center;
     padding-bottom: 20px;
 }
-.container-login button{
+.container-login-button{
+    
     margin-top: 20px;
     display: inline-block;
     border-radius: 35px;
-    padding: 5px 50px 5px 50px;
+    padding: 15px 50px 15px 50px;
     background-color: white;
     text-align: center;
 }
@@ -157,4 +176,9 @@ Login page css
 .container-login p{
     font-size: 16px;
     text-align: center;     
+}
+
+/* styling of icon and search bar div */
+.logo-img{
+    display: block;
 }
