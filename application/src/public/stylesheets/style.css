@@ -4,21 +4,23 @@ body {
   text-align: center;
   font-size: 40px;
 }
-#map{
+#map {
   border: 1px solid black;
   width: 900px;
   height: 600px;
   float: center;
-  margin-left: 50%;
+  margin-left: 38%;
   margin-top: 15%;
+  margin-left: auto;
   position: auto;
 }
-#list{
+#list {
   border: 1px solid black;
   width: 500px;
   height: 600px;
-  margin-left: 15%;
-  margin-top: -31.8%;
+  margin-left: 2%;
+  margin-top: -40.8%;
+  margin-right: auto;
   position: auto;
 }
 
@@ -30,9 +32,9 @@ Navigation Bar css
 --------------------------*/
 .navBar {
   background-color: grey;
-  overflow: hidden;    
-  margin-left: 18%;    
-  border-radius: 35px; 
+  overflow: hidden;
+  margin-left: 18%;
+  border-radius: 35px;
 }
 .navBar a {
   border-radius: 35px;
@@ -114,70 +116,68 @@ footer {
 /*----------------------------
 signup page css
 -----------------------------*/
-.wrapper-signup{
-    text-align: center;
+.wrapper-signup {
+  text-align: center;
 }
-.container-signup{
-    font-size: 20px;
-    background-color: rgb(122, 122, 122);
-    width: 40%;
-    display: inline-block;
-    text-align: left;
-    line-height: 175%;
-    border-radius: 35px;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    
+.container-signup {
+  font-size: 20px;
+  background-color: rgb(122, 122, 122);
+  width: 40%;
+  display: inline-block;
+  text-align: left;
+  line-height: 175%;
+  border-radius: 35px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.wrapper-button{
-    text-align: center;
-    padding-bottom: 15px;
+.wrapper-button {
+  text-align: center;
+  padding-bottom: 15px;
 }
-.container-signup button{
-    margin-top: 20px;
-    display: inline-block;
-    border-radius: 35px;
-    padding: 10px 75px 10px 75px;
+.container-signup button {
+  margin-top: 20px;
+  display: inline-block;
+  border-radius: 35px;
+  padding: 10px 75px 10px 75px;
 }
 /*----------------------------
 Login page css
 -----------------------------*/
-.wrapper-login{
-    text-align: center;
+.wrapper-login {
+  text-align: center;
 }
-.container-login{
-    font-size: 20px;
-    background-color: rgb(122, 122, 122);
-    width: 40%;
-    display: inline-block;
-    text-align: center;
-    line-height: 175%;
-    border-radius: 35px;
-    padding-left: 20px;
-    padding-top: 40px;
-    padding-bottom: 20px;
-    
+.container-login {
+  font-size: 20px;
+  background-color: rgb(122, 122, 122);
+  width: 40%;
+  display: inline-block;
+  text-align: center;
+  line-height: 175%;
+  border-radius: 35px;
+  padding-left: 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
-.wrapper-button-login{
-    text-align: center;
-    padding-bottom: 20px;
+.wrapper-button-login {
+  text-align: center;
+  padding-bottom: 20px;
 }
-.container-login button{
-    margin-top: 20px;
-    display: inline-block;
-    border-radius: 35px;
-    padding: 5px 50px 5px 50px;
-    background-color: white;
-    text-align: center;
+.container-login button {
+  margin-top: 20px;
+  display: inline-block;
+  border-radius: 35px;
+  padding: 5px 50px 5px 50px;
+  background-color: white;
+  text-align: center;
 }
 
-.container-login p{
-    font-size: 16px;
-    text-align: center;     
+.container-login p {
+  font-size: 16px;
+  text-align: center;
 }
 
 /* styling of icon and search bar div */
-.logo-img{
-    display: block;
+.logo-img {
+  display: block;
 }
