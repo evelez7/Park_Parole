@@ -13,6 +13,7 @@ module.exports = {
         var password = req.query.password || '';
         // "password"
 
+        // encrypting users password
         username = username.replace(/[!@#$%^&*]/g, '');
         if (!username || !password || !users[username]) {
             return res.sendStatus(400);
