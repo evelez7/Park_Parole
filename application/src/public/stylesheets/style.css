@@ -163,11 +163,12 @@ Login page css
     text-align: center;
     padding-bottom: 20px;
 }
-.container-login button{
+.container-login-button{
+    
     margin-top: 20px;
     display: inline-block;
     border-radius: 35px;
-    padding: 5px 50px 5px 50px;
+    padding: 15px 50px 15px 50px;
     background-color: white;
     text-align: center;
 }
