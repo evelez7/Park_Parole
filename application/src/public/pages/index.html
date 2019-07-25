@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -10,11 +9,12 @@
 
     <link href="/stylesheets/style.css" rel="stylesheet" />
     <!--<link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />(local href1)-->
-</head>
-
-</html>
 </link>
 <script src="/scripts/render.js"></script>
+<div class="disclaimer"><h6>
+        “SFSU Software Engeneering Project CSC 648-848,
+        <br> Summer 2019. For Demostration Only."
+        </h6></div>
 <div class="navBar">
     <a class="active" href="about">About</a>
     <a href="post">Post</a>
@@ -43,32 +43,51 @@
     </div>
 </div>
 </head>
-
 <body>
     <div id="result"></div>
     <div id="map">
         <script>
-            var map;
-
+            var map, infoWindow;
             function initMap() {
-                map = new google.maps.Map(document.getElementById('map'), {
-                    center: {
-                        lat: 37.773972,
-                        lng: -122.431297
-                    },
-                    zoom: 13
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 37.773972, lng: -122.431297},
+                zoom: 12
+              });
+              infoWindow = new google.maps.InfoWindow;
+              // HTML5 geolocation.
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                  var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                  };
+                  infoWindow.setPosition(pos);
+                  infoWindow.setContent('Location found.');
+                  infoWindow.open(map);
+                  map.setCenter(pos);
+                  var marker = new google.maps.Marker({
+                      position: pos,
+                      map: map,
+                  })
+                }, function() {
+                  handleLocationError(true, infoWindow, map.getCenter());
                 });
+              } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+              }
             }
-        </script>
+      
+            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+              infoWindow.setPosition(pos);
+              infoWindow.setContent(browserHasGeolocation ?
+                                    'Geolocation not allowed' :
+                                    'Error: Your browser doesn\'t support geolocation.');
+              infoWindow.open(map);
+            }
+          </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>
     </div>
     <div id="list"></div>
 </body>
-<footer>
-    <p>
-        “Website used only for education purposes.”
-        <br> CSC 648 -San Francisco State University.
-        <br> Summer 2019</p>
-</footer>
-
 </html
