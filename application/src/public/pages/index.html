@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -9,85 +10,93 @@
 
     <link href="/stylesheets/style.css" rel="stylesheet" />
     <!--<link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />(local href1)-->
-</link>
-<script src="/scripts/render.js"></script>
-<div class="disclaimer"><h6>
-        “SFSU Software Engeneering Project CSC 648-848,
-        <br> Summer 2019. For Demostration Only."
-        </h6></div>
-<div class="navBar">
-    <a class="active" href="about">About</a>
-    <a href="post">Post</a>
-    <a href="contact">Contact</a>
-    <div class="navBar" id="rightSide">
-        <a href="logIn">Log In</a>
-        <a href="signUp">Sign Up</a>
+    </link>
+    <script src="/scripts/render.js"></script>
+    <div class="disclaimer">
+        <h6>
+            “SFSU Software Engeneering Project CSC 648-848,
+            <br> Summer 2019. For Demostration Only."
+        </h6>
     </div>
-    <div class="navBar" id="search">
-        <form method="post">
-            <input id="search" name="search" placeholder="Search.." type="text" value="">
-            <select name="category" onchange="this.form.submit()">
-                <option value="">All Categories</option>
-                <option value="Category1">Fire</option>
-                <option value="Category2">Oil spill</option>
-                <option value="Category3">Waste Managment</option>
-                <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
-                    </option>
-                    <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2
-                        </option>
-                        <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
-                            Category2</option>
-            </select>
-            <button type="button">Search</button>
-        </form>
+    <div class="navBar">
+        <a class="active" href="about">About</a>
+        <a href="post">Post</a>
+        <a href="contact">Contact</a>
+        <div class="navBar" id="rightSide">
+            <a href="logIn">Log In</a>
+            <a href="signUp">Sign Up</a>
+        </div>
+        <div class="navBar" id="search">
+            <form method="post">
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
+                <select name="category" onchange="this.form.submit()">
+          <option value="">All Categories</option>
+          <option value="Category1">Fire</option>
+          <option value="Category2">Oil spill</option>
+          <option value="Category3">Waste Managment</option>
+          <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
+            </option>
+            <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2
+              </option>
+              <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
+                Category2</option>
+        </select>
+                <button type="button">Search</button>
+            </form>
+        </div>
     </div>
-</div>
 </head>
+
 <body>
     <div id="result"></div>
     <div id="map">
         <script>
             var map, infoWindow;
+
             function initMap() {
-              map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 37.773972, lng: -122.431297},
-                zoom: 12
-              });
-              infoWindow = new google.maps.InfoWindow;
-              // HTML5 geolocation.
-              if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                  var pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                  };
-                  infoWindow.setPosition(pos);
-                  infoWindow.setContent('Location found.');
-                  infoWindow.open(map);
-                  map.setCenter(pos);
-                  var marker = new google.maps.Marker({
-                      position: pos,
-                      map: map,
-                  })
-                }, function() {
-                  handleLocationError(true, infoWindow, map.getCenter());
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {
+                        lat: 37.773972,
+                        lng: -122.431297
+                    },
+                    zoom: 12
                 });
-              } else {
-                // Browser doesn't support Geolocation
-                handleLocationError(false, infoWindow, map.getCenter());
-              }
+                infoWindow = new google.maps.InfoWindow;
+                // HTML5 geolocation.
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent('Location found.');
+                        infoWindow.open(map);
+                        map.setCenter(pos);
+                        var marker = new google.maps.Marker({
+                            position: pos,
+                            map: map,
+                        })
+                    }, function() {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    });
+                } else {
+                    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
+                }
             }
-      
+
             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-              infoWindow.setPosition(pos);
-              infoWindow.setContent(browserHasGeolocation ?
-                                    'Geolocation not allowed' :
-                                    'Error: Your browser doesn\'t support geolocation.');
-              infoWindow.open(map);
+                infoWindow.setPosition(pos);
+                infoWindow.setContent(browserHasGeolocation ?
+                    'Geolocation not allowed' :
+                    'Error: Your browser doesn\'t support geolocation.');
+                infoWindow.open(map);
             }
-          </script>
+        </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>
     </div>
     <div id="list"></div>
 </body>
+
 </html

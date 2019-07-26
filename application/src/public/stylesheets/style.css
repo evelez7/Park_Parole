@@ -4,7 +4,6 @@ body {
   text-align: center;
   font-size: 40px;
   min-width: 0px;
-  max-height: 100%;
   min-width: 1080px;
 }
 /*=======================================
@@ -24,9 +23,10 @@ Disclaimer container css
 Map container css
 =======================================*/
 #map {
+  border-radius: 35px;
   border: 1px solid black;
-  width: 90px;
-  height: 100px;
+  width: 250px;
+  height: 2px;
   padding-top: 500px; 
   padding-left: 250px;
   padding-right: 150px;
@@ -35,27 +35,24 @@ Map container css
   margin-top: 5% ;
   margin-bottom: 5%;
   margin-right: 35%;
-  max-height: 150px;
-  min-width: 15%;
   position: absolute;
 }
 /*=======================================
 List container css
 =======================================*/
 #list {
+  border-radius: 35px;
   border: 1px solid black;
   width: 200px;
-  height: 100px;
+  height: 2px;
   padding-right:200px;
   padding-top: 500px; 
-  padding-left: 50px;
+  padding-left: 80px;
   padding-bottom: 20px;
   margin-right: 25%;
   margin-top: 5%; 
   margin-left: 15%;
   margin-bottom: 5%;
-  max-height: 150px;
-  min-width: 10%;
   position: absolute;
 }
 a {
@@ -113,7 +110,7 @@ ul {
 /*=======================================
 Tablet/Laptops scaling css
 =======================================*/
-@media screen and (max-width:949px)
+@media screen and (max-width:991px)
 {
   body{
     display: inline-block;
@@ -122,26 +119,34 @@ Tablet/Laptops scaling css
     width: 45px;
     font-size: 25px;
   }
+  .navBar{
+    min-width: 991px;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+  #search{
+    padding-bottom: 4px;
+  }
    #map{
      width:20%;
      margin-left: 25%; 
      margin-right: 10%;
      margin-right: 10%;
-     float: right;
      position: absolute;
    }
    #list{
      width: 20%;
      margin-right: 30%;
      margin-left: 55%;
-     float: left;
      position: absolute;
    }
 }
 /*=======================================
 Cell phone scaling css 
 =======================================*/
-@media screen and (max-width:640px)
+@media screen and (max-width:767px)
 {
   body{
     display: inline-block;
@@ -150,27 +155,35 @@ Cell phone scaling css
     width: 35px;
     
   }
+  .navBar{
+    min-width: 991px;
+    font-size: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+  #search{
+    padding-bottom: 3px;
+  }
   #map{
-    width: 30%;
-    margin-left: 50%; 
+    width: 5%;
+    margin-left: 10%; 
     margin-right: 55%;
     padding-left: 50%; 
-    float: right;
     position: absolute;
   }
   #list{
-    width: 30%;
-    margin-right: 55%;
-    margin-left: 55%;
+    width: 5%;
+    margin-right: 10%;
+    margin-left: 5px;
     padding-right: 50%;
-    float: left;
     position: absolute;
   }
 }
 /*=======================================
 Cell phone scaling css 
 =======================================*/
-@media screen and (max-width:320px)
+@media screen and (max-width:479px)
 {
   body{
     display: inline-block;
@@ -179,18 +192,68 @@ Cell phone scaling css
     width: 25px;
 
   }
+  .navBar{
+    min-width: 479px;
+    font-size: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+  #search{
+    padding-bottom: 2px;
+  }
   #map{
-    width: 100%;
-    margin-left: 50%; 
-    margin-right: 5%;
-    float: right;
+    width: 300px;
+    margin-right: 10%;
+    margin-left: 105%;
     position: absolute;
   }
   #list{
-    width: 100%;
-    margin-right: 55%;
-    margin-left: 5%;
-    float: left;
+    width: 300px;
+    margin-right: 10%;
+    margin-left: 105%;
+    margin-top: 600px;
+    position: absolute;
+  }
+}
+/*=======================================
+Cell phone scaling css 
+=======================================*/
+@media screen and (max-width:375px)
+{
+  body{
+    display: inline-block;
+  }
+  .disclaimer{
+    width: 10px;
+    margin-left:35%;
+  }
+  .navBar{
+    min-width: 200px;
+    font-size: 3px;
+    margin-top: 5px;
+    margin-bottom:1px;
+    margin-left: 90px;
+    margin-right: 50px;
+  }
+  #search{
+    padding-bottom: 0px;
+    padding-top:10px;
+  }
+  #map{
+    width: 1px;
+    height: 1px;
+    margin-right: 50%;
+    margin-left: 350px;
+    margin-top:150px;
+    position: absolute;
+  }
+  #list{
+    width: 60px;
+    height: 1px;
+    margin-right: 50%;
+    margin-left: 350px;
+    margin-top: 700px;
     position: absolute;
   }
 }
