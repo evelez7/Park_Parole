@@ -15,29 +15,39 @@
                                                         -->
 </head>
 <img src="http://placehold.it/150x50?text=Logo" alt="" class="logo-img">
-<div class="navBar">
-    <a class="active" href="about">About</a>
-    <a href="post">Post</a>
-    <a href="contact">Contact</a>
-    <div class="navBar" id="rightSide">
-        <a href="logIn">Log In</a>
-        <a href="signUp">Sign Up</a>
+<div class="disclaimer">
+        <h6>
+            “SFSU Software Engeneering Project CSC 648-848,
+            <br> Summer 2019. For Demostration Only."
+        </h6>
     </div>
-    <div class="navBar" id="search">
-        <form>
-            <select name="category" onchange="this.form.submit()">
-                <option value="">All Categories</option>
-                <option value="Category1">Fire</option>
-                <option value="Category2">Oil spill</option>
-                <option value="Category3">Waste Managment</option>
-                <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1</option>
-                    <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2</option>
-                        <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>Category2</option>
-            </select>
-            <input id="search" name="search" placeholder="Search.." type="text" value="">
-        </form>
+    <div class="navBar">
+        <a class="active" href="about">About</a>
+        <a href="post">Post</a>
+        <a href="contact">Contact</a>
+        <div class="navBar" id="rightSide">
+            <a href="logIn">Log In</a>
+            <a href="signUp">Sign Up</a>
+        </div>
+        <div class="navBar" id="search">
+            <form method="post">
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
+                <select name="category" onchange="this.form.submit()">
+          <option value="">All Categories</option>
+          <option value="Category1">Fire</option>
+          <option value="Category2">Oil spill</option>
+          <option value="Category3">Waste Managment</option>
+          <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
+            </option>
+            <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2
+              </option>
+              <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
+                Category2</option>
+        </select>
+                <button type="button">Search</button>
+            </form>
+        </div>
     </div>
-</div>
 <!--    </head>  -->
 <hr>
 
@@ -89,14 +99,4 @@
     </div>
 </body>
 <hr>
-<footer>
-    <p>
-        “Website used only for education purposes.”
-        <br>
-        CSC 648 -San Francisco State University.
-        <br>
-        Summer 2019
-    </p>
-</footer>
-
 </html>

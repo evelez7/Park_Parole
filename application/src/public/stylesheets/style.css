@@ -31,7 +31,7 @@ Map container css
   padding-left: 250px;
   padding-right: 150px;
   padding-bottom: 20px;
-  margin-left: 55% ;
+  margin-left: 45% ;
   margin-top: 5% ;
   margin-bottom: 5%;
   margin-right: 35%;
@@ -47,11 +47,11 @@ List container css
   height: 2px;
   padding-right:200px;
   padding-top: 500px; 
-  padding-left: 80px;
+  padding-left: 100px;
   padding-bottom: 20px;
   margin-right: 25%;
   margin-top: 5%; 
-  margin-left: 15%;
+  margin-left: 4%;
   margin-bottom: 5%;
   position: absolute;
 }
@@ -67,7 +67,6 @@ Navigation Bar css
   margin-left: 18%;
   margin-top: 1%;
   border-radius: 35px;
-  min-width: 1080px;
 }
 .navBar a {
   border-radius: 35px;
@@ -205,13 +204,13 @@ Cell phone scaling css
   #map{
     width: 300px;
     margin-right: 10%;
-    margin-left: 105%;
+    margin-left: 90%;
     position: absolute;
   }
   #list{
     width: 300px;
     margin-right: 10%;
-    margin-left: 105%;
+    margin-left: 90%;
     margin-top: 600px;
     position: absolute;
   }
@@ -359,4 +358,20 @@ styling of icon and search bar div
 =======================================*/
 .logo-img {
   display: block;
+}
+/*=======================================
+Post Css
+=========================================*/
+.containerPost {
+  font-size: 20px;
+  background-color: rgb(122, 122, 122);
+  width: 40%;
+  display: inline-block;
+  text-align: left;
+  line-height: 175%;
+  margin-top: 50px;
+  border-radius: 35px;
+  padding-left: 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
