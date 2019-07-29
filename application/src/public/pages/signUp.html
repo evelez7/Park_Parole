@@ -16,6 +16,7 @@
                                                         -->
     <!-- added head in the following -->
 </head>
+<img src="http://placehold.it/150x50?text=Logo" alt="" class="logo-img">
 <div class="navBar">
     <a class="active" href="about">About</a>
     <a href="post">Post</a>
@@ -45,38 +46,43 @@
 <body>
     <div class="wrapper-signup">
     <div class="container-signup">
-        <form action="/login" method="post">
-            <div class="form-group">
-                <label for="first-name">First Name</label>
-                <input type="text" name="first-name" class="form-control" placeholder="">
-                required
-            </div>
-            <div class="form-group">
-                <label for="last-name">Last Name</label>
-                <input type="text" name="last-name" class="form-control" placeholder="">
-                required
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" name="email" class="form-control" placeholder="">
-                required
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="">
-                required
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" name="confirm-password" class="form-control" placeholder="">
-                required
-            </div>
+        <form action="/signUp.html" method="post" name="signUp">
+            <table align="center">
+
+                    <tr>
+                        <td>First Name:</td>
+                        <td><input type="text" size=25 name="firstName" required></td>
+                    </tr>
+
+                    <tr>
+                        <td>Last Name:</td>
+                        <td><input type="text" size=25 name="lastName" required></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="text" size=25 name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="Password" size=25 name="password" required></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password:</td>
+                        <td><input type="Password" size=25 name="confirmPassword" required></td>
+                    </tr>
+
+                </table>
             <div class="wrapper-button">
             <button type="submit">Create Account</button>
+            </div>
+            <div class="wrapper-button">
+            <button type="submit">Cancel</button>
             </div>
         </form>
     </div>
     </div>
+    
+    
 </body>
 <hr>
 <footer>
