@@ -9,14 +9,18 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 /** begin importing all routes */
-const indexRoute = require('./api/routes/index'),
-    aboutRoute = require('./api/routes/about'),
-    resultsRoute = require('./api/routes/results');
+const indexRouter = require('./api/routes/index'),
+    aboutRouter = require('./api/routes/about'),
+    resultsRouter = require('./api/routes/results'),
+    loginRouter = require('./api/routes/login'),
+    signUpRouter = require('./api/routes/signup');
 
 /** begin middleware use for routes */
-app.use('/', indexRoute);
-app.use('/about', aboutRoute);
-app.use('/results', resultsRoute);
+app.use('/', indexRouter);
+app.use('/about', aboutRouter);
+app.use('/results', resultsRouter);
+app.use('/login', loginRouter);
+app.use('/signUp', signUpRouter);
 app.use(morgan('dev'));
 
 
