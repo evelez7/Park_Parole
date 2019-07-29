@@ -1,67 +1,45 @@
 const express = require('express');
-const app = express();    
-// const morgan = require('morgan'); 
+const app = express();
+const morgan = require('morgan'); 
 const bodyParser = require('body-parser');
-const port = 3000; 
+const port = 3000;
 
-// const aboutRoutes = require('src/api/routes/products'); 
-
-// app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({extended: false}));
+/** Use body parser before importing routes */
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static('public'))
-app.use('/images', express.static(__dirname + '/images'))
-app.use('/stylesheets', express.static(__dirname + '/stylesheets'))
+
+/** begin importing all routes */
+const indexRoute = require('./api/routes/index'),
+    aboutRoute = require('./api/routes/about'),
+    resultsRoute = require('./api/routes/results');
+
+/** begin middleware use for routes */
+app.use('/', indexRoute);
+app.use('/about', aboutRoute);
+app.use('/results', resultsRoute);
+app.use(morgan('dev'));
+
+
+/** static directories config */
+app.set('views', __dirname + '/views');
+app.use(express.static('public'));
+app.use('/images', express.static(__dirname + '/images'));
+app.use('/stylesheets', express.static(__dirname + '/stylesheets'));
+
+/** template engine config */
+app.engine('.html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 app.use((req, res, next) => { 
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', '*');
-    if(req.method == 'OPTIONS'){ 
+    if (req.method === 'OPTIONS') {
         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
         return res.status(200).json({});
     }
     next();
-})
-
-// app.use('/about', aboutRoutes);
-
-// app.use((req, res, next) => { 
-//  const error = new Error('Not Found');
-//  error.status = 404;
-//  next(error);
-// })
-
-app.get('/', function(req, res) {
-    res.sendFile('public/pages/index.html', {root: __dirname })
 });
 
-app.get('/about', function(req, res) {
-    res.sendFile('public/pages/about.html', {root: __dirname })
+app.listen(port, function () {
+    console.log("Listening on port 3000");
 });
-
-app.get('/about/Erick', function(req, res) {
-    res.sendFile('public/pages/Erick.html', {root: __dirname })
-});
-
-app.get('/about/Jack', function(req, res) {
-    res.sendFile('public/pages/Jack.html', {root: __dirname })
-});
-
-app.get('/about/Vincent', function(req, res) {
-    res.sendFile('public/pages/Vincent.html', {root: __dirname })
-});
-
-app.get('/about/Hector', function(req, res) {
-    res.sendFile('public/pages/Hector.html', {root: __dirname })
-});
-
-app.get('/about/Kevin', function(req, res) {
-    res.sendFile('public/pages/Kevin.html', {root: __dirname })
-});
-
-app.get('/about/Jimmy', function(req, res) {
-    res.sendFile('public/pages/Jimmy.html', {root: __dirname })
-});
-
-module.exports = app;
-//app.listen(port, () => console.log(`Example app listening on port ${port}!`))

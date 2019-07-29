@@ -1,0 +1,26 @@
+/**
+ * The routing file for the /results URL, which process all of its HTTP requests
+ */
+const router = require('express').Router();
+
+/** Import search functions from module */
+const search = require('../controllers/search');
+
+/**
+ * The GET mehtod for results.html
+ * 
+ * After redirecting from a POST request through a search bar, this method calls
+ * search.issues, which will take the search term from the request's body and 
+ * query the database. The relevant search result is then rendered to results.html
+ */
+router.get('/', search.issues, function(req, res) {
+    let searchResult = req.body.searchResult;
+    res.render('results.html', {
+        results : searchResult.length,
+        searchTerm : req.searchTerm,
+        searchResult : searchResult,
+        category : req.category
+    });
+});
+
+module.exports = router;
