@@ -8,15 +8,15 @@
 
     <title>Homepage</title>
 
-    <link href="/stylesheets/style.css" rel="stylesheet" />
-    <!--<link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />(local href1)-->
+    <!--<link href="/stylesheets/style.css" rel="stylesheet" />(local href1)-->
+    <link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
     </link>
     <script src="/scripts/render.js"></script>
     <div class="disclaimer">
-        <h6>
+        <p>
             “SFSU Software Engeneering Project CSC 648-848,
             <br> Summer 2019. For Demostration Only."
-        </h6>
+        </p>
     </div>
     <div class="navBar">
         <a class="active" href="about">About</a>
@@ -30,17 +30,18 @@
             <form method="post">
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <select name="category" onchange="this.form.submit()">
-          <option value="">All Categories</option>
-          <option value="Category1">Fire</option>
-          <option value="Category2">Oil spill</option>
-          <option value="Category3">Waste Managment</option>
-          <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
-            </option>
-            <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2
-              </option>
-              <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
-                Category2</option>
-        </select>
+                    <option value="">All Categories</option>
+                    <option value="Category1">Fire</option>
+                    <option value="Category2">Oil spill</option>
+                    <option value="Category3">Waste Managment</option>
+                    <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
+                        </option>
+                        <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>
+                            Category2
+                            </option>
+                            <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
+                                Category2</option>
+                </select>
                 <button type="button">Search</button>
             </form>
         </div>
@@ -48,7 +49,12 @@
 </head>
 
 <body>
-    <div id="result"></div>
+    <div id="details">
+        <h5>Our website allows you parks near your location.
+            <br>and provides an issue report that protects you 
+            <br>and helps the enviroment.
+        </h5>
+    </div>
     <div id="map">
         <script>
             var map, infoWindow;
@@ -70,7 +76,7 @@
                             lng: position.coords.longitude
                         };
                         infoWindow.setPosition(pos);
-                        infoWindow.setContent('Location found.');
+                        infoWindow.setContent('You are here.');
                         infoWindow.open(map);
                         map.setCenter(pos);
                         var marker = new google.maps.Marker({
@@ -96,7 +102,32 @@
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>
     </div>
-    <div id="list"></div>
+    <div id="wrapperList">
+        <div id="list">
+            <h3>List of Local Parks</h3>
+            <ul id="parkList">
+                    <li>
+                        <a href="">Twin Peaks</a>
+                        <br>Adress: 501 Twin Peaks Blvd
+                        <br>San Francisco, CA 94114
+                    </li>
+                    <li>
+                        <a href="">Merced Park</a> 
+                        <br>Skyline Blvd & Harding Rd
+                        <br>San Francisco, CA 94132
+                    </li>
+                    <li>
+                        <a href="">Canyon Park</a>
+                        <br>Elk St and Chenery Street
+                        <br>San Francisco, CA 94127
+                    </li>
+                    <li>
+                        <a href="">Mission Dolores Park</a>
+                        <br>Dolores St &19th St
+                        <br>San Francisco, CA 94114
+                    </li>
+            </ul>
+        </div>
+    </div>
 </body>
-
 </html
