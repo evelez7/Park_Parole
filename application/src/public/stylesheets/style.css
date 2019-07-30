@@ -33,6 +33,7 @@ Disclaimer container css
   margin-bottom: 0%;
   min-width: 30%;
   font-size: 25px;    
+<<<<<<< HEAD
 >>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
 }
 /*=======================================
@@ -47,6 +48,8 @@ info container css
     margin-left:25%;
     font-size: 30px;
     margin-top: 1px;
+=======
+>>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
 }
 
 /*=======================================
@@ -435,8 +438,11 @@ styling of icon and search bar div
 
 .logo-img {
 <<<<<<< HEAD
+<<<<<<< HEAD
     display: block;
 =======
+=======
+>>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
   height: 15vh;
   display: flex; 
   justify-content: flex-start;
@@ -445,6 +451,9 @@ styling of icon and search bar div
   width: 25%;
   height: auto;    
   align-self: flex-end;    
+<<<<<<< HEAD
+>>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
+=======
 >>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
 }
 
