@@ -13,6 +13,7 @@ Disclaimer container css
 =======================================*/
 
 .disclaimer {
+<<<<<<< HEAD
     border-radius: 35px;
     width: 50%;
     color: black;
@@ -21,6 +22,18 @@ Disclaimer container css
     margin-left: 25%;
     margin-bottom: 0%;
     min-width: 30%;
+=======
+  border-radius: 35px;
+  width: 50%;
+  color: black;
+  font-style: italic;
+  background-color: grey;
+  /* The following line was changed from 25% to -5% */    
+  margin-left:-5%;
+  margin-bottom: 0%;
+  min-width: 30%;
+  font-size: 25px;    
+>>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
 }
 /*=======================================
 info container css
@@ -421,7 +434,18 @@ styling of icon and search bar div
 =======================================*/
 
 .logo-img {
+<<<<<<< HEAD
     display: block;
+=======
+  height: 15vh;
+  display: flex; 
+  justify-content: flex-start;
+}
+.logo{
+  width: 25%;
+  height: auto;    
+  align-self: flex-end;    
+>>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
 }
 
 /*=======================================
