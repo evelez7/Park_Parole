@@ -1,24 +1,62 @@
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+Description: The page diesplays a sign up form for a user that would like to create an account.
+The page also displays a logo, navigation bar and a disclaimer.
+**************************************************************************************************
+(Used for local rendering)
+<link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
+================================================================================================-->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Document</title>
-    <!-- added the following to get the css to link-->
-    <link href="/stylesheets/style.css" rel="stylesheet" />
-    <!--<link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />(local href1)-->
-</head>
+    <title>SIGNUP</title>
+<link href="/stylesheets/style.css" rel="stylesheet" />
+<!--==============================================================================================
+**************************************************************************************************
+*Author: "Empty Template for comments"FOR LOGO
+*Class:
+*Date Updated:
+*Description: 
+**************************************************************************************************
+================================================================================================-->
 <div class="logo-img">
-<a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
+        <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
+</div>
+
+
+
+
+
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: The disclaimer class shows a stament that prevents confusion for possible users due 
+that this is only a school project and not a real envairmental website.
+**************************************************************************************************
+================================================================================================-->
 <div class="disclaimer">
-        <h6>
+    <h6>
             “SFSU Software Engeneering Project CSC 648-848,
             <br> Summer 2019. For Demostration Only."
         </h6>
-    </div>
 </div>
+<!--==============================================================================================
+**************************************************************************************************    
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
+SIGN UP, and a search bar with categories and a button.
+**************************************************************************************************
+================================================================================================--> 
     <div class="navBar">
         <a class="active" href="about">About</a>
         <a href="post">Post</a>
@@ -31,24 +69,31 @@
             <form method="post">
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <select name="category" onchange="this.form.submit()">
-          <option value="">All Categories</option>
-          <option value="Category1">Fire</option>
-          <option value="Category2">Oil spill</option>
-          <option value="Category3">Waste Managment</option>
-          <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
+        <option value="">All Categories</option>
+        <option value="Category1">Fire</option>
+        <option value="Category2">Oil spill</option>
+        <option value="Category3">Waste Managment</option>
+        <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
             </option>
             <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2
-              </option>
-              <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
+            </option>
+            <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
                 Category2</option>
         </select>
                 <button type="button">Search</button>
             </form>
         </div>
     </div>
-<!--    </head>  -->
+</head>
+<!--==============================================================================================
+**************************************************************************************************
+Author:
+Class:
+Date Updated:
+Description:
+**************************************************************************************************
+================================================================================================-->
 <hr>
-
 <body>
     <div class="wrapper-signup">
         <div class="container-signup">
@@ -90,3 +135,11 @@
 </body>
 <hr>
 </html>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: "Empty Template for comments"
+*Class:
+*Date Updated:
+*Description:
+**************************************************************************************************
+================================================================================================-->

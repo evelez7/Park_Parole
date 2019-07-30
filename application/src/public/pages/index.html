@@ -1,41 +1,69 @@
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: This page displays a map and a list of some of the local park in San Francisco.
+The page also displays a navigation bar, disclaimer and logo.
+**************************************************************************************************
+(Used for local rendering)
+<link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
+================================================================================================-->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
-
-    <title>Homepage</title>
+    <title>HOMEPAGE</title>
     <link href="/stylesheets/style.css" rel="stylesheet" />
-    <!--<link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />(local href1)-->
+
     </link>
     <script src="/scripts/render.js"></script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <div class="disclaimer">
-        <p>
-            “SFSU Software Engeneering Project CSC 648-848,
-            <br> Summer 2019. For Demostration Only."
-        </p>
-=======
-=======
->>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
-    <!-- start of logo and disclaimer --->
-    <div class="logo-img">
+<!--==============================================================================================
+**************************************************************************************************
+*Author: "Empty Template for comments"FOR LOGO
+*Class:
+*Date Updated:
+*Description: 
+**************************************************************************************************
+================================================================================================-->
+<div class="logo-img">
         <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
-        <div class="disclaimer">
+</div>
+
+
+
+
+
+
+
+
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: The disclaimer class shows a stament that prevents confusion for possible users due 
+that this is only a school project and not a real envairmental website.
+**************************************************************************************************
+================================================================================================-->
+    <div class="disclaimer">
         <h6>
             “SFSU Software Engeneering Project CSC 648-848,
             <br> Summer 2019. For Demostration Only."
         </h6>
         </div>
-<<<<<<< HEAD
->>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
-=======
->>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
     </div>
-   <!-- end of logo and disclaimer --->
+<!--==============================================================================================
+**************************************************************************************************    
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
+SIGN UP, and a search bar with categories and a button.
+**************************************************************************************************
+================================================================================================--> 
     <div class="navBar">
         <a class="active" href="about">About</a>
         <a href="post">Post</a>
@@ -65,18 +93,34 @@
         </div>
     </div>
 </head>
-
 <body>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: This class displays a summary of the benefits of using our website.
+**************************************************************************************************
+================================================================================================-->    
     <div id="details">
         <h5>Our website allows you parks near your location.
             <br>and provides an issue report that protects you 
             <br>and helps the enviroment.
         </h5>
     </div>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: This class allow us to create a map by using the Google Maps API. The class includes
+fuctions that request for permission from the user in order to mark a current location. If the user
+does not allow sharing the location then the map will display San Francisco by default.
+**************************************************************************************************
+================================================================================================-->  
     <div id="map">
         <script>
             var map, infoWindow;
-
             function initMap() {
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: {
@@ -94,7 +138,7 @@
                             lng: position.coords.longitude
                         };
                         infoWindow.setPosition(pos);
-                        infoWindow.setContent('You are here.');
+                        infoWindow.setContent('Current Location.');
                         infoWindow.open(map);
                         map.setCenter(pos);
                         var marker = new google.maps.Marker({
@@ -109,7 +153,6 @@
                     handleLocationError(false, infoWindow, map.getCenter());
                 }
             }
-
             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                 infoWindow.setPosition(pos);
                 infoWindow.setContent(browserHasGeolocation ?
@@ -120,6 +163,14 @@
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>
     </div>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: This class displays a list of some local park located in the area of San Francisco.
+**************************************************************************************************
+================================================================================================-->   
     <div id="wrapperList">
         <div id="list">
             <h3>List of Local Parks</h3>
@@ -148,4 +199,12 @@
         </div>
     </div>
 </body>
-</html
+</html>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: "Empty Template for comments"
+*Class:
+*Date Updated:
+*Description:
+**************************************************************************************************
+================================================================================================-->

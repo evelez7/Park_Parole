@@ -1,25 +1,65 @@
+<!--==============================================================================================
+*************************************************************************************************   
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: This page displays the forms that allow the user to log in into their accounts. The 
+page also displays a disclaimer and a navigation bar.
+**************************************************************************************************
+(Used for local rendering)
+<link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
+================================================================================================-->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Document</title>
-    <link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
-    <!-- added the following to get the css to link-->
+    <title>LOGIN</title>
     <link href="/stylesheets/style.css" rel="stylesheet" />
-    <!--<link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />(local href1)-->
-</head>
+
+<!--==============================================================================================
+**************************************************************************************************
+*Author: "Empty Template for comments"FOR LOGO
+*Class:
+*Date Updated:
+*Description: 
+**************************************************************************************************
+================================================================================================-->
 <div class="logo-img">
-<a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
-<div class="disclaimer">
+    <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
+</div>
+
+
+
+
+
+
+
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: The disclaimer class shows a stament that prevents confusion for possible users due 
+that this is only a school project and not a real envairmental website.
+**************************************************************************************************
+================================================================================================-->
+    <div class="disclaimer">
         <h6>
             “SFSU Software Engeneering Project CSC 648-848,
             <br> Summer 2019. For Demostration Only."
         </h6>
     </div>
-</div>
+<!--==============================================================================================
+**************************************************************************************************    
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
+SIGN UP, and a search bar with categories and a button.
+**************************************************************************************************
+================================================================================================-->    
     <div class="navBar">
         <a class="active" href="about">About</a>
         <a href="post">Post</a>
@@ -32,27 +72,32 @@
             <form method="post">
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <select name="category" onchange="this.form.submit()">
-          <option value="">All Categories</option>
-          <option value="Category1">Fire</option>
-          <option value="Category2">Oil spill</option>
-          <option value="Category3">Waste Managment</option>
-          <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
+        <option value="">All Categories</option>
+        <option value="Category1">Fire</option>
+        <option value="Category2">Oil spill</option>
+        <option value="Category3">Waste Managment</option>
+        <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
             </option>
             <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2
-              </option>
-              <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
+            </option>
+            <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
                 Category2</option>
         </select>
                 <button type="button">Search</button>
             </form>
         </div>
     </div>
-<!--    </head>  -->
+</head>
+<!--==============================================================================================
+**************************************************************************************************
+*Author:
+*Class:
+*Date Updated:
+*Description:
+**************************************************************************************************
+================================================================================================-->
 <hr>
-
 <body>
-
-
     <div class="wrapper-login">
         <div class="container-login">
         <form name="loginForm" method="post" action="login.html">
@@ -67,35 +112,42 @@
                     <td>Password:</td>
                     <td><input type="Password" size=25 name="password"></td>
                 </tr>
-                   
             </table>
             <div class="wrapper-button-login">
-                   <button type="submit" class="container-login-button">Log In</button>
+                <button type="submit" class="container-login-button">Log In</button>
             </div>
         </form>
         <p><a href="">New User/Create an Account</a></p>
-               <p><a href="">Forgot Username/Password?</a></p>
+            <p><a href="">Forgot Username/Password?</a></p>
         </div>
         <!--
         <div class="container-login">
-               <form action="/login" method="post">
-                   <div class="form-group">
-                       <label for="username">Username</label>
-                       <input type="text" name="username" class="form-control" placeholder="Username">
-                   </div>
-                   <div class="form-group">
-                       <label for="password">Password</label>
-                       <input type="password" name="password" class="form-control" placeholder="Password">
-                   </div>
-                   <div class="wrapper-button-login">
-                   <button type="submit" class="container-signup button">Submit</button>
-                   </div>
-               </form>
-               <p><a href="">New User/Create an Account</a></p>
-               <p><a href="">Forgot Username/Password?</a></p>
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="wrapper-button-login">
+                <button type="submit" class="container-signup button">Submit</button>
+                </div>
+            </form>
+            <p><a href="">New User/Create an Account</a></p>
+            <p><a href="">Forgot Username/Password?</a></p>
         </div>
-         -->
+        -->
     </div>
 </body>
 <hr>
 </html>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: "Empty Template for comments"
+*Class:
+*Date Updated:
+*Description:
+**************************************************************************************************
+================================================================================================-->

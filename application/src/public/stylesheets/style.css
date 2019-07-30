@@ -13,7 +13,6 @@ Disclaimer container css
 =======================================*/
 
 .disclaimer {
-<<<<<<< HEAD
     border-radius: 35px;
     width: 50%;
     color: black;
@@ -22,19 +21,6 @@ Disclaimer container css
     margin-left: 25%;
     margin-bottom: 0%;
     min-width: 30%;
-=======
-  border-radius: 35px;
-  width: 50%;
-  color: black;
-  font-style: italic;
-  background-color: grey;
-  /* The following line was changed from 25% to -5% */    
-  margin-left:-5%;
-  margin-bottom: 0%;
-  min-width: 30%;
-  font-size: 25px;    
-<<<<<<< HEAD
->>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
 }
 /*=======================================
 info container css
@@ -48,8 +34,6 @@ info container css
     margin-left:25%;
     font-size: 30px;
     margin-top: 1px;
-=======
->>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
 }
 
 /*=======================================
@@ -105,18 +89,14 @@ List container css
     text-align: left;
     font-size: 20px
 }
-
 a {
     color: black;
     font-weight: bold;
 
 }
-
-
 /*=======================================
 Navigation Bar css
 =======================================*/
-
 .navBar {
     background-color: grey;
     overflow: hidden;
@@ -234,7 +214,6 @@ Cell phone scaling css
         position: absolute;
     }
 }
-
 
 /*=======================================
 Cell phone scaling css 
@@ -436,26 +415,6 @@ Login page css
 styling of icon and search bar div
 =======================================*/
 
-.logo-img {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    display: block;
-=======
-=======
->>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
-  height: 15vh;
-  display: flex; 
-  justify-content: flex-start;
-}
-.logo{
-  width: 25%;
-  height: auto;    
-  align-self: flex-end;    
-<<<<<<< HEAD
->>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
-=======
->>>>>>> ec2e2db6241ee2df1e0dddf60f6413cc3afecaef
-}
 
 /*=======================================
 Post Css
@@ -482,7 +441,7 @@ Result Css
     width: 900px;
     height: 700px;
     background-color: rgb(209, 209, 209);
-    margin-top: 5px;
+    margin-top: 10px;
     margin-left: 25%;
     font-size: 30px;
 }
