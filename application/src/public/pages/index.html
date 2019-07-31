@@ -1,70 +1,203 @@
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: This page displays a map and a list of some of the local park in San Francisco.
+The page also displays a navigation bar, disclaimer and logo.
+**************************************************************************************************
+(Used for local rendering)
+<link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
+<link href="/stylesheets/style.css" rel="stylesheet" />
+================================================================================================-->
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>HOMEPAGE</title>
+    <link href="/stylesheets/style.css" rel="stylesheet" />
 
-    <head>
-        <meta charset="UTF-8"/>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    </link>
+    <script src="/scripts/render.js"></script>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Jackie Shan
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: This logo was designed by Hector. When clicked it routes to the home page. 
+**************************************************************************************************
+================================================================================================-->
+<div class="logo-img">
+        <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
+</div>
 
-        <title>csc 648 Homepage</title>
-        <link href="/stylesheets/style.css" rel="stylesheet"/>
-        <div class="navBar">
-            <a class="active" href="about">About</a>
-            <a href="post">Post</a>
-            <a href="contact">Contact</a>
-            <div class="navBar" id="rightSide">
-                <a href="logIn">Log In</a>
-                <a href="signUp">Sign Up</a>
-            </div>
-            <div class="navBar" id="search">
-                <form method="post" action="/">
-                    <input id="search" name="search" placeholder="Search.." type="text" value="">
-                    <select name="category" onchange="this.form.submit()">
-                        <option value="">All Categories</option>
-                        <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
-                        <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
-                        <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
-                    </select>
-                    <button type="submit">Search</button>
-                </form>
-            </div>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: The disclaimer class shows a stament that prevents confusion for possible users due 
+that this is only a school project and not a real envairmental website.
+**************************************************************************************************
+================================================================================================-->
+    <div class="disclaimer">
+        <h6>
+            “SFSU Software Engeneering Project CSC 648-848,
+            <br> Summer 2019. For Demostration Only."
+        </h6>
+    </div>
+<!--==============================================================================================
+**************************************************************************************************    
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
+SIGN UP, and a search bar with categories and a button.
+**************************************************************************************************
+================================================================================================--> 
+    <div class="navBar">
+        <a class="active" href="about">About</a>
+        <a href="post">Post</a>
+        <a href="contact">Contact</a>
+        <div class="navBar" id="rightSide">
+            <a href="logIn">Log In</a>
+            <a href="signUp">Sign Up</a>
         </div>
-    </head>
-    <body>
-        <div id="result"></div>
-        <div id="map">
-            <script src="/application/src/public/scripts/key.js"></script>
-            <script>
-                let map;
-                document.addEventListener("DOMContentLoaded",()=>{
-                    let s = document.createElement("script");
-                    document.head.appendChild(s);
-                    s.addEventListener("load", () =>{
-                        console.log("script has loaded");
-                        map = new google.maps.Map(document.getElementById("map"), {
-                            center:{
-                                lat:37.7241,
-                                lng:122.4799
-                            }, 
-                            zoom:16,
-                            mapTypeId: google.maps.mapTypeId.ROADMAP
-                        });
-                    });
-                    s.src = 'https://mapsgoogleapis.com/maps/api/js?key=${MAPKEY}';
+        <div class="navBar" id="search">
+            <form method="post">
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
+                <select name="category" onchange="this.form.submit()">
+                    <option value="">All Categories</option>
+                    <option value="Category1">Fire</option>
+                    <option value="Category2">Oil spill</option>
+                    <option value="Category3">Waste Managment</option>
+                    <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
+                        </option>
+                        <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>
+                            Category2
+                            </option>
+                            <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
+                                Category2</option>
+                </select>
+                <button type="button">Search</button>
+            </form>
+        </div>
+    </div>
+</head>
+<body>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: This class displays a summary of the benefits of using our website.
+**************************************************************************************************
+================================================================================================-->    
+    <div id="details">
+        <h5>Our website allows you parks near your location.
+            <br>and provides an issue report that protects you 
+            <br>and helps the enviroment.
+        </h5>
+    </div>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: This class allow us to create a map by using the Google Maps API. The class includes
+fuctions that request for permission from the user in order to mark a current location. If the user
+does not allow sharing the location then the map will display San Francisco by default.
+**************************************************************************************************
+================================================================================================-->  
+    <div id="map">
+        <script>
+            var map, infoWindow;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {
+                        lat: 37.773972,
+                        lng: -122.431297
+                    },
+                    zoom: 12
                 });
-            </script>
-        </div>
+                infoWindow = new google.maps.InfoWindow;
+                // HTML5 geolocation.
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent('Current Location.');
+                        infoWindow.open(map);
+                        map.setCenter(pos);
+                        var marker = new google.maps.Marker({
+                            position: pos,
+                            map: map,
+                        })
+                    }, function() {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    });
+                } else {
+                    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
+                }
+            }
+            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                infoWindow.setPosition(pos);
+                infoWindow.setContent(browserHasGeolocation ?
+                    'Geolocation not allowed' :
+                    'Error: Your browser doesn\'t support geolocation.');
+                infoWindow.open(map);
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>
+    </div>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: This class displays a list of some local park located in the area of San Francisco.
+**************************************************************************************************
+================================================================================================-->   
+    <div id="wrapperList">
         <div id="list">
-
+            <h3>List of Local Parks</h3>
+            <ul id="parkList">
+                    <li>
+                        <a href="">Twin Peaks</a>
+                        <br>Adress: 501 Twin Peaks Blvd
+                        <br>San Francisco, CA 94114
+                    </li>
+                    <li>
+                        <a href="">Merced Park</a> 
+                        <br>Skyline Blvd & Harding Rd
+                        <br>San Francisco, CA 94132
+                    </li>
+                    <li>
+                        <a href="">Canyon Park</a>
+                        <br>Elk St and Chenery Street
+                        <br>San Francisco, CA 94127
+                    </li>
+                    <li>
+                        <a href="">Mission Dolores Park</a>
+                        <br>Dolores St &19th St
+                        <br>San Francisco, CA 94114
+                    </li>
+            </ul>
         </div>
-    </body>
-    <footer>
-        <p>
-            “Website used only for education purposes.”
-            <br>
-            CSC 648 -San Francisco State University.
-            <br>
-            Summer 2019
-        </p>
-    </footer>
+    </div>
+</body>
 </html>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: "Empty Template for comments"
+*Class:
+*Date Updated:
+*Description:
+**************************************************************************************************
+================================================================================================-->

@@ -1,48 +1,125 @@
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+Description: The page displays a form with a calendar, category dropdow, upload image and 
+submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a logo.
+**************************************************************************************************
+(Used for local rendering)
+<link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
+<link href="/stylesheets/style.css" rel="stylesheet" />
+================================================================================================-->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="ie=edge" http-equiv="X-UA-Compatible">
-        <title>Document</title>
-        <link
-        href="/application/src/public/stylesheets/style.css" rel="stylesheet"/>
-        <!--   Only used for server path
-                                         <link href="/stylesheets/style.css" rel="stylesheet"/>
-                                         <script src="/scripts/render.js"></script>
-                                                        -->
-        <div class="navBar">
-            <a class="active" href="about">About</a>
-            <a href="post">Post</a>
-            <a href="contact">Contact</a>
-            <div class="navBar" id="rightSide">
-                <a href="logIn">Log In</a>
-                <a href="signUp">Sign Up</a>
-            </div>
-            <div class="navBar" id="search">
-                <form>
-                    <select name="category" onchange="this.form.submit()">
-                        <option value="">All Categories</option>
-                        <option value="Category1">Fire</option>
-                        <option value="Category2">Oil spill</option>
-                        <option value="Category3">Waste Managment</option>
-                        <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1</option>
-                        <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2</option>
-                        <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>Category2</option>
-                    </select>
-                    <input id="search" name="search" placeholder="Search.." type="text" value="">
-                </form>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>POST</title>
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Jackie Shan
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: This logo was designed by Hector. When clicked it routes to the home page. 
+**************************************************************************************************
+================================================================================================-->
+<div class="logo-img">
+        <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
+</div>
+
+
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: The disclaimer class shows a stament that prevents confusion for possible users due 
+that this is only a school project and not a real envairmental website.
+**************************************************************************************************
+================================================================================================-->
+    <div class="disclaimer">
+        <h6>
+            “SFSU Software Engeneering Project CSC 648-848,
+            <br> Summer 2019. For Demostration Only."
+        </h6>
+    </div>
+<!--==============================================================================================
+**************************************************************************************************    
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+*Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
+SIGN UP, and a search bar with categories and a button.
+**************************************************************************************************
+================================================================================================-->  
+    <div class="navBar">
+        <a class="active" href="about">About</a>
+        <a href="post">Post</a>
+        <a href="contact">Contact</a>
+        <div class="navBar" id="rightSide">
+            <a href="logIn">Log In</a>
+            <a href="signUp">Sign Up</a>
         </div>
-    </head>
-    <body></body>
-    <footer>
-        <p>
-            “Website used only for education purposes.”
-            <br>
-            CSC 648 -San Francisco State University.
-            <br>
-            Summer 2019
-        </p>
-    </footer>
+        <div class="navBar" id="search">
+            <form method="post">
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
+                <select name="category" onchange="this.form.submit()">
+                    <option value="">All Categories</option>
+                    <option value="Category1">Fire</option>
+                    <option value="Category2">Oil spill</option>
+                    <option value="Category3">Waste Managment</option>
+                    <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
+                        </option>
+                        <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>
+                            Category2
+                            </option>
+                            <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
+                                Category2</option>
+                </select>
+                <button type="button">Search</button>
+            </form>
+        </div>
+    </div>
+</head>
+<body>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 7/30/2019
+Description: this class has a calendar, dropdown, upload image option and cancel/submit buttons. 
+**************************************************************************************************
+================================================================================================-->  
+    <div class="containerPost">
+        <div id="postForm">
+            <form>
+                <input type="date" name="date" id="id">
+                <select name="category" onchange="this.form.submit()">
+                    <option value="Category1">Fire</option>
+                    <option value="Category2">Oil spill</option>
+                    <option value="Category3">Waste Managment</option>
+                </select>
+                <input type="file" name="pic" accept="image/*">
+                <input type="submit">
+                <p>Enter a description about the issue.</p>
+                <div id="description">
+                    <textarea name="descrption" id="info" cols="65" rows="20" placeholder="Enter information here..."></textarea>
+                </div>
+                <button type="cancel"> Cancel</button>
+                <button type="submit"> Finish</button>
+            </form>
+        </div>
+    </div>
+</body>
 </html>
+<!--==============================================================================================
+**************************************************************************************************
+*Author: "Empty Template for comments"
+*Class:
+*Date Updated:
+*Description:
+**************************************************************************************************
+================================================================================================-->
