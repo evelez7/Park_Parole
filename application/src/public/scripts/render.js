@@ -1,5 +1,5 @@
 $( document ).ready(function() {
- <% for (var i = 0; i < searchResult.length; i++) { %>
+<% for (var i = 0; i < searchResult.length; i++) { %>
     document.getElementById('result').innerHTML += '<p> <%= searchResult[i][ID] %>.<%= searchResult[i]['Name'] %></p>'
     
     document.getElementById('result').innerHTML += '<p> Issue Category: <%= searchResult[i]

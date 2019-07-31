@@ -1,5 +1,7 @@
 /**
- * This is the routing file for the /about URL, which processes all of its HTTP requests
+ * Routing file for the /about URL, which processes all of its HTTP requests
+ * 
+ * Author: Erick Velez
  */
 const router = require('express').Router();
 
