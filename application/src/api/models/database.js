@@ -2,7 +2,7 @@
 
 const mysql = require('mysql2/promise');
 
- const pool = mysql.createPool({
+ const connection = mysql.createPool({
     host: '34.68.209.201',
     user: 'csc648',
     password: 'sithlord',
@@ -12,4 +12,4 @@ const mysql = require('mysql2/promise');
     queueLimit: 0
   });
 
-module.exports = pool;
+module.exports = connection;

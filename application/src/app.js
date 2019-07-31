@@ -2,17 +2,31 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan'); 
 const bodyParser = require('body-parser');
-const search = require('./api/middleware/search');
 const port = 3000;
 
-app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({extended: false}));
+/** Use body parser before importing routes */
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static('public'));
+
+/** begin importing all routes */
+const indexRoute = require('./api/routes/index'),
+    aboutRoute = require('./api/routes/about'),
+    resultsRoute = require('./api/routes/results');
+
+/** begin middleware use for routes */
+app.use('/', indexRoute);
+app.use('/about', aboutRoute);
+app.use('/results', resultsRoute);
+app.use(morgan('dev'));
+
+
+/** static directories config */
 app.set('views', __dirname + '/views');
+app.use(express.static('public'));
 app.use('/images', express.static(__dirname + '/images'));
 app.use('/stylesheets', express.static(__dirname + '/stylesheets'));
 
+/** template engine config */
 app.engine('.html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
@@ -26,55 +40,6 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/', (req, res) => {
-    res.sendFile('public/pages/index.html', {root: __dirname });
-});
-
-app.post('/', (req, res) => {
-    res.redirect(302, '/results');
-});
-
-app.get('/about', function(req, res) {
-    res.sendFile('public/pages/about.html', {root: __dirname })
-});
-
-
-app.get('/about/Erick', function(req, res) {
-    res.sendFile('public/pages/Erick.html', {root: __dirname })
-});
-
-app.get('/about/Jack', function(req, res) {
-    res.sendFile('public/pages/Jack.html', {root: __dirname })
-});
-
-app.get('/about/Vincent', function(req, res) {
-    res.sendFile('public/pages/Vincent.html', {root: __dirname })
-});
-
-app.get('/about/Hector', function(req, res) {
-    res.sendFile('public/pages/Hector.html', {root: __dirname })
-});
-
-app.get('/about/Kevin', function(req, res) {
-    res.sendFile('public/pages/Kevin.html', {root: __dirname })
-});
-
-app.get('/about/Jimmy', function(req, res) {
-    res.sendFile('public/pages/Jimmy.html', {root: __dirname })
-});
-
-app.get('/results', search.issues, function(req, res) {
-    let searchResult = req.body.searchResult;
-    res.render('results.html', {
-        results : searchResult.length,
-        searchTerm : req.body.searchTerm,
-        searchResult : searchResult,
-        category : req.body.category
-    });
-});
-
-module.exports = app;
-
 app.listen(port, function () {
-    console.log("Listening on ${port}");
+    console.log("Listening on port 3000");
 });

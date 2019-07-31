@@ -1,7 +1,6 @@
 body {
     background-image: url(/application/src/public/images/test.png);
     background-repeat: no-repeat;
-    /*ackground-color: white;*/
     color: black;
     text-align: center;
     font-size: 40px;
@@ -258,6 +257,7 @@ Cell phone scaling css
 @media screen and (max-width: 375px) {
     body {
         display: inline-block;
+        background-color:black;
     }
     .disclaimer {
         width: 10px;
@@ -287,9 +287,16 @@ Cell phone scaling css
         width: 60px;
         height: 1px;
         margin-right: 50%;
-        margin-left: 350px;
-        margin-top: 700px;
+        margin-left: -20px;
+        margin-top: -500px;
         position: absolute;
+    }
+    #wrapperList{
+        width: 60px;
+        height: 1px;
+        margin-top: 700px;
+        margin-left: 350px;
+        margin-right: 50%;
     }
 }
 
