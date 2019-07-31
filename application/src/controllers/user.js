@@ -12,10 +12,12 @@ module.exports = {
 					error: err
 				});
 			} else {
-				db.query('INSERT INTO User SET ?', {Email: req.body.email, Password: hash}).then(([result, _]) => {
+				db.query('INSERT INTO User SET ?', {First_Name: req.body.firstName, Last_Name: req.body.lastName, Email: req.body.email, Password: hash}).then(([result, _]) => {
 					console.log(result);
 					const token = jwt.sign({
 						Id: req.body.id,
+						First_Name: req.body.firstName,
+						Last_Name: req.body.lastName,
 						Email: req.body.Email,
 					},
 					"secret"
@@ -24,14 +26,13 @@ module.exports = {
 						Id: result.insertId,
 						token: token,
 					});
-					return;
 				})
 			}
 		});	
 	}, 
 
 	login : function (req, res, next) {
-		db.query('SELECT * FROM User WHERE Email = ?', req.body.username).then(([user, _]) => {
+		db.query('SELECT * FROM User WHERE Email = ?', req.body.email).then(([user, _]) => {
 			if(user == ""){
 				res.status(404).json({
 	
@@ -41,6 +42,8 @@ module.exports = {
 					if(result){
 						const token = jwt.sign({
 							Id: user[0].id,
+							firstName: user[0].First_Name,
+							lastName: user[0].Last_Name,
 							Email: user[0].Email,
 						},
 						"secret")
@@ -48,7 +51,6 @@ module.exports = {
 							Id: user[0].id,
 							token: token,
 						});
-						return;
 					}
 				});
 			}
