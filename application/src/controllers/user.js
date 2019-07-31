@@ -1,4 +1,4 @@
-const db = require('../models/database.js.js.js');
+const db = require('../models/database.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -12,7 +12,7 @@ module.exports = {
 					error: err
 				});
 			} else {
-				db.query('INSERT INTO User SET ?', {Email: req.body.username, Password: hash}).then(([result, _]) => {
+				db.query('INSERT INTO User SET ?', {Email: req.body.email, Password: hash}).then(([result, _]) => {
 					console.log(result);
 					const token = jwt.sign({
 						Id: req.body.id,
