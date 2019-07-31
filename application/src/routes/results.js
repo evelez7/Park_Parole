@@ -3,8 +3,8 @@
  */
 const router = require('express').Router();
 
-/** Import search functions from module */
-const search = require('../controllers/issues');
+/** Import issues module */
+const issues = require('../controllers/issues');
 
 /**
  * The GET mehtod for results.html

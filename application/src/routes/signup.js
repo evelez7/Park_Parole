@@ -4,8 +4,14 @@ router.get('/', function(req, res){
     res.sendFile('public/pages/signUp.html', {root: './'});
 });
 
+/** POST function for search */
 router.post('/', function(req, res) {
-    res.sendFile('public/pages/signUp.html', {root: './'});
+    res.redirect(302, '/results');
+});
+
+/** POST function for signup */
+router.post('/submit', function (req, res) {
+    console.log("submitted signup");
 });
 
 module.exports = router;

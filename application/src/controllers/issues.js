@@ -1,5 +1,5 @@
 /**
- * 
+ * The controller file for 
  */
 const db = require('../models/database.js');
 
