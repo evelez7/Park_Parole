@@ -1,3 +1,13 @@
+/**
+ * The main configuration file for the entire Node application
+ * All routes and dependencies are imported here, and the application
+ * launches from this file.
+ * 
+ * Any configuration to the application should be made here
+ * 
+ * Author: Erick Velez
+ */
+
 const express = require('express');
 const app = express();
 const morgan = require('morgan'); 

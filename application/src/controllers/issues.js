@@ -1,9 +1,20 @@
 /**
- * The controller file for 
+ * Controller file for issues, including search and creation
+ * 
+ * Author: Erick Velez
  */
+
 const db = require('../models/database.js');
 
 module.exports = {
+
+    /** 
+     * search is called by result.html's GET function, which is redirected to from every page
+     * through the search bar
+     * 
+     * returns RESULTS, a collection of issues matching SEARCHTERM, within the body of the HTTP request
+     * The HTTP request originates from the page that the search was submitted in.
+     */
     search : function (req, res, next) {
         //user's search term
         var searchTerm = req.query.search;
@@ -26,7 +37,7 @@ module.exports = {
                 next();
             }
             
-            req.body.searchResult = results;
+            req.body.searchResult = results; //collection of issues
             req.body.searchTerm = searchTerm;
             req.body.category = category;
             next();

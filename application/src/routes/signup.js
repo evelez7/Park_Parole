@@ -1,3 +1,8 @@
+/**
+ * Routing file for the /signup URL, which processes all of its HTTP requests
+ * 
+ * Author: Erick Velez
+ */
 const router = require('express').Router();
 
 router.get('/', function(req, res){

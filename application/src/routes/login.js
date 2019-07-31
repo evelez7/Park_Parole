@@ -1,3 +1,8 @@
+/**
+ * Routing file for the /login URL, which processes all of its HTTP requests
+ * 
+ * Author: Erick Velez
+ */
 const router = require('express').Router();
 
 router.get('/', function(req, res) {
@@ -6,7 +11,6 @@ router.get('/', function(req, res) {
 
 /** POST function for search */
 router.post('/', function(req, res){
-    console.log("submitted search");
     res.redirect(302, '/results');
 });
 
