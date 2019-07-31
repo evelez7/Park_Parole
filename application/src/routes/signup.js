@@ -6,7 +6,7 @@
 const router = require('express').Router();
 
 router.get('/', function(req, res){
-    res.sendFile('public/pages/signUp.html', {root: './'});
+    res.sendFile('public/pages/signup.html', {root: './'});
 });
 
 /** POST function for search */
