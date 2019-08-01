@@ -7,6 +7,8 @@ body {
     min-width: 0px;
     min-width: 1080px;
 }
+
+
 /*=======================================
 Disclaimer container css
 =======================================*/
@@ -21,19 +23,23 @@ Disclaimer container css
     margin-bottom: 0%;
     min-width: 30%;
 }
+
+
 /*=======================================
 info container css
 =======================================*/
-#details{
+
+#details {
     border-radius: 35px;
     background-color: rgb(209, 209, 209);
     font-style: italic;
     width: 50%;
     float: center;
-    margin-left:25%;
+    margin-left: 25%;
     font-size: 30px;
     margin-top: 1px;
 }
+
 
 /*=======================================
 Map container css
@@ -54,6 +60,8 @@ Map container css
     margin-right: 35%;
     position: absolute;
 }
+
+
 /*=======================================
 List container css
 =======================================*/
@@ -74,13 +82,15 @@ List container css
     position: absolute;
     background-color: rgb(209, 209, 209);
 }
-#list{
+
+#list {
     width: 300px;
-    margin-top:-480px;
+    margin-top: -480px;
     margin-left: 1px;
     font-size: 20px;
 }
-#parkList{
+
+#parkList {
     list-style-type: none;
     margin-left: -50px;
     margin-top: 40px;
@@ -88,14 +98,17 @@ List container css
     text-align: left;
     font-size: 20px
 }
+
 a {
     color: black;
     font-weight: bold;
-
 }
+
+
 /*=======================================
 Navigation Bar css
 =======================================*/
+
 .navBar {
     background-color: grey;
     overflow: hidden;
@@ -177,6 +190,7 @@ Tablet/Laptops scaling css
     }
 }
 
+
 /*=======================================
 Cell phone scaling css 
 =======================================*/
@@ -214,6 +228,7 @@ Cell phone scaling css
     }
 }
 
+
 /*=======================================
 Cell phone scaling css 
 =======================================*/
@@ -250,14 +265,16 @@ Cell phone scaling css
     }
 }
 
+
 /*=======================================
 Cell phone scaling css 
 =======================================*/
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 374px) {
     body {
         display: inline-block;
-        background-color:black;
+        background-image: none;
+        background-color: black;
     }
     .disclaimer {
         width: 10px;
@@ -291,12 +308,16 @@ Cell phone scaling css
         margin-top: -500px;
         position: absolute;
     }
-    #wrapperList{
+    #wrapperList {
         width: 60px;
         height: 1px;
         margin-top: 700px;
         margin-left: 350px;
         margin-right: 50%;
+    }
+    .logo-img {
+        border-radius: 100%;
+        left: 10%;
     }
 }
 
@@ -313,8 +334,7 @@ about page css
     font-size: 25px;
 }
 
-#aboutUl
-{
+#aboutUl {
     margin-left: 40%;
     border-radius: 35px;
     background-color: grey;
@@ -440,10 +460,14 @@ Login page css
 /*=======================================
 styling of icon and search bar div
 =======================================*/
-.logo-img{
+
+.logo-img {
+    border-radius: 100%;
     position: absolute;
     left: 10%;
 }
+
+
 /*=======================================
 Post Css
 =========================================*/
@@ -461,10 +485,13 @@ Post Css
     padding-top: 40px;
     padding-bottom: 20px;
 }
+
+
 /*=======================================
 Result Css
 =========================================*/
-#result{
+
+#result {
     border-radius: 35px;
     width: 900px;
     height: 700px;
