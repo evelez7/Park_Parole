@@ -355,7 +355,7 @@ signup page css
 .container-signup {
     font-size: 20px;
     background-color: rgb(122, 122, 122);
-    width: 40%;
+    width: 50%;
     display: inline-block;
     text-align: left;
     line-height: 175%;
@@ -371,13 +371,30 @@ signup page css
 }
 
 .container-signup button {
-    margin-top: 20px;
+    margin-top: 0px;
     display: inline-block;
     border-radius: 35px;
     padding: 10px 75px 10px 75px;
+    font-size: 16px;
+    font-weight: bold;
+}
+td{
+    text-align: right;
 }
 
-
+.form-title{
+    text-align: center;
+}
+.required-text{
+    color: red;
+    font-size: 12px;
+    text-align: right;    
+}
+.button-container{
+    display: flex;
+    
+    justify-content: space-around;
+}
 /*=======================================
 Login page css
 =======================================*/
@@ -396,7 +413,7 @@ Login page css
     line-height: 175%;
     border-radius: 35px;
     padding-left: 20px;
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -406,7 +423,7 @@ Login page css
 }
 
 .container-login-button {
-    margin-top: 20px;
+    margin-top: 5px;
     display: inline-block;
     border-radius: 35px;
     padding: 15px 50px 15px 50px;

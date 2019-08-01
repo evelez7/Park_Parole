@@ -17,7 +17,7 @@ The page also displays a logo, navigation bar and a disclaimer.
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>SIGNUP</title>
-    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <link href="../stylesheets/style.css" rel="stylesheet" />
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -94,36 +94,51 @@ Description: The sign up form will allow users to sign up for a new account so t
     <div class="wrapper-signup">
         <div class="container-signup">
             <form action="/signUp.html" method="post" name="signUp">
+                
+                <h3 class="form-title">Sign Up</h3>
+                
                 <table align="center">
 
                     <tr>
                         <td>First Name:</td>
                         <td><input type="text" size=25 name="firstName" required></td>
+                        <td class="required-text">*required</td>
                     </tr>
 
                     <tr>
                         <td>Last Name:</td>
                         <td><input type="text" size=25 name="lastName" required></td>
+                        <td class="required-text">*required</td>
                     </tr>
                     <tr>
                         <td>Email:</td>
                         <td><input type="text" size=25 name="email" required></td>
+                        <td class="required-text">*required</td>
                     </tr>
                     <tr>
                         <td>Password:</td>
                         <td><input type="Password" size=25 name="password" required></td>
+                        <td class="required-text">*required</td>
                     </tr>
                     <tr>
                         <td>Confirm Password:</td>
                         <td><input type="Password" size=25 name="confirmPassword" required></td>
+                        <td class="required-text">*required</td>
                     </tr>
 
                 </table>
+                
+                <!-- start of check box -->
+                <p align="center"><input type="checkbox" required name="terms"> I accept the <a href="#"><u>Terms and Conditions</u></a></p>
+                 <!-- end of check box -->
+                
+                <div class="button-container">
+                <div class="wrapper-button">
+                    <a href="/"><button type="submit">Cancel</button></a>
+                </div>
                 <div class="wrapper-button">
                     <a href="/"><button type="submit">Create Account</button></a>
                 </div>
-                <div class="wrapper-button">
-                    <a href="/"><button type="submit">Cancel</button></a>
                 </div>
             </form>
         </div>
