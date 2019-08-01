@@ -17,7 +17,7 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>POST</title>
-    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -29,8 +29,6 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
 <div class="logo-img">
         <a href="/"><img src="../images/Logo648.png" alt="" class="logo"></a>
 </div>
-
-
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
@@ -40,21 +38,21 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
 that this is only a school project and not a real envairmental website.
 **************************************************************************************************
 ================================================================================================-->
-    <div class="disclaimer">
+<div class="disclaimer">
         <h6>
             “SFSU Software Engeneering Project CSC 648-848,
             <br> Summer 2019. For Demostration Only."
         </h6>
     </div>
 <!--==============================================================================================
-**************************************************************************************************    
+**************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
 *Date Updated: 7/30/2019
-*Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
-SIGN UP, and a search bar with categories and a button.
+*Description: The disclaimer class shows a stament that prevents confusion for possible users due 
+that this is only a school project and not a real envairmental website.
 **************************************************************************************************
-================================================================================================-->  
+================================================================================================-->
     <div class="navBar">
         <a class="active" href="about">About</a>
         <a href="post">Post</a>
@@ -65,7 +63,6 @@ SIGN UP, and a search bar with categories and a button.
         </div>
         <div class="navBar" id="search">
             <form method="post">
-                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <select name="category" onchange="this.form.submit()">
                     <option value="">All Categories</option>
                     <option value="Category1">Fire</option>
@@ -79,6 +76,7 @@ SIGN UP, and a search bar with categories and a button.
                             <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
                                 Category2</option>
                 </select>
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <button type="button">Search</button>
             </form>
         </div>
@@ -89,21 +87,27 @@ SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 Description: this class has a calendar, dropdown, upload image option and cancel/submit buttons. 
 **************************************************************************************************
 ================================================================================================-->  
     <div class="containerPost">
+        <div id="titlePost">
+            <h1>POST</h1>
+        </div>
         <div id="postForm">
             <form>
                 <input type="date" name="date" id="id">
+                <br>
                 <select name="category" onchange="this.form.submit()">
                     <option value="Category1">Fire</option>
                     <option value="Category2">Oil spill</option>
                     <option value="Category3">Waste Managment</option>
                 </select>
+                <br>
                 <input type="file" name="pic" accept="image/*">
                 <input type="submit">
+                <br> 
                 <p>Enter a description about the issue.</p>
                 <div id="description">
                     <textarea name="descrption" id="info" cols="65" rows="20" placeholder="Enter information here..."></textarea>

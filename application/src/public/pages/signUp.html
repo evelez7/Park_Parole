@@ -17,7 +17,7 @@ The page also displays a logo, navigation bar and a disclaimer.
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>SIGNUP</title>
-    <link href="../stylesheets/style.css" rel="stylesheet" />
+    <link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -29,7 +29,6 @@ The page also displays a logo, navigation bar and a disclaimer.
 <div class="logo-img">
         <a href="/"><img src="../images/Logo648.png" alt="" class="logo"></a>
 </div>
-
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
@@ -49,7 +48,7 @@ that this is only a school project and not a real envairmental website.
 **************************************************************************************************    
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 *Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
 SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
@@ -64,19 +63,20 @@ SIGN UP, and a search bar with categories and a button.
         </div>
         <div class="navBar" id="search">
             <form method="post">
-                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <select name="category" onchange="this.form.submit()">
-        <option value="">All Categories</option>
-        <option value="Category1">Fire</option>
-        <option value="Category2">Oil spill</option>
-        <option value="Category3">Waste Managment</option>
-        <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
-            </option>
-            <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>Category2
-            </option>
-            <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
-                Category2</option>
-        </select>
+                    <option value="">All Categories</option>
+                    <option value="Category1">Fire</option>
+                    <option value="Category2">Oil spill</option>
+                    <option value="Category3">Waste Managment</option>
+                    <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
+                        </option>
+                        <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>
+                            Category2
+                            </option>
+                            <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
+                                Category2</option>
+                </select>
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <button type="button">Search</button>
             </form>
         </div>

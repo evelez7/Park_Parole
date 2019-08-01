@@ -33,7 +33,6 @@ The page also displays a navigation bar, disclaimer and logo.
     <div class="logo-img">
         <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
     </div>
-
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
@@ -53,7 +52,7 @@ that this is only a school project and not a real envairmental website.
 **************************************************************************************************    
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 *Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
 SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
@@ -68,7 +67,6 @@ SIGN UP, and a search bar with categories and a button.
         </div>
         <div class="navBar" id="search">
             <form method="post">
-                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <select name="category" onchange="this.form.submit()">
                     <option value="">All Categories</option>
                     <option value="Category1">Fire</option>
@@ -82,37 +80,38 @@ SIGN UP, and a search bar with categories and a button.
                             <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
                                 Category2</option>
                 </select>
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <button type="button">Search</button>
             </form>
         </div>
     </div>
 </head>
-
 <body>
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 *Description: This class displays a summary of the benefits of using our website.
 **************************************************************************************************
 ================================================================================================-->
     <div id="details">
-        <h5>Our website allows you parks near your location.
-            <br>and provides an issue report that protects you
-            <br>and helps the enviroment.
-        </h5>
+        <p>Our services help you to protect the community 
+            <br>and the enviroment by sharing reports and 
+            <br>updates related to environmental issues.
+        </p>
     </div>
-    <!--==============================================================================================
+<!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 *Description: This class allow us to create a map by using the Google Maps API. The class includes
 fuctions that request for permission from the user in order to mark a current location. If the user
 does not allow sharing the location then the map will display San Francisco by default.
 **************************************************************************************************
 ================================================================================================-->
+<div id="containerIndex">
     <div id="map">
         <script>
             var map, infoWindow;
@@ -195,6 +194,7 @@ does not allow sharing the location then the map will display San Francisco by d
             </ul>
         </div>
     </div>
+</div> 
 </body>
 
 </html>

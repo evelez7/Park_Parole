@@ -1,7 +1,6 @@
 body {
     background-image: url(/application/src/public/images/test.png);
     background-repeat: no-repeat;
-    color: black;
     text-align: center;
     font-size: 40px;
     min-width: 0px;
@@ -14,11 +13,11 @@ Disclaimer container css
 =======================================*/
 
 .disclaimer {
-    border-radius: 35px;
     width: 50%;
     color: black;
-    font-style: italic;
-    background-color: rgb(209, 209, 209);
+    font-style: italic;    
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
     margin-left: 25%;
     margin-bottom: 0%;
     min-width: 30%;
@@ -31,8 +30,10 @@ info container css
 
 #details {
     border-radius: 35px;
-    background-color: rgb(209, 209, 209);
     font-style: italic;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
     width: 50%;
     float: center;
     margin-left: 25%;
@@ -47,15 +48,14 @@ Map container css
 
 #map {
     border-radius: 35px;
-    border: 1px solid black;
     width: 250px;
     height: 2px;
     padding-top: 500px;
     padding-left: 250px;
     padding-right: 150px;
     padding-bottom: 20px;
-    margin-left: 55%;
-    margin-top: 1%;
+    margin-left: 30%;
+    margin-top: 8%;
     margin-bottom: 1%;
     margin-right: 35%;
     position: absolute;
@@ -68,26 +68,27 @@ List container css
 
 #wrapperList {
     border-radius: 35px;
-    border: 1px solid black;
     width: 200px;
     height: 2px;
     padding-right: 200px;
     padding-top: 500px;
-    padding-left: 100px;
+    padding-left: 50px;
     padding-bottom: 20px;
     margin-right: 25%;
-    margin-top: 1%;
-    margin-left: 10%;
+    margin-top: 8%;
+    margin-left: 5%;
     margin-bottom: 1%;
     position: absolute;
-    background-color: rgb(209, 209, 209);
 }
 
 #list {
     width: 300px;
-    margin-top: -480px;
+    margin-top: -520px;
     margin-left: 1px;
-    font-size: 20px;
+    font-size: 25px;
+    color: rgb(238, 236, 236);
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #parkList {
@@ -99,9 +100,24 @@ List container css
     font-size: 20px
 }
 
+#containerIndex{
+    width: 1300px;
+    height: 700px;
+    margin-top: -8%;
+    margin-left: 16%;
+    background-color: rgba(0,0,0,.3);
+}
+
 a {
-    color: black;
-    font-weight: bold;
+    color: rgb(185, 185, 185);
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#titlePost{
+    margin-left: 40%;
+    margin-top: -40px;
 }
 
 
@@ -111,10 +127,8 @@ Navigation Bar css
 
 .navBar {
     background-color: grey;
-    overflow: hidden;
-    margin-left: 18%;
+    
     margin-top: 1%;
-    border-radius: 35px;
 }
 
 .navBar a {
@@ -127,7 +141,6 @@ Navigation Bar css
     font-size: 20px;
     margin-top: 5px;
     margin-bottom: 10px;
-    margin-left: 10px;
 }
 
 .navBar a:hover {
@@ -139,11 +152,12 @@ Navigation Bar css
     float: right;
     overflow: hidden;
     margin-right: 10px;
+    margin-top: 0px;
     min-width: 0px;
+    height: 50px;
 }
 
 #search {
-    border-radius: 35px;
     float: center;
     overflow: hidden;
     text-align: center;
@@ -320,49 +334,6 @@ Cell phone scaling css
         left: 10%;
     }
 }
-
-
-/*=======================================
-about page css
-=======================================*/
-
-.about_links a {
-    text-align: center;
-    color: black;
-    padding: 10px 10px;
-    text-decoration: none;
-    font-size: 25px;
-}
-
-#aboutUl {
-    margin-left: 40%;
-    border-radius: 35px;
-    background-color: grey;
-    width: 300px;
-    list-style-type: none;
-    text-align: center;
-    padding-right: 40px;
-}
-
-.about_links a:hover {
-    color: blue;
-}
-
-.profile {
-    text-align: center;
-    overflow: hidden;
-    font-size: 50px;
-    color: white;
-}
-
-.avatar {
-    padding: 70px 20px;
-    border-radius: 50%;
-    width: 500px;
-    height: 500px;
-}
-
-
 /*=======================================
 signup page css
 =======================================*/
@@ -474,18 +445,18 @@ Post Css
 
 .containerPost {
     font-size: 20px;
-    background-color: rgb(122, 122, 122);
+    background-color: rgba(0,0,0,.3);
     width: 35%;
     display: inline-block;
     text-align: left;
     line-height: 175%;
     margin-top: 50px;
+    margin-left: -15%;
     border-radius: 35px;
     padding-left: 20px;
     padding-top: 40px;
     padding-bottom: 20px;
 }
-
 
 /*=======================================
 Result Css
@@ -499,4 +470,45 @@ Result Css
     margin-top: 10px;
     margin-left: 25%;
     font-size: 30px;
+}
+/*=======================================
+AboutCss
+=========================================*/
+#containerAbout
+{
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+.about_links a {
+    text-align: center;
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 25px;
+}
+#aboutUl {
+    margin-left: 40%;
+    border-radius: 35px;
+    background-color: rgba(0,0,0,.3);
+    width: 300px;
+    height: 360px;
+    list-style-type: none;
+    text-align: center;
+    padding-right: 40px;
+}
+.about_links a:hover {
+    color: blue;
+}
+.profile {
+    text-align: center;
+    overflow: hidden;
+    font-size: 50px;
+    color: white;
+}
+.avatar {
+    padding: 70px 20px;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
 }
