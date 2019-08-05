@@ -1,4 +1,8 @@
-/** Router file for index.html, which processes all of its HTTP requests */
+/** 
+ * Routing file for the / URL, which processes all of its HTTP requests
+ *
+ * Author: Erick Velez  
+ */
 const router = require('express').Router();
 
 router.get('/', function (req, res)  {

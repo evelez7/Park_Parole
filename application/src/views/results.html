@@ -20,21 +20,12 @@ a navigation bar, logo, and disclaimer.
     <link href="/stylesheets/style.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
-        $(document).ready(function() { <
-            %
-            for (var i = 0; i < searchResult.length; i++) { %
-                >
-                $("button").click(function(){
-                document.getElementById('result').innerHTML += '<p> Issue Category: <%= searchResult[i]['
-                Category '] %><br>Description: <%= searchResult[i]['
-                Description '] %> </p>'
-                document.getElementById('result').innerHTML += '<p>Date: <%= searchResult[i]['
-                Date '] %><br>Location: <%= searchResult[i]['
-                Location '] %> </p>' <
-                    %
-                });
-            } % >
-        });
+        $(document).ready(function() {
+            <% for (var i = 0; i < searchResult.length; i++) { %>
+                    document.getElementById('result').innerHTML += '<p> Issue Category: <%= searchResult[i]['Category'] %><br>Description: <%= searchResult[i]['Description'] %> </p>'
+                    document.getElementById('result').innerHTML += '<p>Date: <%= searchResult[i]['Date'] %><br>Location: <%= searchResult[i]['Location'] %> </p>'
+                    <% } %>
+            });
     </script>
     <link href="/stylesheets/style.css" rel="stylesheet" />
 <!--==============================================================================================
@@ -74,32 +65,24 @@ SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
 ================================================================================================-->      
     <div class="navBar">
-        <a class="active" href="about">About</a>
-        <a href="post">Post</a>
-        <a href="contact">Contact</a>
-        <div class="navBar" id="rightSide">
-            <a href="logIn">Log In</a>
-            <a href="signUp">Sign Up</a>
-        </div>
-        <div class="navBar" id="search">
-            <form method="post">
-                <select name="category" onchange="this.form.submit()">
-                    <option value="">All Categories</option>
-                    <option value="Category1">Fire</option>
-                    <option value="Category2">Oil spill</option>
-                    <option value="Category3">Waste Managment</option>
-                    <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
-                        </option>
-                        <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>
-                            Category2
-                            </option>
-                            <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
-                                Category2</option>
-                </select>
-                <input id="search" name="search" placeholder="Search.." type="text" value="">
-                <button type="button">Search</button>
-            </form>
-        </div>
+    <a class="active" href="about">About</a>
+    <a href="post">Post</a>
+    <a href="contact">Contact</a>
+    <div class="navBar" id="rightSide">
+        <a href="logIn">Log In</a>
+        <a href="signUp">Sign Up</a>
+    </div>
+    <div class="navBar" id="search">
+        <form method="post" action="/">
+            <input id="search" name="search" placeholder="Search.." type="text" value="">
+            <select name="category" onchange="this.form.submit()">
+                <option value="">All Categories</option>
+                <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
+                <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
+                <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
     </div>
 </head>
 <body>
@@ -112,7 +95,6 @@ Description: This class displays a container for the result from the search fuct
 **************************************************************************************************
 ================================================================================================-->
     <div id="result">
-        <h3>Search Results:</h3>
     </div>
 </body>
 </html>

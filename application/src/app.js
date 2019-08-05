@@ -1,3 +1,13 @@
+/**
+ * The main configuration file for the entire Node application
+ * All routes and dependencies are imported here, and the application
+ * launches from this file.
+ * 
+ * Any configuration to the application should be made here
+ * 
+ * Author: Erick Velez
+ */
+
 const express = require('express');
 const app = express();
 const morgan = require('morgan'); 
@@ -9,11 +19,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 /** begin importing all routes */
-const indexRouter = require('./api/routes/index'),
-    aboutRouter = require('./api/routes/about'),
-    resultsRouter = require('./api/routes/results'),
-    loginRouter = require('./api/routes/login'),
-    signUpRouter = require('./api/routes/signup');
+const indexRouter = require('./routes/index'),
+    aboutRouter = require('./routes/about'),
+    resultsRouter = require('./routes/results'),
+    loginRouter = require('./routes/login'),
+    signUpRouter = require('./routes/signup'),
+    postRouter = require('./routes/post');
 
 /** begin middleware use for routes */
 app.use('/', indexRouter);
@@ -21,8 +32,8 @@ app.use('/about', aboutRouter);
 app.use('/results', resultsRouter);
 app.use('/login', loginRouter);
 app.use('/signUp', signUpRouter);
+app.use('/post', postRouter);
 app.use(morgan('dev'));
-
 
 /** static directories config */
 app.set('views', __dirname + '/views');
