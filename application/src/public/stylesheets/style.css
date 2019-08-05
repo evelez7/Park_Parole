@@ -474,8 +474,10 @@ Result Css
     height: 700px;
     background-color: rgb(0, 0, 0,.3);
     margin-top: 10px;
-    margin-left: 25%;
+    margin-left: 15%;
     font-size: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 /*=======================================
 AboutCss
