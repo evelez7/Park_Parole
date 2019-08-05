@@ -4,7 +4,9 @@
 const router = require('express').Router();
 
 router.get('/', function(req, res) {
-    res.sendFile('public/pages/post.html', {root: './'});
+    res.render('post.html', {
+        category: "" //Must render something for category, make it blank
+    });
 });
 
 /** POST function for search */

@@ -5,8 +5,10 @@
  */
 const router = require('express').Router();
 
-router.get('/', function (req, res)  {
-    res.sendFile('/public/pages/index.html', {root: './'});
+router.get('/', function(req, res) {
+    res.render('index.html', {
+        category: "" //Must render something for category, make it blank
+    });
 });
 
 router.post('/', function(req, res) {
