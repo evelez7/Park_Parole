@@ -5,6 +5,8 @@
  */
 const router = require('express').Router();
 
+const user = require('../controllers/user');
+
 router.get('/', function(req, res) {
     res.sendFile('public/pages/login.html', {root: './'});
 });
@@ -15,8 +17,9 @@ router.post('/', function(req, res){
 });
 
 /** POST function for login */
-router.post('/submit', function (req, res) {
+router.post('/submit', user.login, function (req, res) {
     console.log("submitted login");
+    res.redirect(302, '/');
 });
 
 module.exports = router;
