@@ -18,6 +18,7 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>POST</title>
     <link href="/stylesheets/style.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -27,10 +28,8 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
 **************************************************************************************************
 ================================================================================================-->
 <div class="logo-img">
-        <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
+        <a href="/"><img src="../images/Logo648.png" alt="" class="logo"></a>
 </div>
-
-
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
@@ -40,21 +39,21 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
 that this is only a school project and not a real envairmental website.
 **************************************************************************************************
 ================================================================================================-->
-    <div class="disclaimer">
+<div class="disclaimer">
         <h6>
             “SFSU Software Engeneering Project CSC 648-848,
             <br> Summer 2019. For Demostration Only."
         </h6>
     </div>
 <!--==============================================================================================
-**************************************************************************************************    
+**************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
 *Date Updated: 7/30/2019
-*Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
-SIGN UP, and a search bar with categories and a button.
+*Description: The disclaimer class shows a stament that prevents confusion for possible users due 
+that this is only a school project and not a real envairmental website.
 **************************************************************************************************
-================================================================================================-->  
+================================================================================================-->
     <div class="navBar">
         <a class="active" href="about">About</a>
         <a href="post">Post</a>
@@ -66,13 +65,13 @@ SIGN UP, and a search bar with categories and a button.
         <div class="navBar" id="search">
             <form method="post" action="/">
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
-                <select name="category" onchange="this.form.submit()">
+                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
                     <option value="">All Categories</option>
                     <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
                     <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
                     <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
                 </select>
-                <button type="submit">Search</button>
+                <button type="submit" id="searchButton">Search</button>
             </form>
         </div>
     </div>
@@ -82,27 +81,44 @@ SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 Description: this class has a calendar, dropdown, upload image option and cancel/submit buttons. 
 **************************************************************************************************
 ================================================================================================-->  
     <div class="containerPost">
+        <div id="titlePost">
+            <h3>POST</h3>
+        </div>
         <div id="postForm">
             <form method="post" action="/submit">
-                <input type="date" name="date" id="id">
-                <select name="category" onchange="this.form.submit()">
+                <table align="left">
+                <tr>
+                <td>Name of Park: </td>
+                <td><input type="name" name="parkName" maxlength="25" placeholder="Enter the park name here...." id="nameOfPark"></td>
+                </tr>
+                <tr>
+                <td>Date: </td>
+                <td><input type="date" name="date" id="id"></td>
+                </tr>
+                <tr>
+                <td>Type of issue: </td>
+                <td><select name="category" id="postDropDown">
                     <option value="Category1">Fire</option>
                     <option value="Category2">Oil spill</option>
                     <option value="Category3">Waste Managment</option>
-                </select>
-                <input type="file" name="pic" accept="image/*">
-                <input type="submit">
-                <p>Enter a description about the issue.</p>
+                </select></td>
+                </tr>
+                <tr>
+                <td><input type="file" name="picture" accept="image/*"></td>
+                <td><input type="submit" id="uploadImage"></td>
+                </tr>
+                <td>Enter a description of the Issue:</td>
+                </table>
                 <div id="description">
-                    <textarea name="descrption" id="info" cols="65" rows="20" placeholder="Enter information here..."></textarea>
+                    <textarea name="descrption" id="info" cols="60" rows="10" maxlength="400" placeholder="Maximun 400 characters..."></textarea>
                 </div>
-                <button type="cancel"> Cancel</button>
-                <button type="submit"> Finish</button>
+                <button type="cancel" id="cancelButton"> Cancel</button>
+                <button type="submit" id="submitButton"> Finish</button>
             </form>
         </div>
     </div>

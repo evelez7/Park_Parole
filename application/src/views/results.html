@@ -37,10 +37,8 @@ a navigation bar, logo, and disclaimer.
 **************************************************************************************************
 ================================================================================================-->
 <div class="logo-img">
-        <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
+        <a href="/"><img src="../images/Logo648.png" alt="" class="logo"></a>
 </div>
-
-
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
@@ -61,32 +59,32 @@ that this is only a school project and not a real envairmental website.
 **************************************************************************************************    
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 *Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
 SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
 ================================================================================================-->      
     <div class="navBar">
-    <a class="active" href="about">About</a>
-    <a href="post">Post</a>
-    <a href="contact">Contact</a>
-    <div class="navBar" id="rightSide">
-        <a href="logIn">Log In</a>
-        <a href="signUp">Sign Up</a>
+        <a class="active" href="about">About</a>
+        <a href="post">Post</a>
+        <a href="contact">Contact</a>
+        <div class="navBar" id="rightSide">
+            <a href="logIn">Log In</a>
+            <a href="signUp">Sign Up</a>
+        </div>
+        <div class="navBar" id="search">
+            <form method="post" action="/">
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
+                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
+                    <option value="">All Categories</option>
+                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
+                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
+                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
+                </select>
+                <button type="submit" id="searchButton">Search</button>
+            </form>
+        </div>
     </div>
-    <div class="navBar" id="search">
-        <form method="post" action="/">
-            <input id="search" name="search" placeholder="Search.." type="text" value="">
-            <select name="category" onchange="this.form.submit()">
-                <option value="">All Categories</option>
-                <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
-                <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
-                <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
-            </select>
-            <button type="submit">Search</button>
-        </form>
-    </div>
-</div>
 </head>
 <body>
 <!--==============================================================================================

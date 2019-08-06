@@ -29,10 +29,9 @@ The page also displays a navigation bar, disclaimer and logo.
 *Description: This logo was designed by Hector. When clicked it routes to the home page. 
 **************************************************************************************************
 ================================================================================================-->
-<div class="logo-img">
+    <div class="logo-img">
         <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
-</div>
-
+    </div>
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
@@ -52,11 +51,11 @@ that this is only a school project and not a real envairmental website.
 **************************************************************************************************    
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 *Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
 SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
-================================================================================================--> 
+================================================================================================-->
     <div class="navBar">
         <a class="active" href="about">About</a>
         <a href="post">Post</a>
@@ -68,13 +67,13 @@ SIGN UP, and a search bar with categories and a button.
         <div class="navBar" id="search">
             <form method="post" action="/">
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
-                <select name="category" onchange="this.form.submit()">
+                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
                     <option value="">All Categories</option>
                     <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
                     <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
                     <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
                 </select>
-                <button type="submit">Search</button>
+                <button type="submit" id="searchButton">Search</button>
             </form>
         </div>
     </div>
@@ -84,26 +83,27 @@ SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 *Description: This class displays a summary of the benefits of using our website.
 **************************************************************************************************
-================================================================================================-->    
+================================================================================================-->
     <div id="details">
-        <h5>Our website allows you parks near your location.
-            <br>and provides an issue report that protects you 
-            <br>and helps the enviroment.
-        </h5>
+        <p>Our services help you to protect the community 
+            <br>and the enviroment by sharing reports and 
+            <br>updates related to environmental issues.
+        </p>
     </div>
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 *Description: This class allow us to create a map by using the Google Maps API. The class includes
 fuctions that request for permission from the user in order to mark a current location. If the user
 does not allow sharing the location then the map will display San Francisco by default.
 **************************************************************************************************
-================================================================================================-->  
+================================================================================================-->
+<div id="containerIndex">
     <div id="map">
         <script>
             var map, infoWindow;
@@ -156,34 +156,35 @@ does not allow sharing the location then the map will display San Francisco by d
 *Date Updated: 7/30/2019
 *Description: This class displays a list of some local park located in the area of San Francisco.
 **************************************************************************************************
-================================================================================================-->   
+================================================================================================-->
     <div id="wrapperList">
         <div id="list">
             <h3>List of Local Parks</h3>
             <ul id="parkList">
-                    <li>
-                        <a href="">Twin Peaks</a>
-                        <br>Adress: 501 Twin Peaks Blvd
-                        <br>San Francisco, CA 94114
-                    </li>
-                    <li>
-                        <a href="">Merced Park</a> 
-                        <br>Skyline Blvd & Harding Rd
-                        <br>San Francisco, CA 94132
-                    </li>
-                    <li>
-                        <a href="">Canyon Park</a>
-                        <br>Elk St and Chenery Street
-                        <br>San Francisco, CA 94127
-                    </li>
-                    <li>
-                        <a href="">Mission Dolores Park</a>
-                        <br>Dolores St &19th St
-                        <br>San Francisco, CA 94114
-                    </li>
+                <li>
+                    <a href="">Twin Peaks</a>
+                    <br>Adress: 501 Twin Peaks Blvd
+                    <br>San Francisco, CA 94114
+                </li>
+                <li>
+                    <a href="">Merced Park</a>
+                    <br>Skyline Blvd & Harding Rd
+                    <br>San Francisco, CA 94132
+                </li>
+                <li>
+                    <a href="">Canyon Park</a>
+                    <br>Elk St and Chenery Street
+                    <br>San Francisco, CA 94127
+                </li>
+                <li>
+                    <a href="">Mission Dolores Park</a>
+                    <br>Dolores St &19th St
+                    <br>San Francisco, CA 94114
+                </li>
             </ul>
         </div>
     </div>
+</div> 
 </body>
 </html>
 <!--==============================================================================================
@@ -194,3 +195,4 @@ does not allow sharing the location then the map will display San Francisco by d
 *Description:
 **************************************************************************************************
 ================================================================================================-->
+

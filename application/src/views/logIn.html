@@ -28,10 +28,8 @@ page also displays a disclaimer and a navigation bar.
 **************************************************************************************************
 ================================================================================================-->
 <div class="logo-img">
-    <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
+    <a href="/"><img src="../images/Logo648.png" alt="" class="logo"></a>
 </div>
-
-
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
@@ -66,15 +64,15 @@ SIGN UP, and a search bar with categories and a button.
         </div>
         <div class="navBar" id="search">
             <form method="post" action="/">
-                    <input id="search" name="search" placeholder="Search.." type="text" value="">
-                    <select name="category" onchange="this.form.submit()">
-                        <option value="">All Categories</option>
-                        <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
-                        <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
-                        <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
-                    </select>
-                    <button type="submit">Search</button>
-                </form>
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
+                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
+                    <option value="">All Categories</option>
+                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
+                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
+                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
+                </select>
+                <button type="submit" id="searchButton">Search</button>
+            </form>
         </div>
     </div>
 </head>
@@ -89,7 +87,8 @@ SIGN UP, and a search bar with categories and a button.
 <body>
     <div class="wrapper-login">
         <div class="container-login">
-        <form name="loginForm" method="post" action="/login/submit">
+        <form name="loginForm" method="post" action="/login/submit"> 
+            <h3 class="form-title">Log In</h3>
             <table width="20%" align="center">
 
                 <tr>
@@ -102,12 +101,12 @@ SIGN UP, and a search bar with categories and a button.
                     <td><input type="Password" size=25 name="password"></td>
                 </tr>
             </table>
+            <p><a href="signUp" class="log-in-links">Forgot Username/Password?</a></p>
             <div class="wrapper-button-login">
                 <button type="submit" class="container-login-button">Log In</button>
             </div>
         </form>
-        <p><a href="">New User/Create an Account</a></p>
-            <p><a href="">Forgot Username/Password?</a></p>
+        <p><a href="signUp" class="log-in-links">New User/Create an Account</a></p>
         </div>
         <!--
         <div class="container-login">
