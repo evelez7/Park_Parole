@@ -24,7 +24,7 @@ module.exports = {
 						Id: req.body.id,
 						First_Name: req.body.firstName,
 						Last_Name: req.body.lastName,
-						Email: req.body.Email,
+						Email: req.body.email,
 					},
 					//token is "secret"
 					"secret"
@@ -52,7 +52,7 @@ module.exports = {
 							Id: user[0].id,
 							firstName: user[0].First_Name,
 							lastName: user[0].Last_Name,
-							Email: user[0].Email,
+							email: user[0].Email,
 						},
 						//token is "secret"
 						"secret")
