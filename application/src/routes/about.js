@@ -6,7 +6,9 @@
 const router = require('express').Router();
 
 router.get('/', function(req, res) {
-    res.sendFile('public/pages/about.html', {root: './' })
+    res.render('about.html', {
+        category: "" //Must render something for category, make it blank
+    });
 });
 
 router.get('/Erick', function(req, res) {

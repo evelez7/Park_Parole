@@ -12,7 +12,6 @@ The page also displays a navigation bar, disclaimer and logo.
 ================================================================================================-->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -108,7 +107,6 @@ does not allow sharing the location then the map will display San Francisco by d
     <div id="map">
         <script>
             var map, infoWindow;
-
             function initMap() {
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: {
@@ -141,7 +139,6 @@ does not allow sharing the location then the map will display San Francisco by d
                     handleLocationError(false, infoWindow, map.getCenter());
                 }
             }
-
             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                 infoWindow.setPosition(pos);
                 infoWindow.setContent(browserHasGeolocation ?
@@ -189,7 +186,6 @@ does not allow sharing the location then the map will display San Francisco by d
     </div>
 </div> 
 </body>
-
 </html>
 <!--==============================================================================================
 **************************************************************************************************
@@ -199,3 +195,4 @@ does not allow sharing the location then the map will display San Francisco by d
 *Description:
 **************************************************************************************************
 ================================================================================================-->
+

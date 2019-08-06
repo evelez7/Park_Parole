@@ -3,8 +3,14 @@
  */
 const router = require('express').Router();
 
+const postIssue = require('../controllers/postIssue');
+
+const auth = require('../api/middleware/check-auth');
+
 router.get('/', function(req, res) {
-    res.sendFile('public/pages/post.html', {root: './'});
+    res.render('post.html', {
+        category: "" //Must render something for category, make it blank
+    });
 });
 
 /** POST function for search */
@@ -13,8 +19,9 @@ router.post('/', function(req, res) {
 });
 
 /** POST function for submitting post */
-router.post('/submit', function (req, res) {
+router.post('/submit', auth, postIssue.post, function (req, res) {
     console.log("submitted post");
+    res.redirect(302, '/');
 });
 
 module.exports = router;
