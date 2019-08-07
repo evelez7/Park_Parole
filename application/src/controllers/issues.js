@@ -21,22 +21,26 @@ module.exports = {
         //user's selected category
         var category = req.query.category;
 
-        let query = 'SELECT * FROM Issue';
+        let query = 'SELECT * FROM Issue INNER JOIN Park ON Issue.Park = Park.Id INNER JOIN Category ON Issue.Category = Category.Id';
         if (searchTerm != null && category != null) {
-            query = `SELECT * FROM Issue WHERE Category = '` + category + `' AND Location LIKE '%` + searchTerm + `%'`;
+            query = query.concat(` WHERE Category.Category_Name= '` + category + `' AND (Issue.Description LIKE '%` + searchTerm + `%' OR Park.Location LIKE '%` + searchTerm + `%')`);
         } else if (searchTerm != null && category == null) {
-            query = `SELECT * FROM Issue WHERE Location LIKE '%` + searchTerm + `%'`;
+            query = query.concat(` WHERE Issue.Description LIKE '%` + searchTerm + `%' OR Park.Location LIKE '%` + searchTerm + `%'`);
         } else if (searchTerm == null && category != null) {
-            query = `SELECT * FROM Issue WHERE Category = '` + category + `'`;
+            query = query.concat(` WHERE Category.Category_Name = '` + category + `'`);
         }
+
         db.query(query, function (err, results, fields) {
             if (err) { //TODO: properly handle errors
+                console.log(query);
                 req.body.searchResult = "";
                 req.body.searchTerm = "";
                 req.body.category = "";
+                console.log(err);
                 next();
             }
             
+            console.log(results);
             req.body.searchResult = results; //collection of issues
             req.body.searchTerm = searchTerm;
             req.body.category = category;
