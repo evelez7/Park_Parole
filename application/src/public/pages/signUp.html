@@ -17,7 +17,7 @@ The page also displays a logo, navigation bar and a disclaimer.
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>SIGNUP</title>
-    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <link href="../stylesheets/style.css" rel="stylesheet" />
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -101,35 +101,35 @@ Description: The sign up form will allow users to sign up for a new account so t
 
                     <tr>
                         <td>First Name:</td>
-                        <td><input type="text" size=25 name="firstName" required></td>
+                        <td><input type="text" size=25 name="firstName" required maxlength="50"></td>
                         <td class="required-text">*required</td>
                     </tr>
 
                     <tr>
                         <td>Last Name:</td>
-                        <td><input type="text" size=25 name="lastName" required></td>
+                        <td><input type="text" size=25 name="lastName" required maxlength="50"></td>
                         <td class="required-text">*required</td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td><input type="text" size=25 name="email" required></td>
+                        <td><input type="text" size=25 name="email" required maxlength="50"></td>
                         <td class="required-text">*required</td>
                     </tr>
                     <tr>
                         <td>Password:</td>
-                        <td><input type="Password" size=25 name="password" required></td>
+                        <td><input type="Password" size=25 name="password" required maxlength="50"></td>
                         <td class="required-text">*required</td>
                     </tr>
                     <tr>
                         <td>Confirm Password:</td>
-                        <td><input type="Password" size=25 name="confirmPassword" required></td>
+                        <td><input type="Password" size=25 name="confirmPassword" required maxlength="50"></td>
                         <td class="required-text">*required</td>
                     </tr>
 
                 </table>
                 
                 <!-- start of check box -->
-                <p align="center"><input type="checkbox" required name="terms"> I accept the <a href="#" class="tos-link"><u>Terms and Conditions</u></a></p>
+                <p align="center"><input type="checkbox" required name="terms"> I accept the <a href="#" class="tos-link"><span style="color: blue"><u>Terms and Conditions</u></span></a></p>
                  <!-- end of check box -->
                 
                 <div class="button-container">
