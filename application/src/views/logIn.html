@@ -1,10 +1,10 @@
 <!--==============================================================================================
-**************************************************************************************************
+*************************************************************************************************   
 *Author: Kevin Paredes
 *Class: CSC 648
 *Date Updated: 7/30/2019
-Description: The page displays a form with a calendar, category dropdow, upload image and 
-submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a logo.
+*Description: This page displays the forms that allow the user to log in into their accounts. The 
+page also displays a disclaimer and a navigation bar.
 **************************************************************************************************
 (Used for local rendering)
 <link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
@@ -16,8 +16,9 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>POST</title>
-    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <title>LOGIN</title>
+    <link href="../stylesheets/style.css" rel="stylesheet" />
+
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -27,7 +28,7 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
 **************************************************************************************************
 ================================================================================================-->
 <div class="logo-img">
-        <a href="/"><img src="../images/Logo648.png" alt="" class="logo"></a>
+    <a href="/"><img src="../images/Logo648.png" alt="" class="logo"></a>
 </div>
 <!--==============================================================================================
 **************************************************************************************************
@@ -38,21 +39,21 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
 that this is only a school project and not a real envairmental website.
 **************************************************************************************************
 ================================================================================================-->
-<div class="disclaimer">
+    <div class="disclaimer">
         <h6>
             “SFSU Software Engeneering Project CSC 648-848,
             <br> Summer 2019. For Demostration Only."
         </h6>
     </div>
 <!--==============================================================================================
-**************************************************************************************************
+**************************************************************************************************    
 *Author: Kevin Paredes
 *Class: CSC 648
 *Date Updated: 7/30/2019
-*Description: The disclaimer class shows a stament that prevents confusion for possible users due 
-that this is only a school project and not a real envairmental website.
+*Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
+SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
-================================================================================================-->
+================================================================================================-->    
     <div class="navBar">
         <a class="active" href="about">About</a>
         <a href="post">Post</a>
@@ -62,60 +63,72 @@ that this is only a school project and not a real envairmental website.
             <a href="signUp">Sign Up</a>
         </div>
         <div class="navBar" id="search">
-            <form method="post">
-                <select name="category" onchange="this.form.submit()">
-                    <option value="">All Categories</option>
-                    <option value="Category1">Fire</option>
-                    <option value="Category2">Oil spill</option>
-                    <option value="Category3">Waste Managment</option>
-                    <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
-                        </option>
-                        <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>
-                            Category2
-                            </option>
-                            <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
-                                Category2</option>
-                </select>
+            <form method="post" action="/">
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
-                <button type="button">Search</button>
+                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
+                    <option value="">All Categories</option>
+                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
+                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
+                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
+                </select>
+                <button type="submit" id="searchButton">Search</button>
             </form>
         </div>
     </div>
 </head>
-<body>
 <!--==============================================================================================
 **************************************************************************************************
-*Author: Kevin Paredes
+*Author: Jackie Shan
 *Class: CSC 648
-*Date Updated: 8/01/2019
-Description: this class has a calendar, dropdown, upload image option and cancel/submit buttons. 
+*Date Updated: 7/30/2019
+*Description: The login page will allow users to login into their account to access all the websites features.
 **************************************************************************************************
-================================================================================================-->  
-    <div class="containerPost">
-        <div id="titlePost">
-            <h1>POST</h1>
+================================================================================================-->
+<body>
+    <div class="wrapper-login">
+        <div class="container-login">
+        <form name="loginForm" method="post" action="/login/submit"> 
+            <h3 class="form-title">Log In</h3>
+            <table width="20%" align="center">
+
+                <tr>
+                    <td>Username:</td>
+
+                    <td><input type="text" size=25 name="email"></td>
+
+                </tr>
+
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="Password" size=25 name="password" required maxlength="50"></td>
+                </tr>
+            </table>
+            <p><a href="signUp" class="log-in-links">Forgot Username/Password?</a></p>
+            <div class="wrapper-button-login">
+                <button type="submit" class="container-login-button">Log In</button>
+            </div>
+        </form>
+        <p><a href="signUp" class="log-in-links">New User/Create an Account</a></p>
         </div>
-        <div id="postForm">
-            <form>
-                <input type="date" name="date" id="id">
-                <br>
-                <select name="category" onchange="this.form.submit()">
-                    <option value="Category1">Fire</option>
-                    <option value="Category2">Oil spill</option>
-                    <option value="Category3">Waste Managment</option>
-                </select>
-                <br>
-                <input type="file" name="pic" accept="image/*">
-                <input type="submit">
-                <br> 
-                <p>Enter a description about the issue.</p>
-                <div id="description">
-                    <textarea name="descrption" id="info" cols="65" rows="20" placeholder="Enter information here..."></textarea>
+        <!--
+        <div class="container-login">
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Username">
                 </div>
-                <button type="cancel"> Cancel</button>
-                <button type="submit"> Finish</button>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="wrapper-button-login">
+                <button type="submit" class="container-signup button">Submit</button>
+                </div>
             </form>
+            <p><a href="">New User/Create an Account</a></p>
+            <p><a href="">Forgot Username/Password?</a></p>
         </div>
+        -->
     </div>
 </body>
 </html>

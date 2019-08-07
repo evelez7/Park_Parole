@@ -3,8 +3,8 @@
 *Author: Kevin Paredes
 *Class: CSC 648
 *Date Updated: 7/30/2019
-Description: This page diesplays the result from the search bar function. The page also contains 
-a navigation bar, logo, and disclaimer.
+Description: The page displays a form with a calendar, category dropdow, upload image and 
+submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a logo.
 **************************************************************************************************
 (Used for local rendering)
 <link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
@@ -16,18 +16,9 @@ a navigation bar, logo, and disclaimer.
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>RESULT</title>
+    <title>POST</title>
     <link href="/stylesheets/style.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            <% for (var i = 0; i < searchResult.length; i++) { %>
-                    document.getElementById('result').innerHTML += '<p> Issue Category: <%= searchResult[i]['Category'] %><br>Description: <%= searchResult[i]['Description'] %> </p>'
-                    document.getElementById('result').innerHTML += '<p>Date: <%= searchResult[i]['Date'] %><br>Location: <%= searchResult[i]['Location'] %> </p>'
-                    <% } %>
-            });
-    </script>
-    <script src="../public/scripts/render.js"></script>
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -48,22 +39,21 @@ a navigation bar, logo, and disclaimer.
 that this is only a school project and not a real envairmental website.
 **************************************************************************************************
 ================================================================================================-->
-    <div class="disclaimer">
+<div class="disclaimer">
         <h6>
             “SFSU Software Engeneering Project CSC 648-848,
             <br> Summer 2019. For Demostration Only."
         </h6>
-        </div>
     </div>
 <!--==============================================================================================
-**************************************************************************************************    
+**************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 8/01/2019
-*Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
-SIGN UP, and a search bar with categories and a button.
+*Date Updated: 7/30/2019
+*Description: The disclaimer class shows a stament that prevents confusion for possible users due 
+that this is only a school project and not a real envairmental website.
 **************************************************************************************************
-================================================================================================-->      
+================================================================================================-->
     <div class="navBar">
         <a class="active" href="about">About</a>
         <a href="post">Post</a>
@@ -91,18 +81,45 @@ SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
-Description: This class displays a container for the result from the search fuction. 
+*Date Updated: 8/01/2019
+Description: this class has a calendar, dropdown, upload image option and cancel/submit buttons. 
 **************************************************************************************************
-================================================================================================-->
-
-   <div class="resultContainer">
-        <div id="result">
-            <div>Number of results: <span id="resultCounter"></span></div>
-            <h4>Search Results:</h4>
+================================================================================================-->  
+    <div class="containerPost">
+        <div id="titlePost">
+            <h3>POST</h3>
         </div>
-        <div id="resultMap">
-            <h4>Google Map Here:</h4>    
+        <div id="postForm">
+            <form method="post" action="/submit">
+                <table align="left">
+                <tr>
+                <td>Name of Park: </td>
+                <td><input type="name" name="parkName" maxlength="25" placeholder="Enter the park name here...." id="nameOfPark"></td>
+                </tr>
+                <tr>
+                <td>Date: </td>
+                <td><input type="date" name="date" id="id"></td>
+                </tr>
+                <tr>
+                <td>Type of issue: </td>
+                <td><select name="category" id="postDropDown">
+                    <option value="Category1">Fire</option>
+                    <option value="Category2">Oil spill</option>
+                    <option value="Category3">Waste Managment</option>
+                </select></td>
+                </tr>
+                <tr>
+                <td><input type="file" name="picture" accept="image/*"></td>
+                <td><input type="submit" id="uploadImage"></td>
+                </tr>
+                <td>Enter a description of the Issue:</td>
+                </table>
+                <div id="description">
+                    <textarea name="descrption" id="info" cols="60" rows="10" maxlength="400" placeholder="Maximun 400 characters..."></textarea>
+                </div>
+                <button type="cancel" id="cancelButton"> Cancel</button>
+                <button type="submit" id="submitButton"> Finish</button>
+            </form>
         </div>
     </div>
 </body>

@@ -12,7 +12,6 @@ The page also displays a navigation bar, disclaimer and logo.
 ================================================================================================-->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -66,22 +65,15 @@ SIGN UP, and a search bar with categories and a button.
             <a href="signUp">Sign Up</a>
         </div>
         <div class="navBar" id="search">
-            <form method="post">
-                <select name="category" onchange="this.form.submit()">
-                    <option value="">All Categories</option>
-                    <option value="Category1">Fire</option>
-                    <option value="Category2">Oil spill</option>
-                    <option value="Category3">Waste Managment</option>
-                    <optionselected<%}selected value="Category1" <% if (category == "Category1") { %> <% } %>>Category1
-                        </option>
-                        <optionselected<%}selected value="Category2" <% if (category == "Category2") { %> <% } %>>
-                            Category2
-                            </option>
-                            <optionselected<%}selected value="Category3" <% if (category == "Category3") { %> <% } %>>
-                                Category2</option>
-                </select>
+            <form method="post" action="/">
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
-                <button type="button">Search</button>
+                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
+                    <option value="">All Categories</option>
+                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
+                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
+                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
+                </select>
+                <button type="submit" id="searchButton">Search</button>
             </form>
         </div>
     </div>
@@ -115,7 +107,6 @@ does not allow sharing the location then the map will display San Francisco by d
     <div id="map">
         <script>
             var map, infoWindow;
-
             function initMap() {
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: {
@@ -148,7 +139,6 @@ does not allow sharing the location then the map will display San Francisco by d
                     handleLocationError(false, infoWindow, map.getCenter());
                 }
             }
-
             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                 infoWindow.setPosition(pos);
                 infoWindow.setContent(browserHasGeolocation ?
@@ -196,7 +186,6 @@ does not allow sharing the location then the map will display San Francisco by d
     </div>
 </div> 
 </body>
-
 </html>
 <!--==============================================================================================
 **************************************************************************************************
@@ -206,3 +195,4 @@ does not allow sharing the location then the map will display San Francisco by d
 *Description:
 **************************************************************************************************
 ================================================================================================-->
+
