@@ -27,7 +27,7 @@ a navigation bar, logo, and disclaimer.
                     <% } %>
             });
     </script>
-    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <script src="../public/scripts/render.js"></script>
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -95,7 +95,15 @@ SIGN UP, and a search bar with categories and a button.
 Description: This class displays a container for the result from the search fuction. 
 **************************************************************************************************
 ================================================================================================-->
-    <div id="result">
+
+   <div class="resultContainer">
+        <div id="result">
+            <div>Number of results: <span id="resultCounter"></span></div>
+            <h4>Search Results:</h4>
+        </div>
+        <div id="resultMap">
+            <h4>Google Map Here:</h4>    
+        </div>
     </div>
 </body>
 </html>
