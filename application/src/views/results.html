@@ -16,18 +16,12 @@ a navigation bar, logo, and disclaimer.
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>RESULT</title>
+    <title>RESULTS</title>
     <link href="/stylesheets/style.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            <% for (var i = 0; i < searchResult.length; i++) { %>
-                    document.getElementById('result').innerHTML += '<p> Issue Category: <%= searchResult[i]['Category'] %><br>Description: <%= searchResult[i]['Description'] %> </p>'
-                    document.getElementById('result').innerHTML += '<p>Date: <%= searchResult[i]['Date'] %><br>Location: <%= searchResult[i]['Location'] %> </p>'
-                    <% } %>
-            });
+        
     </script>
-    <script src="../public/scripts/render.js"></script>
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -102,9 +96,66 @@ Description: This class displays a container for the result from the search fuct
             <h4>Search Results:</h4>
         </div>
         <div id="resultMap">
-            <h4>Google Map Here:</h4>    
+            
+             
         </div>
     </div>
+
+    <script>
+        /**
+         * Functions to load map and results onto page
+         * 
+         * Authors: Kevin Paredes and Erick Velez
+         */
+        $(document).ready(function() {
+            //Inject HTML to show results
+            <% for (var i = 0; i < searchResults.length; i++) { %>
+                    document.getElementById('result').innerHTML += '<p> Issue Category: <%= searchResults[i]['Category'] %><br>Description: <%= searchResults[i]['Description'] %> </p>'
+                    document.getElementById('result').innerHTML += '<p>Date: <%= searchResults[i]['Date'] %><br>Location: <%= searchResults[i]['Location'] %> </p>'
+                    <% } %>
+        });
+
+        //Convert rendered data to a JSON array
+        const issues = <%- JSON.stringify(searchResults) %>;
+
+        function initMap() { // function is called once the API is loaded in the script tag below
+            const map = new google.maps.Map(document.getElementById('resultMap'), {
+                center: {
+                    lat: 37.773972,
+                    lng: -122.431297
+                },
+                zoom: 12
+            });
+
+            for (let i = 0; i < issues.length; i++) {
+                let currentIssue = issues[i];
+
+                //Initial values are undefined 
+                //Thus we must convert passed values to Strings, then Numbers
+                let descriptionString = String(currentIssue['Description']);
+                let latNum = Number(currentIssue['Latitude']);
+                let lngNum = Number(currentIssue['Longitude']);
+                //contentString will appear in marker tooltip
+                let contentString = String(currentIssue['Description']);
+    
+                //infoWindow is the tooltip itself
+                let tooltip = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                
+                let marker = new google.maps.Marker({
+                    position: {lat: latNum, lng: lngNum},
+                    map: map,
+                    title: currentIssue['Description']
+                });
+
+                marker.addListener('click', function() {
+                    tooltip.open(map, marker);
+                });
+            }
+        }
+        </script> 
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>
 </body>
 </html>
 <!--==============================================================================================
