@@ -17,7 +17,7 @@ page also displays a disclaimer and a navigation bar.
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>LOGIN</title>
-    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <link href="../stylesheets/style.css" rel="stylesheet" />
 
 <!--==============================================================================================
 **************************************************************************************************
@@ -93,12 +93,14 @@ SIGN UP, and a search bar with categories and a button.
 
                 <tr>
                     <td>Username:</td>
+
                     <td><input type="text" size=25 name="email"></td>
+
                 </tr>
 
                 <tr>
                     <td>Password:</td>
-                    <td><input type="Password" size=25 name="password"></td>
+                    <td><input type="Password" size=25 name="password" required maxlength="50"></td>
                 </tr>
             </table>
             <p><a href="signUp" class="log-in-links">Forgot Username/Password?</a></p>

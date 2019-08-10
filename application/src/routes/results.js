@@ -15,10 +15,11 @@ const issues = require('../controllers/issues');
  */
 router.get('/', issues.search, function(req, res) {
     let searchResult = req.body.searchResult;
+   
     res.render('results.html', {
-        results : searchResult.length,
+        searchResultsLength : searchResult.length,
         searchTerm : req.searchTerm,
-        searchResult : searchResult,
+        searchResults : searchResult,
         category : req.category
     });
 });
