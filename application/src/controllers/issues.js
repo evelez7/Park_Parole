@@ -18,6 +18,7 @@ module.exports = {
     search : function (req, res, next) {
         //user's search term
         var searchTerm = req.query.search;
+        console.log(String(searchTerm));
         //user's selected category
         var category = req.query.category;
 

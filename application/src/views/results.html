@@ -113,7 +113,7 @@ Description: This class displays a container for the result from the search fuct
                     document.getElementById('result').innerHTML += '<p> Issue Category: <%= searchResults[i]['Category'] %><br>Description: <%= searchResults[i]['Description'] %> </p>'
                     document.getElementById('result').innerHTML += '<p>Date: <%= searchResults[i]['Date'] %><br>Location: <%= searchResults[i]['Location'] %> </p>'
                     <% } %>
-        });
+            });
 
         //Convert rendered data to a JSON array
         const issues = <%- JSON.stringify(searchResults) %>;

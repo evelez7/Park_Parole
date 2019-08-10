@@ -4,10 +4,13 @@
  * Author: Erick Velez  
  */
 const router = require('express').Router();
+const search = require('../controllers/search');
 
-router.get('/', function(req, res) {
+router.get('/', search.parks, function(req, res) {
+    console.log(req.body.searchResults[0]['Location']);
     res.render('index.html', {
-        category: "" //Must render something for category, make it blank
+        category: "", //Must render something for category, make it blank
+        searchResults: req.body.searchResults
     });
 });
 
