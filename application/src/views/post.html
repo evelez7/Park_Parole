@@ -12,6 +12,7 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
 ================================================================================================-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -19,7 +20,20 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
     <title>POST</title>
     <link href="/stylesheets/style.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<!--==============================================================================================
+    <!--==============================================================================================
+**************************************************************************************************
+*Author: "Empty Template for comments"
+*Class:
+*Date Updated:
+*Description:
+**************************************************************************************************
+================================================================================================-->
+    <script>
+        function myFunction() {
+            alert("The form was submitted");
+        }
+    </script>
+    <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
 *Class: CSC 648
@@ -27,10 +41,10 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
 *Description: This logo was designed by Hector. When clicked it routes to the home page. 
 **************************************************************************************************
 ================================================================================================-->
-<div class="logo-img">
+    <div class="logo-img">
         <a href="/"><img src="../public/images/Logo648.png" alt="" class="logo"></a>
-</div>
-<!--==============================================================================================
+    </div>
+    <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
@@ -39,7 +53,7 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
 that this is only a school project and not a real envairmental website.
 **************************************************************************************************
 ================================================================================================-->
-<div class="disclaimer">
+    <div class="disclaimer">
         <h6>
             “SFSU Software Engeneering Project CSC 648-848,
             <br> Summer 2019. For Demostration Only."
@@ -67,15 +81,18 @@ that this is only a school project and not a real envairmental website.
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
                     <option value="">All Categories</option>
-                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
-                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
+                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %>>Debris</option>
+                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %>>Fire</option>
+                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Flood</option>
+                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Oil spill</option>
+                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Waste</option>
                 </select>
                 <button type="submit" id="searchButton">Search</button>
             </form>
         </div>
     </div>
 </head>
+
 <body>
 <!--==============================================================================================
 **************************************************************************************************
@@ -84,38 +101,51 @@ that this is only a school project and not a real envairmental website.
 *Date Updated: 8/01/2019
 Description: this class has a calendar, dropdown, upload image option and cancel/submit buttons. 
 **************************************************************************************************
-================================================================================================-->  
+================================================================================================-->
     <div class="containerPost">
         <div id="titlePost">
             <h3>POST</h3>
         </div>
         <div id="postForm">
-            <form method="post" action="/submit">
+            <form method="post" action="/submit" onsubmit="myFunction()">
                 <table align="left">
-                <tr>
-                <td>Name of Park: </td>
-                <td><input type="name" name="parkName" maxlength="25" placeholder="Enter the park name here...." id="nameOfPark"></td>
-                </tr>
-                <tr>
-                <td>Date: </td>
-                <td><input type="date" name="date" id="id"></td>
-                </tr>
-                <tr>
-                <td>Type of issue: </td>
-                <td><select name="category" id="postDropDown">
-                    <option value="Category1">Fire</option>
-                    <option value="Category2">Oil spill</option>
-                    <option value="Category3">Waste Managment</option>
-                </select></td>
-                </tr>
-                <tr>
-                <td><input type="file" name="picture" accept="image/*"></td>
-                <td><input type="submit" id="uploadImage"></td>
-                </tr>
-                <td>Enter a description of the Issue:</td>
+                    <tr>
+                        <td>Select a Park: </td>
+                        <td><select name="category" id="dropDownPost" required>
+                            <option value="0" >Brooks Park</option>
+                            <option value="1" >Golden Gate Park</option>
+                            <option value="2" >Buena Vista Park</option>
+                            <option value="3" >Bernal Heigths Park</option>
+                            <option value="4" >Dolores Par</option>
+                            <option value="5" >Glen Canyon Park</option>
+                            <option value="6" >Lake Merced Park</option>
+                            <option value="7" >Corona Heigths Park</option>
+                            <option value="8" >Mountain Lake Trail</option>
+                            <option value="9" >Balboa Park</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date: </td>
+                        <td><input type="date" name="date" id="id"></td>
+                    </tr>
+                    <tr>
+                        <td>Type of issue: </td>
+                        <td><select name="category" id="postDropDown">
+                                <option value="Category1">Debris</option>
+                                <option value="Category2">Fire</option>
+                                <option value="Category3">Flood</option>
+                                <option value="Category3">Oil Spill</option>
+                                <option value="Category3">Waste</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td><input type="file" name="picture" accept="image/*"></td>
+                    </tr>
+                    <td>Enter a description of the Issue:</td>
                 </table>
                 <div id="description">
-                    <textarea name="descrption" id="info" cols="60" rows="10" maxlength="400" placeholder="Maximun 400 characters..."></textarea>
+                    <textarea name="descrption" id="info" cols="60" rows="10" maxlength="400" placeholder="Maximum 400 characters..."></textarea>
                 </div>
                 <button type="cancel" id="cancelButton"> Cancel</button>
                 <button type="submit" id="submitButton"> Finish</button>
@@ -123,6 +153,7 @@ Description: this class has a calendar, dropdown, upload image option and cancel
         </div>
     </div>
 </body>
+
 </html>
 <!--==============================================================================================
 **************************************************************************************************

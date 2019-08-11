@@ -15,7 +15,7 @@ Disclaimer container css
 .disclaimer {
     width: 50%;
     color: black;
-    font-style: italic;    
+    font-style: italic;
     font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 25%;
@@ -61,7 +61,6 @@ Map container css
     position: absolute;
 }
 
-
 /*=======================================
 List container css
 =======================================*/
@@ -79,6 +78,7 @@ List container css
     margin-left: 5%;
     margin-bottom: 1%;
     position: absolute;
+    overflow-y: scroll;
 }
 
 #list {
@@ -97,15 +97,15 @@ List container css
     margin-top: 40px;
     width: 300px;
     text-align: left;
-    font-size: 20px
+    font-size: 20px;
 }
 
-#containerIndex{
+#containerIndex {
     width: 1300px;
     height: 700px;
     margin-top: -8%;
     margin-left: 16%;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 a {
@@ -115,7 +115,7 @@ a {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#titlePost{
+#titlePost {
     margin-left: 40%;
     margin-top: -40px;
 }
@@ -163,16 +163,16 @@ Navigation Bar css
     margin-top: 1%;
     margin-bottom: 15px;
     padding-bottom: 0px;
-    min-width: 0px; 
+    min-width: 0px;
     border: none;
     font-size: 20px;
 }
 
-#searchButton{
+#searchButton {
     font-size: 20px;
 }
 
-#dropDownNavBar{
+#dropDownNavBar {
     font-size: 20px;
 }
 
@@ -214,7 +214,6 @@ Tablet/Laptops scaling css
     }
 }
 
-
 /*=======================================
 Cell phone scaling css 
 =======================================*/
@@ -251,8 +250,6 @@ Cell phone scaling css
         position: absolute;
     }
 }
-
-
 /*=======================================
 Cell phone scaling css 
 =======================================*/
@@ -343,13 +340,15 @@ Cell phone scaling css
         border-radius: 100%;
         left: 10%;
     }
-    .containerPost{
-        width:35%;
+    .containerPost {
+        width: 35%;
         background-image: none;
         padding-left: 300px;
         padding-right: 100px;
     }
 }
+
+
 /*=======================================
 signup page css
 =======================================*/
@@ -360,8 +359,8 @@ signup page css
 }
 
 .container-signup {
-    font-size: 1.25rem;
-    background-color: rgb(0, 0, 0, .3);
+    font-size: 20px;
+    background-color: rgb(0, 0, 0, 0.3);
     width: 50%;
     display: inline-block;
     text-align: left;
@@ -385,26 +384,27 @@ signup page css
     font-size: 1rem;
     font-weight: bold;
 }
-td{
+
+td {
     text-align: right;
 }
-
-.form-title{
+.form-title {
     text-align: center;
 }
-.required-text{
+.required-text {
     color: red;
-    font-size: .75rem;
-    text-align: right;    
+    font-size: 12px;
+    text-align: right;
 }
-.button-container{
+.button-container {
     display: flex;
-    
     justify-content: space-around;
 }
-.tos-link{
-    font-size: 1rem;
+
+.tos-link {
+    font-size: 16px;
 }
+
 /*=======================================
 Login page css
 =======================================*/
@@ -416,7 +416,7 @@ Login page css
 
 .container-login {
     font-size: 20px;
-    background-color: rgb(0, 0, 0,.3);
+    background-color: rgb(0, 0, 0, 0.3);
     width: 40%;
     display: inline-block;
     text-align: center;
@@ -445,10 +445,12 @@ Login page css
     font-size: 16px;
     text-align: center;
 }
-.log-in-links{
+
+.log-in-links {
     font-size: 16px;
     color: black;
 }
+
 
 /*=======================================
 styling of icon and search bar div
@@ -467,7 +469,7 @@ Post Css
 
 .containerPost {
     font-size: 30px;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, 0.3);
     width: 35%;
     display: inline-block;
     text-align: left;
@@ -479,38 +481,44 @@ Post Css
     padding-right: 100px;
     padding-top: 40px;
     padding-bottom: 20px;
-    color:black;
+    color: black;
     font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
 }
-#cancelButton{
+#cancelButton {
     border-radius: 30px;
     font-size: 25px;
     background-color: red;
 }
-#submitButton{
+#submitButton {
     border-radius: 30px;
     font-size: 25px;
     float: right;
     background-color: greenyellow;
 }
 
-td{
-    font-size: 28px;
+td {
+    font-size: 20px;
     text-align: left;
-    color:white;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
-tr{
+select{
+    font-size: 15px;
+}
+tr {
     text-align: center;
 }
-#nameOfPark{
+
+#nameOfPark {
     font-size: 15px;
     height: 25px;
 }
-#postDropDown{
+
+#postDropDown {
     font-size: 15px;
 }
+
 
 /*=======================================
 Result Css
@@ -582,12 +590,13 @@ Result Css
 /*=======================================
 AboutCss
 =========================================*/
-#containerAbout
-{
+
+#containerAbout {
     font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
 }
+
 .about_links a {
     text-align: center;
     color: black;
@@ -595,25 +604,29 @@ AboutCss
     text-decoration: none;
     font-size: 25px;
 }
+
 #aboutUl {
     margin-left: 40%;
     border-radius: 35px;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, 0.3);
     width: 300px;
     height: 360px;
     list-style-type: none;
     text-align: center;
     padding-right: 40px;
 }
+
 .about_links a:hover {
     color: blue;
 }
+
 .profile {
     text-align: center;
     overflow: hidden;
     font-size: 50px;
     color: white;
 }
+
 .avatar {
     padding: 70px 20px;
     border-radius: 50%;
