@@ -212,6 +212,15 @@ Tablet/Laptops scaling css
         margin-left: 55%;
         position: absolute;
     }
+    #result {
+        width: 45%;
+        min-width: 29rem;
+
+    }
+    #resultMap{
+        width: 45%;
+        min-width: 29rem;
+    }
 }
 
 /*=======================================
@@ -249,6 +258,15 @@ Cell phone scaling css
         padding-right: 50%;
         position: absolute;
     }
+    #result {
+        width: 45%;
+        min-width: 29rem;
+
+    }
+    #resultMap{
+        width: 45%;
+        min-width: 29rem;
+    }
 }
 /*=======================================
 Cell phone scaling css 
@@ -283,6 +301,15 @@ Cell phone scaling css
         margin-left: 90%;
         margin-top: 600px;
         position: absolute;
+    }
+    #result {
+        width: 45%;
+        min-width: 29rem;
+
+    }
+    #resultMap{
+        width: 45%;
+        min-width: 29rem;
     }
 }
 
@@ -345,6 +372,15 @@ Cell phone scaling css
         background-image: none;
         padding-left: 300px;
         padding-right: 100px;
+    }
+    #result {
+        width: 45%;
+        min-width: 23rem;
+
+    }
+    #resultMap{
+        width: 45%;
+        min-width: 23rem;
     }
 }
 
@@ -531,34 +567,23 @@ Result Css
     justify-content: space-around;
 }
 #result {
-/*    border-radius: 35px;*/
     width: 45%;
-    height: 100%;
+    min-width: 23rem;
+    min-height: 100vh;
     background-color: rgb(0, 0, 0,.3);
     margin-top: 5%;
     font-size: 25px;
     overflow-x: hidden;
     overflow-y: auto;
+    text-align: center;
 }
 #resultMap{
     margin-top: 5%;
     width: 45%;
-    height: 100%;
+    min-width: 23rem;
+    min-height: 100vh;
     background-color: blue;
-/*
-    border-radius: 35px;
-    width: 250px;
-    height: 2px;
-    padding-top: 500px;
-    padding-left: 250px;
-    padding-right: 150px;
-    padding-bottom: 20px;
-    margin-left: 30%;
-    margin-top: 8%;
-    margin-bottom: 1%;
-    margin-right: 35%;
-    position: absolute;
-*/
+
 }
 #result #resultTitle, #result #resultCounter{
     color: white;        
@@ -569,6 +594,7 @@ Result Css
     min-height: 15vh;
     height: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: start;
     font-size: 1.1rem;
     text-align: left;
