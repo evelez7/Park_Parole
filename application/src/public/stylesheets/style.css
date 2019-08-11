@@ -421,7 +421,7 @@ Login page css
     display: inline-block;
     text-align: center;
     line-height: 175%;
-    border-radius: 35px;
+/*    border-radius: 35px;*/
     padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -435,7 +435,7 @@ Login page css
 .container-login-button {
     margin-top: 5px;
     display: inline-block;
-    border-radius: 35px;
+/*    border-radius: 35px;*/
     padding: 15px 50px 15px 50px;
     background-color: white;
     text-align: center;
@@ -524,7 +524,7 @@ Result Css
 }
 #result {
 /*    border-radius: 35px;*/
-    width: 40%;
+    width: 45%;
     height: 100%;
     background-color: rgb(0, 0, 0,.3);
     margin-top: 5%;
@@ -534,7 +534,7 @@ Result Css
 }
 #resultMap{
     margin-top: 5%;
-    width: 40%;
+    width: 45%;
     height: 100%;
     background-color: blue;
 /*
@@ -551,6 +551,33 @@ Result Css
     margin-right: 35%;
     position: absolute;
 */
+}
+#result #resultTitle, #result #resultCounter{
+    color: white;        
+}
+.resultCard{
+    margin: auto;
+    width: 90%;
+    min-height: 15vh;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    font-size: 1.1rem;
+    text-align: left;
+    border: 1px solid red;
+}
+.result-col-1{
+    min-width: 50%;
+    background-color: lightgray;
+}
+.result-col-2{
+    min-width: 50%;
+    background-color: lightblue;
+}
+.resultLocationRow,
+.resultDateRow,
+.resultCategoryRow{
+    height: 33%;
 }
 /*=======================================
 AboutCss
