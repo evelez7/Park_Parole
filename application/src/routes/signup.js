@@ -7,8 +7,10 @@ const router = require('express').Router();
 
 const user = require('../controllers/user');
 
-router.get('/', function(req, res){
-    res.sendFile('public/pages/signup.html', {root: './'});
+router.get('/', function(req, res) {
+    res.render('signUp.html', {
+        category: "" //Must render something for category, make it blank
+    });
 });
 
 /** POST function for search */

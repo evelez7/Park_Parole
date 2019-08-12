@@ -3,8 +3,7 @@
 *Author: Kevin Paredes
 *Class: CSC 648
 *Date Updated: 7/30/2019
-Description: The page diesplays a sign up form for a user that would like to create an account.
-The page also displays a logo, navigation bar and a disclaimer.
+*Description:
 **************************************************************************************************
 (Used for local rendering)
 <link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
@@ -13,23 +12,23 @@ The page also displays a logo, navigation bar and a disclaimer.
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>SIGNUP</title>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>ABOUT</title>
     <link href="/stylesheets/style.css" rel="stylesheet" />
+
 <!--==============================================================================================
 **************************************************************************************************
-*Author: Jackie Shan
-*Class: CSC 648
-*Date Updated: 7/30/2019
-*Description: This logo was designed by Hector. When clicked it routes to the home page. 
+*Author: "Empty Template for comments"FOR LOGO
+*Class:
+*Date Updated:
+*Description: 
 **************************************************************************************************
 ================================================================================================-->
 <div class="logo-img">
-        <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
+    <a href="/"><img src="../public/images/Logo648.png" alt="" class="logo"></a>
 </div>
-
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
@@ -39,17 +38,17 @@ The page also displays a logo, navigation bar and a disclaimer.
 that this is only a school project and not a real envairmental website.
 **************************************************************************************************
 ================================================================================================-->
-<div class="disclaimer">
-    <h6>
-            “SFSU Software Engeneering Project CSC 648-848,
-            <br> Summer 2019. For Demostration Only."
-        </h6>
-</div>
+    <div class="disclaimer">
+            <h6>
+                “SFSU Software Engeneering Project CSC 648-848,
+                <br> Summer 2019. For Demostration Only."
+            </h6>
+    </div>
 <!--==============================================================================================
 **************************************************************************************************    
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 *Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
 SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
@@ -65,65 +64,42 @@ SIGN UP, and a search bar with categories and a button.
         <div class="navBar" id="search">
             <form method="post" action="/">
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
-                <select name="category" onchange="this.form.submit()">
+                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
                     <option value="">All Categories</option>
                     <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
                     <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
                     <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
                 </select>
-                <button type="submit">Search</button>
+                <button type="submit" id="searchButton">Search</button>
             </form>
         </div>
     </div>
 </head>
 <!--==============================================================================================
 **************************************************************************************************
-Author: Jackie Shan
-Class: CSC 648
-Date Updated: 7/30/2019
-Description: The sign up form will allow users to sign up for a new account so they can have access all the features of the site. 
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 8/01/2019
+Description: Displays a list of names for the team members.
 **************************************************************************************************
 ================================================================================================-->
 <body>
-    <div class="wrapper-signup">
-        <div class="container-signup">
-            <form action="/signup/submit" method="post" name="signUp">
-                <table align="center">
-
-                    <tr>
-                        <td>First Name:</td>
-                        <td><input type="text" size=25 name="firstName" required></td>
-                    </tr>
-
-                    <tr>
-                        <td>Last Name:</td>
-                        <td><input type="text" size=25 name="lastName" required></td>
-                    </tr>
-                    <tr>
-                        <td>Email:</td>
-                        <td><input type="text" size=25 name="email" required></td>
-                    </tr>
-                    <tr>
-                        <td>Password:</td>
-                        <td><input type="Password" size=25 name="password" required></td>
-                    </tr>
-                    <tr>
-                        <td>Confirm Password:</td>
-                        <td><input type="Password" size=25 name="confirmPassword" required></td>
-                    </tr>
-
-                </table>
-                <div class="wrapper-button">
-                    <button type="submit">Create Account</button>
-                </div>
-                <div class="wrapper-button">
-                    <button type="submit">Cancel</button>
-                </div>
-            </form>
+    <div id="containerAbout">
+        <p>
+            About
+        </p>
+        <div class="about_links">
+            <ul id="aboutUl">
+                <li><a href="about/Erick">Erick</a></li>
+                <li><a href="about/Jack">Jack</a></li>
+                <li><a href="about/Vincent">Vincent</a></li>
+                <li><a href="about/Hector">Hector</a></li>
+                <li><a href="about/Kevin">Kevin</a></li>
+                <li><a href="about/Jimmy">Jimmy</a></li>
+            </ul>
         </div>
     </div>
 </body>
-
 </html>
 <!--==============================================================================================
 **************************************************************************************************
