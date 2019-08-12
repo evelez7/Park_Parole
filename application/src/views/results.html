@@ -19,9 +19,6 @@ a navigation bar, logo, and disclaimer.
     <title>RESULTS</title>
     <link href="/stylesheets/style.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script>
-        
-    </script>
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -31,7 +28,7 @@ a navigation bar, logo, and disclaimer.
 **************************************************************************************************
 ================================================================================================-->
 <div class="logo-img">
-        <a href="/"><img src="../images/Logo648.png" alt="" class="logo"></a>
+        <a href="/"><img src="../public/images/Logo648.png" alt="" class="logo"></a>
 </div>
 <!--==============================================================================================
 **************************************************************************************************
@@ -92,12 +89,28 @@ Description: This class displays a container for the result from the search fuct
 
    <div class="resultContainer">
         <div id="result">
-            <div>Number of results: <span id="resultCounter"></span></div>
-            <h4>Search Results:</h4>
+            <div id="resultTitle">Number of results: <span id="resultCounter"></span></div>
+            <h4 id="resultTitle">Search Results:</h4>
+            
+            <div class="resultCard">
+                <div class="result-col-1">
+                    <div class="resultCategoryRow">
+                        Category: fire      
+                    </div>
+                    <div class="resultDateRow">
+                        date: 8/10/2019
+                    </div>
+                    <div class="resultLocationRow">
+                        location: sunset park
+                    </div>
+                </div>
+                <div class="result-col-2">
+                    Description: There is a big fire
+                </div>         
+            </div>
+            
         </div>
         <div id="resultMap">
-            
-             
         </div>
     </div>
 

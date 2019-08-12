@@ -31,6 +31,25 @@ The page also displays a navigation bar, disclaimer and logo.
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <!--==============================================================================================
 **************************************************************************************************
+*Author: "Empty Template for comments"
+*Class:
+*Date Updated:
+*Description:
+**************************************************************************************************
+================================================================================================-->
+<script>
+    function logInStatus()
+    {
+        var status;
+        if (confirm("You have succelfully log in"))
+        {
+            status = "logged In!"
+        }
+    }
+</script>
+
+<!--==============================================================================================
+**************************************************************************************************
 *Author: Jackie Shan
 *Class: CSC 648
 *Date Updated: 7/30/2019
@@ -38,7 +57,7 @@ The page also displays a navigation bar, disclaimer and logo.
 **************************************************************************************************
 ================================================================================================-->
     <div class="logo-img">
-        <a href="/"><img src="../images/Logo648.jpg" alt="" class="logo"></a>
+        <a href="/"><img src="../public/images/Logo648.png" alt="" class="logo"></a>
     </div>
 <!--==============================================================================================
 **************************************************************************************************
@@ -77,15 +96,17 @@ SIGN UP, and a search bar with categories and a button.
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
                     <option value="">All Categories</option>
-                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %> >Fire</option>
-                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %> >Oil spill</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %> >Waste Managment</option>
+                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %>>Fire</option>
+                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %>>Oil spill</option>
+                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Waste Managment
+                    </option>
                 </select>
                 <button type="submit" id="searchButton">Search</button>
             </form>
         </div>
     </div>
 </head>
+
 <body>
 <!--==============================================================================================
 **************************************************************************************************
@@ -96,8 +117,8 @@ SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
 ================================================================================================-->
     <div id="details">
-        <p>Our services help you to protect the community 
-            <br>and the enviroment by sharing reports and 
+        <p>Our services help you to protect the community
+            <br>and the enviroment by sharing reports and
             <br>updates related to environmental issues.
         </p>
     </div>
@@ -162,22 +183,20 @@ does not allow sharing the location then the map will display San Francisco by d
                         })
                     }, function() {
                         handleLocationError(true, infoWindow, map.getCenter());
+
                     });
-                } else {
-                    // Browser doesn't support Geolocation
-                    handleLocationError(false, infoWindow, map.getCenter());
+     
                 }
-            }
-            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                infoWindow.setPosition(pos);
-                infoWindow.setContent(browserHasGeolocation ?
-                    'Geolocation not allowed' :
-                    'Error: Your browser doesn\'t support geolocation.');
-                infoWindow.open(map);
-            }
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>
-    </div>
+                function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent(browserHasGeolocation ?
+                        'Geolocation not allowed' :
+                        'Error: Your browser doesn\'t support geolocation.');
+                    infoWindow.open(map);
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>
+        </div>
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Kevin Paredes
@@ -194,7 +213,6 @@ does not allow sharing the location then the map will display San Francisco by d
             </ul>
         </div>
     </div>
-</div> 
 </body>
 </html>
 <!--==============================================================================================

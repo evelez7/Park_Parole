@@ -1,10 +1,9 @@
 <!--==============================================================================================
-*************************************************************************************************   
+**************************************************************************************************
 *Author: Kevin Paredes
 *Class: CSC 648
 *Date Updated: 7/30/2019
-*Description: This page displays the forms that allow the user to log in into their accounts. The 
-page also displays a disclaimer and a navigation bar.
+*Description:
 **************************************************************************************************
 (Used for local rendering)
 <link href="/application/src/public/stylesheets/style.css" rel="stylesheet" />
@@ -13,18 +12,18 @@ page also displays a disclaimer and a navigation bar.
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>LOGIN</title>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Contact</title>
     <link href="/stylesheets/style.css" rel="stylesheet" />
 
 <!--==============================================================================================
 **************************************************************************************************
-*Author: Jackie Shan
-*Class: CSC 648
-*Date Updated: 7/30/2019
-*Description: This logo was designed by Hector. When clicked it routes to the home page. 
+*Author: "Empty Template for comments"FOR LOGO
+*Class:
+*Date Updated:
+*Description: 
 **************************************************************************************************
 ================================================================================================-->
 <div class="logo-img">
@@ -40,20 +39,20 @@ that this is only a school project and not a real envairmental website.
 **************************************************************************************************
 ================================================================================================-->
     <div class="disclaimer">
-        <h6>
-            “SFSU Software Engeneering Project CSC 648-848,
-            <br> Summer 2019. For Demostration Only."
-        </h6>
+            <h6>
+                “SFSU Software Engeneering Project CSC 648-848,
+                <br> Summer 2019. For Demostration Only."
+            </h6>
     </div>
 <!--==============================================================================================
 **************************************************************************************************    
 *Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
+*Date Updated: 8/01/2019
 *Description: The navBar class displays a navigation bar that contains links to ABOUT, POST, LOG IN, 
 SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
-================================================================================================-->    
+================================================================================================--> 
     <div class="navBar">
         <a class="active" href="about">About</a>
         <a href="post">Post</a>
@@ -78,57 +77,20 @@ SIGN UP, and a search bar with categories and a button.
 </head>
 <!--==============================================================================================
 **************************************************************************************************
-*Author: Jackie Shan
+*Author: Kevin Paredes
 *Class: CSC 648
-*Date Updated: 7/30/2019
-*Description: The login page will allow users to login into their account to access all the websites features.
+*Date Updated: 8/01/2019
+Description: Displays a list of names for the team members.
 **************************************************************************************************
 ================================================================================================-->
 <body>
-    <div class="wrapper-login">
-        <div class="container-login">
-        <form name="loginForm" method="post" action="/login/submit"> 
-            <h3 class="form-title">Log In</h3>
-            <table width="20%" align="center">
-
-                <tr>
-                    <td>Username:</td>
-
-                    <td><input type="text" size=25 name="email"></td>
-
-                </tr>
-
-                <tr>
-                    <td>Password:</td>
-                    <td><input type="Password" size=25 name="password" required maxlength="50"></td>
-                </tr>
-            </table>
-            <p><a href="signUp" class="log-in-links">Forgot Username/Password?</a></p>
-            <div class="wrapper-button-login">
-                <button type="submit" class="container-login-button">Log In</button>
-            </div>
-        </form>
-        <p><a href="signUp" class="log-in-links">New User/Create an Account</a></p>
+    <div id="containerAbout">
+        <p>
+            Contact
+        </p>
+        <div class="about_links" style="align-content: center; font-size: 30px" >
+            <p>To contact us send us an email "enviroment@sfsu-csc648.com" <br>NOT A REAL EMAIL</p>
         </div>
-        <!--
-        <div class="container-login">
-            <form action="/login" method="post">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" class="form-control" placeholder="Username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="Password">
-                </div>
-                <div class="wrapper-button-login">
-                <button type="submit" class="container-signup button">Submit</button>
-                </div>
-            </form>
-            <p><a href="">New User/Create an Account</a></p>
-            <p><a href="">Forgot Username/Password?</a></p>
-        </div>
-        -->
     </div>
 </body>
 </html>
