@@ -13,6 +13,16 @@ The page also displays a navigation bar, disclaimer and logo.
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141185844-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-141185844-2');
+    </script>
+
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
@@ -115,9 +125,11 @@ does not allow sharing the location then the map will display San Francisco by d
 
                 for (let i = 0; i < parks.length; i++) {
                     let parkName = String(parks[i]['Location']);
-                    let uriParkName = encodeURIComponent(parkName); //encode to valid URI for href
+                    let uriToEncode = '/results?search=' + parkName;
+                    let encodedURI = encodeURI(uriToEncode); //encode to valid URI for href
+
                     //Create a list item with an anchor for each park name
-                    let listItem = '<li><a href=/results?search=' + uriParkName +'>' + parkName + '</a></li>';
+                    let listItem = '<li><a href=' + encodedURI +'>' + parkName + '</a></li>';
                 
                     document.getElementById('parkList').innerHTML += listItem;
                 }
