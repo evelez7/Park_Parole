@@ -16,7 +16,7 @@ const port = 3000;
 
 /** Use body parser before importing routes */
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
 
 /** begin importing all routes */
 const indexRouter = require('./routes/index'),
@@ -40,6 +40,7 @@ app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 app.use('/images', express.static(__dirname + '/images'));
 app.use('/stylesheets', express.static(__dirname + '/stylesheets'));
+app.use('/uploads', express.static('uploads'));
 
 /** template engine config */
 app.engine('.html', require('ejs').renderFile);
