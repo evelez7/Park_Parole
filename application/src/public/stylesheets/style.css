@@ -221,6 +221,18 @@ Tablet/Laptops scaling css
         width: 45%;
         min-width: 29rem;
     }
+    .container-login {
+    width: 40%;
+    min-width: 29rem;
+    
+    }
+    
+    .container-signup {
+
+    width: 50%;
+    min-width: 29rem;
+
+    }
 }
 
 /*=======================================
@@ -267,6 +279,17 @@ Cell phone scaling css
         width: 45%;
         min-width: 29rem;
     }
+    .container-login {
+        
+        min-width: 29rem;
+    
+    }
+    .container-signup {
+
+        width: 50%;
+        min-width: 29rem;
+
+    }
 }
 /*=======================================
 Cell phone scaling css 
@@ -310,6 +333,18 @@ Cell phone scaling css
     #resultMap{
         width: 45%;
         min-width: 29rem;
+    }
+    .container-login {
+        width: 40%;
+        min-width: 29rem;
+    
+    }
+    
+    .container-signup {
+
+        width: 50%;
+        min-width: 29rem;
+
     }
 }
 
@@ -382,6 +417,18 @@ Cell phone scaling css
         width: 45%;
         min-width: 23rem;
     }
+    .container-login {
+        width: 40%;
+        min-width: 23rem;
+    
+    }
+    
+    .container-signup {
+
+        width: 50%;
+        min-width: 23rem;
+
+    }
 }
 
 
@@ -398,11 +445,10 @@ signup page css
     font-size: 20px;
     background-color: rgb(0, 0, 0, 0.3);
     width: 50%;
+    min-width: 23rem;
     display: inline-block;
     text-align: left;
     line-height: 175%;
-    border-radius: 35px;
-    padding-left: 1.25rem;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
 }
@@ -415,14 +461,15 @@ signup page css
 .container-signup button {
     margin-top: 0px;
     display: inline-block;
-    border-radius: 2.18rem;
-    padding: .625rem 4.68rem .625rem 4.68rem;
+    padding: .625rem 2.68rem .625rem 2.68rem;
     font-size: 1rem;
     font-weight: bold;
 }
 
-td {
+.container-signup td {
     text-align: right;
+    font-size: 1rem;
+    color: black;
 }
 .form-title {
     text-align: center;
@@ -446,6 +493,7 @@ Login page css
 =======================================*/
 
 .wrapper-login {
+    width: 100%;
     text-align: center;
     margin-top: 3%;
 }
@@ -454,10 +502,11 @@ Login page css
     font-size: 20px;
     background-color: rgb(0, 0, 0, 0.3);
     width: 40%;
+    min-width: 23rem;
     display: inline-block;
     text-align: center;
     line-height: 175%;
-/*    border-radius: 35px;*/
+    margin: auto;
     padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -471,7 +520,7 @@ Login page css
 .container-login-button {
     margin-top: 5px;
     display: inline-block;
-/*    border-radius: 35px;*/
+
     padding: 15px 50px 15px 50px;
     background-color: white;
     text-align: center;
