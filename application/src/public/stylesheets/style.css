@@ -127,7 +127,6 @@ Navigation Bar css
 
 .navBar {
     background-color: grey;
-    margin-top: -px;
 }
 
 .navBar a {
@@ -153,7 +152,7 @@ Navigation Bar css
     margin-right: 10px;
     margin-top: 0px;
     min-width: 0px;
-    height: 50px;
+    height: 46.5px;
 }
 
 #search {
@@ -175,8 +174,6 @@ Navigation Bar css
 #dropDownNavBar {
     font-size: 20px;
 }
-
-
 /*=======================================
 Tablet/Laptops scaling css
 =======================================*/
@@ -195,6 +192,9 @@ Tablet/Laptops scaling css
         margin-top: 5px;
         margin-bottom: 10px;
         margin-left: 10px;
+    }
+    #rightSide{
+        height: 45px;
     }
     #search {
         padding-bottom: 4px;
@@ -563,7 +563,7 @@ Post Css
     margin-left: 0%;
     border-radius: 35px;
     padding-left: 40px;
-    padding-right: 100px;
+    padding-right: 80px;
     padding-top: 40px;
     padding-bottom: 20px;
     color: black;
@@ -681,7 +681,7 @@ AboutCss
 }
 
 #aboutUl {
-    margin-left: 40%;
+    margin-left: 35%;
     border-radius: 35px;
     background-color: rgba(0, 0, 0, 0.3);
     width: 300px;
