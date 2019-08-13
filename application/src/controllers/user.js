@@ -17,6 +17,7 @@ module.exports = {
 				return res.status(500).json({
 					error: err
 				});
+				next();
 			} else {
 				//put name, email, and password into database
 				db.query('INSERT INTO User SET ?', {First_Name: req.body.firstName, Last_Name: req.body.lastName, Email: req.body.email, Password: hash}).then(([result, _]) => {
@@ -29,11 +30,9 @@ module.exports = {
 					//token is "secret"
 					"secret"
 					)
-					res.status(200).json({
-						Id: result.insertId,
-						token: token,
-					});
-				})
+					res.cookie('token', token);
+					next();
+				});
 			}
 		});	
 	}, 
@@ -56,10 +55,9 @@ module.exports = {
 						},
 						//token is "secret"
 						"secret")
-						res.status(200).json({
-							Id: user[0].id,
-							token: token,
-						});
+						res.cookie('token', token);
+						console.log(token);
+						next();
 					}
 				});
 			}

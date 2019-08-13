@@ -16,49 +16,9 @@ a navigation bar, logo, and disclaimer.
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>RESULT</title>
-<!--    <link href="../public/stylesheets/style.css" rel="stylesheet" />-->
-<link href="/stylesheets/style.css" rel="stylesheet" />
+    <title>RESULTS</title>
+    <link href="/stylesheets/style.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <!--- old script -->
-<!--
-    <script>
-        $(document).ready(function() {
-            <% for (var i = 0; i < searchResult.length; i++) { %>
-                    document.getElementById('result').innerHTML += '<p> Issue Category: <%= searchResult[i]['Category'] %><br>Description: <%= searchResult[i]['Description'] %> </p>'
-                    document.getElementById('result').innerHTML += '<p>Date: <%= searchResult[i]['Date'] %><br>Location: <%= searchResult[i]['Location'] %> </p>'
-                    <% } %>
-            });
-    </script>
--->
-    <!--- end of old script -->
-    <script>
-        $(document).ready(function() {
-            <% for (var i = 0; i < searchResult.length; i++) { %>
-                    /* start here -*/
-                    document.getElementById('result').innerHTML += '<div class="resultCard">
-                <div class="result-col-1">
-                    <div class="resultCategoryRow">
-                        Category: <%= searchResult[i]['Category'] %>      
-                    </div>
-                    <div class="resultDateRow">
-                        date: <%= searchResult[i]['Date'] %>
-                    </div>
-                    <div class="resultLocationRow">
-                        location: <%= searchResult[i]['Location'] %>
-                    </div>
-                </div>
-                <div class="result-col-2">
-                    Description: <%= searchResult[i]['Description'] %>
-                </div>         
-            </div>'
-                    /* end here -*/                                          
-                    <% } %>
-            });
-    </script>
-    <!--- old script -->
-<!--    <script src="../public/scripts/render.js"></script>-->
-    <!--- end of old script -->
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -68,7 +28,7 @@ a navigation bar, logo, and disclaimer.
 **************************************************************************************************
 ================================================================================================-->
 <div class="logo-img">
-        <a href="/"><img src="../public/images/Logo648.png" alt="" class="logo"></a>
+        <a href="/"><img src="/images/Logo648.png" alt="" class="logo"></a>
 </div>
 <!--==============================================================================================
 **************************************************************************************************
@@ -104,14 +64,13 @@ SIGN UP, and a search bar with categories and a button.
             <a href="signUp">Sign Up</a>
         </div>
         <div class="navBar" id="search">
-            <form method="post" action="/">
-                <select name="category" id="dropDownNavBar" action="/submit" onsubmit="myFunction()" style="width: 250px">
+            <form method="get" action="/results">
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
+                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
                     <option value="">All Categories</option>
-                    <option value="Category1" <% if (category == "Category1") { %>Debris</option>
-                    <option value="Category2" <% if (category == "Category2") { %>Fire</option>
-                    <option value="Category3" <% if (category == "Category3") { %>Flood</option>
-                    <option value="Category3" <% if (category == "Category3") { %>Oil spill</option>
-                    <option value="Category3" <% if (category == "Category3") { %>Waste</option>
+                    <option value="1" <% if (category == "1") { %> selected <% } %> >Fire</option>
+                    <option value="2" <% if (category == "2") { %> selected <% } %> >Oil spill</option>
+                    <option value="3" <% if (category == "3") { %> selected <% } %> >Waste Managment</option>
                 </select>
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <button type="submit" id="searchButton">Search</button>
@@ -132,10 +91,9 @@ Description: This class displays a container for the result from the search fuct
 
    <div class="resultContainer">
         <div id="result">
-            <div id="resultTitle">Number of results: <span id="resultCounter"></span></div>
-            <h4 id="resultTitle">Search Results:</h4>
-            
-            <div class="resultCard">
+            <!-- <div id="resultTitle">Number of results: <span id="resultCounter"></span></div>
+            <h4 id="resultTitle">Search Results:</h4> -->
+            <!-- <div class="resultCard">
                 <div class="result-col-1">
                     <div class="resultCategoryRow">
                         Category: fire      
@@ -150,56 +108,68 @@ Description: This class displays a container for the result from the search fuct
                 <div class="result-col-2">
                     Description: There is a big fire
                 </div>         
-            </div>
-            
+            </div> -->
         </div>
+
         <div id="resultMap">
-            <h4>Google Map Here:</h4>
-            <script>
-            var map, infoWindow;
-            function initMap() {
-                map = new google.maps.Map(document.getElementById('resultMap'), {
-                    center: {
-                        lat: 37.773972,
-                        lng: -122.431297
-                    },
-                    zoom: 12
-                });
-                infoWindow = new google.maps.InfoWindow;
-                // HTML5 geolocation.
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function(position) {
-                        var pos = {
-                            lat: position.coords.latitude,
-                            lng: position.coords.longitude
-                        };
-                        infoWindow.setPosition(pos);
-                        infoWindow.setContent('Current Location.');
-                        infoWindow.open(map);
-                        map.setCenter(pos);
-                        var marker = new google.maps.Marker({
-                            position: pos,
-                            map: map,
-                        })
-                    }, function() {
-                        handleLocationError(true, infoWindow, map.getCenter());
-                    });
-                } else {
-                    // Browser doesn't support Geolocation
-                    handleLocationError(false, infoWindow, map.getCenter());
-                }
-            }
-            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                infoWindow.setPosition(pos);
-                infoWindow.setContent(browserHasGeolocation ?
-                    'Geolocation not allowed' :
-                    'Error: Your browser doesn\'t support geolocation.');
-                infoWindow.open(map);
-            }
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>    
         </div>
     </div>
+
+    <script>
+        /**
+         * Functions to load map and results onto page
+         * 
+         * Authors: Kevin Paredes and Erick Velez
+         */
+        $(document).ready(function() {
+            //Inject HTML to show results
+            <% for (var i = 0; i < searchResults.length; i++) { %>
+                    // Result cards do not render well unless all HTML is added together, so it is a messy line
+                    document.getElementById('result').innerHTML += '<div class="resultCard"><div class="result-col-1"><div class="resultCategoryRow"> Issue Category: <%= searchResults[i]['Category'] %></div><div class="resultDateRow">Date: <%= searchResults[i]['Date'] %></div><div class="resultLocationRow">Location: <%= searchResults[i]['Location'] %> </div></div><div class="result-col-2">Description: <%= searchResults[i]['Description'] %>  <img src="<%= searchResults[i]['Image'] %>" alt="Smiley face" height="42" width="42"> </div'
+                    <% } %>
+            });
+
+        //Convert rendered data to a JSON array
+        const issues = <%- JSON.stringify(searchResults) %>;
+
+        function initMap() { // function is called once the API is loaded in the script tag below
+            const map = new google.maps.Map(document.getElementById('resultMap'), {
+                center: {
+                    lat: 37.773972,
+                    lng: -122.431297
+                },
+                zoom: 12
+            });
+
+            for (let i = 0; i < issues.length; i++) {
+                let currentIssue = issues[i];
+
+                //Initial values are undefined 
+                //Thus we must convert passed values to Strings, then Numbers
+                let descriptionString = String(currentIssue['Description']);
+                let latNum = Number(currentIssue['Latitude']);
+                let lngNum = Number(currentIssue['Longitude']);
+                //contentString will appear in marker tooltip
+                let contentString = String(currentIssue['Description']);
+    
+                //infoWindow is the tooltip itself
+                let tooltip = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                
+                let marker = new google.maps.Marker({
+                    position: {lat: latNum, lng: lngNum},
+                    map: map,
+                    title: currentIssue['Description']
+                });
+
+                marker.addListener('click', function() {
+                    tooltip.open(map, marker);
+                });
+            }
+        }
+        </script> 
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>
 </body>
 </html>
 <!--==============================================================================================
