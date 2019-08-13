@@ -78,21 +78,20 @@ that this is only a school project and not a real envairmental website.
         </div>
         <div class="navBar" id="search">
             <form method="post" action="/">
-                <input id="search" name="search" placeholder="Search.." type="text" value="">
-                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
+                <select name="category" id="dropDownNavBar" onchange="this.form.submit()" style="width: 250px">
                     <option value="">All Categories</option>
-                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %>>Debris</option>
-                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %>>Fire</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Flood</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Oil spill</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Waste</option>
+                    <option value="Category1" <% if (category == "Category1") { %>Debris</option>
+                    <option value="Category2" <% if (category == "Category2") { %>Fire</option>
+                    <option value="Category3" <% if (category == "Category3") { %>Flood</option>
+                    <option value="Category3" <% if (category == "Category3") { %>Oil spill</option>
+                    <option value="Category3" <% if (category == "Category3") { %>Waste</option>
                 </select>
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <button type="submit" id="searchButton">Search</button>
             </form>
         </div>
     </div>
 </head>
-
 <body>
 <!--==============================================================================================
 **************************************************************************************************
