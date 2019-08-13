@@ -31,12 +31,12 @@ module.exports = {
   				.resize(200)
   				.toBuffer()
   				.then( data => { 
-					fs.writeFile(`./uploads/${filename}`, data, function(err) {
+					fs.writeFile(`./public/images/${filename}`, data, function(err) {
         				if (err) console.log(err);
     				})
 				
 					db.query('INSERT INTO Issue SET ?', {Park: req.body.park, Description: req.body.description,
-				 		Category: req.body.category, Image: 'http://34.68.209.201:3000/uploads/' + filename,  Date: req.body.date, Status: "open"})
+				 		Category: req.body.category, Image: '/public/images/' + filename,  Date: req.body.date, Status: "open"})
 					.then(([result, _]) => {
 						next();
 					})
