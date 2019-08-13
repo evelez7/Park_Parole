@@ -5,7 +5,7 @@ const router = require('express').Router();
 
 const postIssue = require('../controllers/postIssue');
 
-const auth = require('../api/middleware/check-auth');
+const auth = require('../middleware/cookieAuth');
 
 const multer = require('multer');
 const upload = multer({dest: 'uploads/'});
@@ -22,7 +22,7 @@ router.post('/', function(req, res) {
 });
 
 /** POST function for submitting post */
-router.post('/submit', auth, upload.single('image') , postIssue.post, function (req, res) {
+router.post('/submit', auth.authenticatePost, upload.single('image') , postIssue.post, function (req, res) {
     console.log("submitted post");
     res.redirect(302, '/');
 });
