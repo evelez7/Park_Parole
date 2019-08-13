@@ -4,10 +4,10 @@
  * Author: Erick Velez
  */
 const router = require('express').Router();
-
+const auth = require('../middleware/cookieAuth');
 const user = require('../controllers/user');
 
-router.get('/', function(req, res) {
+router.get('/', auth.authenticateUser, function(req, res) {
     res.render('signUp.html', {
         category: "" //Must render something for category, make it blank
     });
@@ -20,6 +20,7 @@ router.post('/', function(req, res) {
 
 /** POST function for signup */
 router.post('/submit', user.register, function (req, res) {
+    req.session.user = req.body.email;
     res.redirect(302, '/');
 });
 
