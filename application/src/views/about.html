@@ -53,23 +53,23 @@ that this is only a school project and not a real envairmental website.
 SIGN UP, and a search bar with categories and a button.
 **************************************************************************************************
 ================================================================================================--> 
-    <div class="navBar">
-        <a class="active" href="about">About</a>
-        <a href="post">Post</a>
-        <a href="contact">Contact</a>
-        <div class="navBar" id="rightSide">
-            <a href="logIn">Log In</a>
-            <a href="signUp">Sign Up</a>
-        </div>
+<div class="navBar">
+    <a class="active" href="about">About</a>
+    <a href="post">Post</a>
+    <a href="contact">Contact</a>
+    <div class="navBar" id="rightSide">
+        <a href="logIn">Log In</a>
+        <a href="signUp">Sign Up</a>
+    </div>
         <div class="navBar" id="search">
             <form method="get" action="/results">
-                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
                     <option value="">All Categories</option>
                     <option value="1" <% if (category == "1") { %> selected <% } %> >Fire</option>
                     <option value="2" <% if (category == "2") { %> selected <% } %> >Oil spill</option>
                     <option value="3" <% if (category == "3") { %> selected <% } %> >Waste Managment</option>
                 </select>
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <button type="submit" id="searchButton">Search</button>
             </form>
         </div>

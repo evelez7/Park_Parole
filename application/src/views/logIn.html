@@ -64,17 +64,18 @@ SIGN UP, and a search bar with categories and a button.
         </div>
         <div class="navBar" id="search">
             <form method="get" action="/results">
-                <input id="search" name="search" placeholder="Search.." type="text" value="">
+               
                 <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
                     <option value="">All Categories</option>
                     <option value="1" <% if (category == "1") { %> selected <% } %> >Fire</option>
                     <option value="2" <% if (category == "2") { %> selected <% } %> >Oil spill</option>
                     <option value="3" <% if (category == "3") { %> selected <% } %> >Waste Managment</option>
                 </select>
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <button type="submit" id="searchButton">Search</button>
             </form>
         </div>
-    </div>
+</div>
 </head>
 <!--==============================================================================================
 **************************************************************************************************
