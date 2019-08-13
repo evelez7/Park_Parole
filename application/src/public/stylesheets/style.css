@@ -643,7 +643,7 @@ Result Css
     min-height: 15vh;
     height: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: start;
     font-size: 1.1rem;
     text-align: left;
@@ -661,6 +661,14 @@ Result Css
 .resultDateRow,
 .resultCategoryRow{
     height: 33%;
+    padding: .5rem;
+}
+.resultThumbnail{
+    margin-top: .5rem;
+    text-align: center;
+}
+.resultDescription{
+    padding: .5rem;
 }
 /*=======================================
 AboutCss
