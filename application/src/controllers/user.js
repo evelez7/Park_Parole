@@ -30,6 +30,7 @@ module.exports = {
 					//token is "secret"
 					"secret"
 					)
+					res.cookie('token', token);
 					next();
 				});
 			}
@@ -54,6 +55,8 @@ module.exports = {
 						},
 						//token is "secret"
 						"secret")
+						res.cookie('token', token);
+						console.log(token);
 						next();
 					}
 				});
