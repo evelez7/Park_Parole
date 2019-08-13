@@ -64,7 +64,7 @@
         </div>
         <div class="navBar" id="search">
             <form method="post" action="/">
-                <select name="category" id="dropDownNavBar" onchange="this.form.submit()" style="width: 250px">
+                <select name="category" id="dropDownNavBar" action="/submit" onsubmit="myFunction()" style="width: 250px">
                     <option value="">All Categories</option>
                     <option value="Category1" <% if (category == "Category1") { %>Debris</option>
                     <option value="Category2" <% if (category == "Category2") { %>Fire</option>
