@@ -15,7 +15,7 @@ Disclaimer container css
 .disclaimer {
     width: 50%;
     color: black;
-    font-style: italic;    
+    font-style: italic;
     font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 25%;
@@ -61,7 +61,6 @@ Map container css
     position: absolute;
 }
 
-
 /*=======================================
 List container css
 =======================================*/
@@ -79,6 +78,7 @@ List container css
     margin-left: 5%;
     margin-bottom: 1%;
     position: absolute;
+    overflow-y: scroll;
 }
 
 #list {
@@ -97,15 +97,15 @@ List container css
     margin-top: 40px;
     width: 300px;
     text-align: left;
-    font-size: 20px
+    font-size: 20px;
 }
 
-#containerIndex{
+#containerIndex {
     width: 1300px;
     height: 700px;
     margin-top: -8%;
     margin-left: 16%;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 a {
@@ -115,7 +115,7 @@ a {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#titlePost{
+#titlePost {
     margin-left: 40%;
     margin-top: -40px;
 }
@@ -127,7 +127,6 @@ Navigation Bar css
 
 .navBar {
     background-color: grey;
-    margin-top: -px;
 }
 
 .navBar a {
@@ -153,7 +152,7 @@ Navigation Bar css
     margin-right: 10px;
     margin-top: 0px;
     min-width: 0px;
-    height: 50px;
+    height: 46.5px;
 }
 
 #search {
@@ -163,20 +162,18 @@ Navigation Bar css
     margin-top: 1%;
     margin-bottom: 15px;
     padding-bottom: 0px;
-    min-width: 0px; 
+    min-width: 0px;
     border: none;
     font-size: 20px;
 }
 
-#searchButton{
+#searchButton {
     font-size: 20px;
 }
 
-#dropDownNavBar{
+#dropDownNavBar {
     font-size: 20px;
 }
-
-
 /*=======================================
 Tablet/Laptops scaling css
 =======================================*/
@@ -196,6 +193,9 @@ Tablet/Laptops scaling css
         margin-bottom: 10px;
         margin-left: 10px;
     }
+    #rightSide{
+        height: 45px;
+    }
     #search {
         padding-bottom: 4px;
     }
@@ -212,8 +212,28 @@ Tablet/Laptops scaling css
         margin-left: 55%;
         position: absolute;
     }
-}
+    #result {
+        width: 45%;
+        min-width: 29rem;
 
+    }
+    #resultMap{
+        width: 45%;
+        min-width: 29rem;
+    }
+    .container-login {
+    width: 40%;
+    min-width: 29rem;
+    
+    }
+    
+    .container-signup {
+
+    width: 50%;
+    min-width: 29rem;
+
+    }
+}
 
 /*=======================================
 Cell phone scaling css 
@@ -250,9 +270,27 @@ Cell phone scaling css
         padding-right: 50%;
         position: absolute;
     }
+    #result {
+        width: 45%;
+        min-width: 29rem;
+
+    }
+    #resultMap{
+        width: 45%;
+        min-width: 29rem;
+    }
+    .container-login {
+        
+        min-width: 29rem;
+    
+    }
+    .container-signup {
+
+        width: 50%;
+        min-width: 29rem;
+
+    }
 }
-
-
 /*=======================================
 Cell phone scaling css 
 =======================================*/
@@ -286,6 +324,27 @@ Cell phone scaling css
         margin-left: 90%;
         margin-top: 600px;
         position: absolute;
+    }
+    #result {
+        width: 45%;
+        min-width: 29rem;
+
+    }
+    #resultMap{
+        width: 45%;
+        min-width: 29rem;
+    }
+    .container-login {
+        width: 40%;
+        min-width: 29rem;
+    
+    }
+    
+    .container-signup {
+
+        width: 50%;
+        min-width: 29rem;
+
     }
 }
 
@@ -343,13 +402,36 @@ Cell phone scaling css
         border-radius: 100%;
         left: 10%;
     }
-    .containerPost{
-        width:35%;
+    .containerPost {
+        width: 35%;
         background-image: none;
         padding-left: 300px;
         padding-right: 100px;
     }
+    #result {
+        width: 45%;
+        min-width: 23rem;
+
+    }
+    #resultMap{
+        width: 45%;
+        min-width: 23rem;
+    }
+    .container-login {
+        width: 40%;
+        min-width: 23rem;
+    
+    }
+    
+    .container-signup {
+
+        width: 50%;
+        min-width: 23rem;
+
+    }
 }
+
+
 /*=======================================
 signup page css
 =======================================*/
@@ -360,14 +442,13 @@ signup page css
 }
 
 .container-signup {
-    font-size: 1.25rem;
-    background-color: rgb(0, 0, 0, .3);
+    font-size: 20px;
+    background-color: rgb(0, 0, 0, 0.3);
     width: 50%;
+    min-width: 23rem;
     display: inline-block;
     text-align: left;
     line-height: 175%;
-    border-radius: 35px;
-    padding-left: 1.25rem;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
 }
@@ -380,48 +461,52 @@ signup page css
 .container-signup button {
     margin-top: 0px;
     display: inline-block;
-    border-radius: 2.18rem;
-    padding: .625rem 4.68rem .625rem 4.68rem;
+    padding: .625rem 2.68rem .625rem 2.68rem;
     font-size: 1rem;
     font-weight: bold;
 }
-td{
-    text-align: right;
-}
 
-.form-title{
+.container-signup td {
+    text-align: right;
+    font-size: 1rem;
+    color: black;
+}
+.form-title {
     text-align: center;
 }
-.required-text{
+.required-text {
     color: red;
-    font-size: .75rem;
-    text-align: right;    
+    font-size: 12px;
+    text-align: right;
 }
-.button-container{
+.button-container {
     display: flex;
-    
     justify-content: space-around;
 }
-.tos-link{
-    font-size: 1rem;
+
+.tos-link {
+    font-size: 16px;
 }
+
 /*=======================================
 Login page css
 =======================================*/
 
 .wrapper-login {
+    width: 100%;
     text-align: center;
     margin-top: 3%;
 }
 
 .container-login {
     font-size: 20px;
-    background-color: rgb(0, 0, 0,.3);
+    background-color: rgb(0, 0, 0, 0.3);
     width: 40%;
+    min-width: 23rem;
     display: inline-block;
     text-align: center;
     line-height: 175%;
-    border-radius: 35px;
+    margin: auto;
     padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -435,7 +520,7 @@ Login page css
 .container-login-button {
     margin-top: 5px;
     display: inline-block;
-    border-radius: 35px;
+
     padding: 15px 50px 15px 50px;
     background-color: white;
     text-align: center;
@@ -445,10 +530,12 @@ Login page css
     font-size: 16px;
     text-align: center;
 }
-.log-in-links{
+
+.log-in-links {
     font-size: 16px;
     color: black;
 }
+
 
 /*=======================================
 styling of icon and search bar div
@@ -467,7 +554,7 @@ Post Css
 
 .containerPost {
     font-size: 30px;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, 0.3);
     width: 35%;
     display: inline-block;
     text-align: left;
@@ -476,91 +563,115 @@ Post Css
     margin-left: 0%;
     border-radius: 35px;
     padding-left: 40px;
-    padding-right: 100px;
+    padding-right: 80px;
     padding-top: 40px;
     padding-bottom: 20px;
-    color:black;
+    color: black;
     font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
 }
-#cancelButton{
+#cancelButton {
     border-radius: 30px;
     font-size: 25px;
     background-color: red;
 }
-#submitButton{
+#submitButton {
     border-radius: 30px;
     font-size: 25px;
     float: right;
     background-color: greenyellow;
 }
 
-td{
-    font-size: 28px;
+td {
+    font-size: 20px;
     text-align: left;
-    color:white;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
-tr{
+select{
+    font-size: 15px;
+}
+tr {
     text-align: center;
 }
-#nameOfPark{
+
+#nameOfPark {
     font-size: 15px;
     height: 25px;
 }
-#postDropDown{
+
+#postDropDown {
     font-size: 15px;
 }
+
 
 /*=======================================
 Result Css
 =========================================*/
 .resultContainer{
     width: 100%;
-    height: 100vh;
+    height: 40rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 #result {
-/*    border-radius: 35px;*/
-    width: 40%;
-    height: 100%;
+    width: 45%;
+    min-width: 23rem;
+    min-height: 70%;
     background-color: rgb(0, 0, 0,.3);
     margin-top: 5%;
     font-size: 25px;
     overflow-x: hidden;
     overflow-y: auto;
+    text-align: center;
 }
 #resultMap{
     margin-top: 5%;
-    width: 40%;
-    height: 100%;
+    width: 45%;
+    min-width: 23rem;
+    min-height: 70%;
     background-color: blue;
-/*
-    border-radius: 35px;
-    width: 250px;
-    height: 2px;
-    padding-top: 500px;
-    padding-left: 250px;
-    padding-right: 150px;
-    padding-bottom: 20px;
-    margin-left: 30%;
-    margin-top: 8%;
-    margin-bottom: 1%;
-    margin-right: 35%;
-    position: absolute;
-*/
+
+}
+#result #resultTitle, #result #resultCounter{
+    color: white;        
+}
+.resultCard{
+    margin: auto;
+    width: 90%;
+    min-height: 15vh;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    font-size: 1.1rem;
+    text-align: left;
+    border: 1px solid red;
+}
+.result-col-1{
+    min-width: 50%;
+    background-color: lightgray;
+}
+.result-col-2{
+    min-width: 50%;
+    background-color: lightblue;
+}
+.resultLocationRow,
+.resultDateRow,
+.resultCategoryRow{
+    height: 33%;
 }
 /*=======================================
 AboutCss
 =========================================*/
-#containerAbout
-{
+
+#containerAbout {
     font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
 }
+
 .about_links a {
     text-align: center;
     color: black;
@@ -568,25 +679,29 @@ AboutCss
     text-decoration: none;
     font-size: 25px;
 }
+
 #aboutUl {
-    margin-left: 40%;
+    margin-left: 35%;
     border-radius: 35px;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, 0.3);
     width: 300px;
     height: 360px;
     list-style-type: none;
     text-align: center;
     padding-right: 40px;
 }
+
 .about_links a:hover {
     color: blue;
 }
+
 .profile {
     text-align: center;
     overflow: hidden;
     font-size: 50px;
     color: white;
 }
+
 .avatar {
     padding: 70px 20px;
     border-radius: 50%;
