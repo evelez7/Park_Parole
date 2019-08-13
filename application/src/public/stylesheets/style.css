@@ -691,18 +691,20 @@ signup page css
 .container-signup button {
     margin-top: 0px;
     display: inline-block;
-    padding: .625rem 2.68rem .625rem 2.68rem;
-    font-size: 1rem;
+    padding: .625rem 2rem .625rem 2rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
 .container-signup td {
     text-align: right;
-    font-size: 1rem;
-    color: black;
+    font-size: 1.3rem;
+    color: white;
 }
 .form-title {
     text-align: center;
+    color: white;
+    font-size: 2rem;
 }
 .required-text {
     color: red;
@@ -715,7 +717,13 @@ signup page css
 }
 
 .tos-link {
-    font-size: 16px;
+    font-size: 1.3rem;
+    color: white;
+}
+.container-signup p{
+    font-size: 1.3rem;
+    color: white;
+    
 }
 
 /*=======================================
@@ -750,7 +758,8 @@ Login page css
 .container-login-button {
     margin-top: 5px;
     display: inline-block;
-
+    font-size: 1.3rem;
+    font-weight: 700;
     padding: 15px 50px 15px 50px;
     background-color: white;
     text-align: center;
@@ -764,6 +773,10 @@ Login page css
 .log-in-links {
     font-size: 16px;
     color: black;
+}
+.container-login a{
+    color: white;
+    font-size: 1.2rem;
 }
 
 
@@ -892,8 +905,8 @@ Result Css
 .resultLocationRow,
 .resultDateRow,
 .resultCategoryRow{
-    height: 33%;
     padding: .5rem;
+    font-size: 1.3rem;
 }
 .resultThumbnail{
     margin-top: .5rem;
@@ -901,6 +914,7 @@ Result Css
 }
 .resultDescription{
     padding: .5rem;
+    font-size: 1.3rem;
 }
 /*=======================================
 AboutCss
