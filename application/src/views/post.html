@@ -77,15 +77,13 @@ that this is only a school project and not a real envairmental website.
             <a href="signUp">Sign Up</a>
         </div>
         <div class="navBar" id="search">
-            <form method="post" action="/">
+            <form method="get" action="/results">
                 <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
                     <option value="">All Categories</option>
-                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %>>Debris</option>
-                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %>>Fire</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Flood</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Oil spill</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Waste</option>
+                    <option value="1" <% if (category == "1") { %> selected <% } %> >Fire</option>
+                    <option value="2" <% if (category == "2") { %> selected <% } %> >Oil spill</option>
+                    <option value="3" <% if (category == "3") { %> selected <% } %> >Waste Managment</option>
                 </select>
                 <button type="submit" id="searchButton">Search</button>
             </form>
