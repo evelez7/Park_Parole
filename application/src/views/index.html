@@ -143,7 +143,7 @@ does not allow sharing the location then the map will display San Francisco by d
 
                 for (let i = 0; i < parks.length; i++) {
                     let parkName = String(parks[i]['Location']);
-                    let uriToEncode = '/results?search=' + parkName;
+                    let uriToEncode = '/results?search=' + parkName + '&category=';
                     let encodedURI = encodeURI(uriToEncode); //encode to valid URI for href
 
                     //Create a list item with an anchor for each park name
