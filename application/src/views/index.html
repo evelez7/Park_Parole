@@ -167,36 +167,7 @@ does not allow sharing the location then the map will display San Francisco by d
                     },
                     zoom: 12
                 });
-                infoWindow = new google.maps.InfoWindow;
-                // HTML5 geolocation.
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function(position) {
-                        var pos = {
-                            lat: position.coords.latitude,
-                            lng: position.coords.longitude
-                        };
-                        infoWindow.setPosition(pos);
-                        infoWindow.setContent('Current Location.');
-                        infoWindow.open(map);
-                        map.setCenter(pos);
-                        var marker = new google.maps.Marker({
-                            position: pos,
-                            map: map,
-                        })
-                    }, function() {
-                        handleLocationError(true, infoWindow, map.getCenter());
-
-                    });
-    
-                }
             }
-                function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                    infoWindow.setPosition(pos);
-                    infoWindow.setContent(browserHasGeolocation ?
-                        'Geolocation not allowed' :
-                        'Error: Your browser doesn\'t support geolocation.');
-                    infoWindow.open(map);
-                }
             </script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz0xeLyqgYCgChd_cu1TroCXMgCmpr_NU&callback=initMap" async defer></script>
         </div>
