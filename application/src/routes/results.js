@@ -15,12 +15,18 @@ const search = require('../controllers/search');
  */
 router.get('/', search.issues, function(req, res) {
     let searchResults = req.body.searchResults;
+    let authenticated = false;
+    if (req.session.userEmail) {
+        authenticated = true;
+    }
+
     
     res.render('results.html', {
         searchResultsLength : searchResults.length,
         searchTerm : req.searchTerm,
         searchResults : searchResults,
-        category : req.category
+        category : req.category,
+        authenticated: authenticated
     });
 });
 

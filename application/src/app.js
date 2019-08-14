@@ -20,6 +20,7 @@ const port = 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(cookieParser());
+//session middleware for user login
 app.use(session({
     key: 'sid',
     secret: 'secret',
@@ -44,7 +45,8 @@ const indexRouter = require('./routes/index'),
     loginRouter = require('./routes/login'),
     signUpRouter = require('./routes/signup'),
     postRouter = require('./routes/post'),
-    contactRouter = require('./routes/contact');
+    contactRouter = require('./routes/contact'),
+    signoutRouter = require('./routes/signout');
 
 /** begin middleware use for routes */
 app.use('/', indexRouter);
@@ -54,6 +56,7 @@ app.use('/login', loginRouter);
 app.use('/signUp', signUpRouter);
 app.use('/post', postRouter);
 app.use('/contact', contactRouter);
+app.use('/signout', signoutRouter);
 app.use(morgan('dev'));
 
 /** static directories config */
@@ -61,6 +64,7 @@ app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 app.use('/images', express.static(__dirname + '/images'));
 app.use('/stylesheets', express.static(__dirname + '/stylesheets'));
+app.use('/scripts', express.static(__dirname + '/scripts'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 /** template engine config */

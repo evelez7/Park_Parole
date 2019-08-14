@@ -24,22 +24,22 @@ module.exports = {
 
         let query = 'SELECT * FROM Issue INNER JOIN Park ON Issue.Park = Park.Id INNER JOIN Category ON Issue.Category = Category.Id';
         if (searchTerm != "" && category != "") {
-            query = query.concat(` WHERE Category.Category_Name= '` + category + `' AND (Issue.Description LIKE '%` + searchTerm + `%' OR Park.Location LIKE '%` + searchTerm + `%')`);
+            query = query.concat(` WHERE Category.Id= '` + category + `' AND (Issue.Description LIKE '%` + searchTerm + `%' OR Park.Location LIKE '%` + searchTerm + `%')`);
         } else if (searchTerm != "" && category == "") {
             console.log("Empty cat but search term present")
             query = query.concat(` WHERE Issue.Description LIKE '%` + searchTerm + `%' OR Park.Location LIKE '%` + searchTerm + `%'`)
         } else if (searchTerm == "" && category != "") {
-            query = query.concat(` WHERE Category.Category_Name = '` + category + `'`);
+            query = query.concat(` WHERE Category.Id = '` + category + `'`);
         }
 
         db.query(query, function (err, results, fields) {
             if (err) { //TODO: properly handle errors
-                req.body.searchResult = "";
+                req.body.searchResults = "";
                 req.body.searchTerm = "";
                 req.body.category = "";
                 next();
             }
-
+            
             req.body.searchResults = results; //collection of issues
             req.body.searchTerm = searchTerm;
             req.body.category = category;

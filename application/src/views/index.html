@@ -86,13 +86,18 @@ SIGN UP, and a search bar with categories and a button.
         <a class="active" href="about">About</a>
         <a href="post">Post</a>
         <a href="contact">Contact</a>
+        
         <div class="navBar" id="rightSide">
+        <% if (!authenticated) { %> 
             <a href="logIn">Log In</a>
             <a href="signUp">Sign Up</a>
+        <% } else { %>
+            <a href="signout">Sign out</a>
+        <% } %>
         </div>
         <div class="navBar" id="search">
             <form method="get" action="/results">
-                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
+                <select name="category" id="dropDownNavBar">
                     <option value="">All Categories</option>
                     <option value="1" <% if (category == "1") { %> selected <% } %> >Fire</option>
                     <option value="2" <% if (category == "2") { %> selected <% } %> >Oil spill</option>
@@ -182,7 +187,7 @@ does not allow sharing the location then the map will display San Francisco by d
                         handleLocationError(true, infoWindow, map.getCenter());
 
                     });
-     
+    
                 }
             }
                 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
