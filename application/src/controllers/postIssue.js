@@ -23,7 +23,7 @@ module.exports = {
 				console.log(req.body.description);
 				console.log(data);
 
-    			data = new Buffer(data.toString(), 'base64')
+    			data = new Buffer(String(data), 'base64')
     			let filename = new Date().toISOString().replace(/:/g, '-') + '.jpeg';
 
 				sharp(req.file.path)
@@ -34,16 +34,18 @@ module.exports = {
 					fs.writeFile(`./uploads/${filename}`, data, function(err) {
         				if (err) console.log(err);
     				})
+
 				
 					db.query('INSERT INTO Issue SET ?', {Park: req.body.park, Description: req.body.description,
 				 		Category: req.body.category, Image: 'http://34.68.209.201:3000/uploads/' + filename,  Date: req.body.date, Status: "open"})
 					.then(([result, _]) => {
 						next();
 					})
-				})
+				
 				.catch( err => {
 					console.log(err);
 				})
 				
+			});
+		}
 	}
-}

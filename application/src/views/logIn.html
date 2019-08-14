@@ -65,7 +65,7 @@ SIGN UP, and a search bar with categories and a button.
         <div class="navBar" id="search">
             <form method="get" action="/results">
                
-                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
+                <select name="category" id="dropDownNavBar">
                     <option value="">All Categories</option>
                     <option value="1" <% if (category == "1") { %> selected <% } %> >Fire</option>
                     <option value="2" <% if (category == "2") { %> selected <% } %> >Oil spill</option>
@@ -104,12 +104,12 @@ SIGN UP, and a search bar with categories and a button.
                     <td><input type="Password" size=25 name="password" required maxlength="50"></td>
                 </tr>
             </table>
-            <p><a href="signUp" class="log-in-links">Forgot Username/Password?</a></p>
+            <p><a href="signUp.html" class="log-in-links">Forgot Username/Password?</a></p>
             <div class="wrapper-button-login">
                 <button type="submit" class="container-login-button">Log In</button>
             </div>
         </form>
-        <p><a href="signUp" class="log-in-links">New User/Create an Account</a></p>
+        <p><a href="signUp.html" class="log-in-links">New User/Create an Account</a></p>
         </div>
         <!--
         <div class="container-login">
