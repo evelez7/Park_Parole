@@ -20,7 +20,6 @@ router.post('/', function(req, res) {
 
 /** POST function for signup */
 router.post('/submit', user.register, function (req, res) {
-    req.session.user = req.body.email;
     res.redirect(302, '/');
 });
 
