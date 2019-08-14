@@ -242,7 +242,7 @@ Projector Scaling css
     }
     #containerIndex
     {
-        width: 1300px;
+        width: 1250px;
         margin-top: -140px;
         margin-left: 15%;
     }
@@ -645,7 +645,7 @@ Tablet/Laptops scaling css
     }
     #map {
         width: 20%;
-        margin-left: 25%;
+        margin-left: 55%;
         margin-top: 240px;
         margin-right: 10%;
         position: absolute;
@@ -719,7 +719,7 @@ Cell phone scaling css
     }
     #map {
         width: 5%;
-        margin-left: 10%;
+        margin-left: 65%;
         margin-right: 55%;
         margin-top: 250px;
         padding-left: 50%;
@@ -789,14 +789,14 @@ Cell phone scaling css
     }
     #map {
         width: 300px;
-        margin-right: 10%;
-        margin-left: 90%;
+        margin-right: 35%;
+        margin-left: 75%;
         position: absolute;
     }
     #list {
         width: 300px;
         margin-right: 10%;
-        margin-left: 90%;
+        margin-left: 75%;
         margin-top: 600px;
         position: absolute;
     }
@@ -820,6 +820,20 @@ Cell phone scaling css
         width: 50%;
         min-width: 29rem;
 
+    }
+    #wrapperList {
+        width: 150px;
+        height: 1px;
+        margin-top: 250px;
+        margin-left: 5%;
+        margin-right: 50%;
+    }
+    #containerIndex
+    {
+        width: 850px;
+        height: 900px;
+        margin-top: -250px;
+        margin-left: 10%;
     }
 }
 /*=======================================
