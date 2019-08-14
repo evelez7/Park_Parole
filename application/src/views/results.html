@@ -128,7 +128,7 @@ Description: This class displays a container for the result from the search fuct
             //Inject HTML to show results
             <% for (var i = 0; i < searchResults.length; i++) { %>
                     // Result cards do not render well unless all HTML is added together, so it is a messy line
-                    document.getElementById('result').innerHTML += '<div class="resultCard"><div class="result-col-1"><div class="resultCategoryRow"> Issue Category: <%= searchResults[i]['Category_Name'] %></div><div class="resultDateRow">Date: <%= searchResults[i]['Date'] %></div><div class="resultLocationRow">Location: <%= searchResults[i]['Location'] %> </div></div><div class="result-col-2"><div class="resultDescription">Description: <%= searchResults[i]['Description'] %></div><div class="resultThumbnail"><img src="<%= searchResults[i]['Image'] %>" alt="Picture" height="75" width="75"></div></div>'
+                    document.getElementById('result').innerHTML += '<div class="resultCard"><div class="result-col-1"><div class="resultCategoryRow"> Issue Category: <%= searchResults[i]['Category_Name'] %></div><div class="resultDateRow">Date: <%= searchResults[i]['Date'] %></div><div class="resultLocationRow">Location: <%= searchResults[i]['Location'] %></div> <div class="resultStatusRow">Status: <%= searchResults[i]['Status'] %> </div></div><div class="result-col-2"><div class="resultDescription">Description: <%= searchResults[i]['Description'] %></div><div class="resultThumbnail"><img src="<%= searchResults[i]['Image'] %>" alt="Picture" height="75" width="75"></div></div>'
                     <% } %>
             });
 

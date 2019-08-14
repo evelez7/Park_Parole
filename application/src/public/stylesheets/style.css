@@ -1169,7 +1169,8 @@ Result Css
 }
 .resultLocationRow,
 .resultDateRow,
-.resultCategoryRow{
+.resultCategoryRow,
+.resultStatusRow{
     padding: .5rem;
     font-size: 1.3rem;
 }
