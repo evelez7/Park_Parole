@@ -8,7 +8,6 @@ const auth = require('../middleware/cookieAuth');
 const user = require('../controllers/user');
 
 router.get('/', auth.authenticateUser, function(req, res) {
-    console.log('login router');
     res.render('login.html', {
         category: "" //Must render something for category, make it blank
     });

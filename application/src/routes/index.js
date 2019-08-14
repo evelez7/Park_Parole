@@ -7,10 +7,15 @@ const router = require('express').Router();
 const search = require('../controllers/search');
 
 router.get('/', search.parks, function(req, res) {
-    console.log(req.body.searchResults[0]['Location']);
+    let authenticated = false;
+    if (req.session.userEmail) {
+        authenticated = true;
+    }
+
     res.render('index.html', {
         category: "", //Must render something for category, make it blank
-        searchResults: req.body.searchResults
+        searchResults: req.body.searchResults,
+        authenticated: authenticated
     });
 });
 

@@ -11,7 +11,13 @@ const multer = require('multer');
 const upload = multer({dest: 'uploads/'});
 
 router.get('/', function(req, res) {
+    let authenticated = false;
+    if (req.session.userEmail) {
+        authenticated = true;
+    }
+
     res.render('post.html', {
+        authenticated: authenticated,
         category: "" //Must render something for category, make it blank
     });
 });

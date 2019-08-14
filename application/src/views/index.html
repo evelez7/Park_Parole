@@ -86,9 +86,14 @@ SIGN UP, and a search bar with categories and a button.
         <a class="active" href="about">About</a>
         <a href="post">Post</a>
         <a href="contact">Contact</a>
+        
         <div class="navBar" id="rightSide">
+        <% if (!authenticated) { %> 
             <a href="logIn">Log In</a>
             <a href="signUp">Sign Up</a>
+        <% } else { %>
+            <a href="signout">Sign out</a>
+        <% } %>
         </div>
         <div class="navBar" id="search">
             <form method="get" action="/results">

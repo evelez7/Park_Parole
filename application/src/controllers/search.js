@@ -40,11 +40,9 @@ module.exports = {
                 next();
             }
             
-
             req.body.searchResults = results; //collection of issues
             req.body.searchTerm = searchTerm;
             req.body.category = category;
-            console.log(req.body.searchResults);
             next();
         });
     },
