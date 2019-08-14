@@ -65,7 +65,7 @@ SIGN UP, and a search bar with categories and a button.
         <div class="navBar" id="search">
             <form method="get" action="/results">
                
-                <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
+                <select name="category" id="dropDownNavBar">
                     <option value="">All Categories</option>
                     <option value="1" <% if (category == "1") { %> selected <% } %> >Fire</option>
                     <option value="2" <% if (category == "2") { %> selected <% } %> >Oil spill</option>
