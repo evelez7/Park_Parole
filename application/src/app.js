@@ -12,11 +12,30 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan'); 
 const bodyParser = require('body-parser');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const port = 3000;
 
 /** Use body parser before importing routes */
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({limit: '50mb'}));
+app.use(cookieParser());
+app.use(session({
+    key: 'sid',
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 600000
+    }
+}));
+
+app.use((req, res, next) => {
+    if (req.cookies.user_sid && !req.session.user) {
+        res.clearCookie('sid');        
+    }
+    next();
+});
 
 /** begin importing all routes */
 const indexRouter = require('./routes/index'),
@@ -42,7 +61,7 @@ app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 app.use('/images', express.static(__dirname + '/images'));
 app.use('/stylesheets', express.static(__dirname + '/stylesheets'));
-app.use('/uploads', express.static(__dirname + 'uploads'));
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 /** template engine config */
 app.engine('.html', require('ejs').renderFile);

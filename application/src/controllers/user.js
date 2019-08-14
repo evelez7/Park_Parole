@@ -30,6 +30,7 @@ module.exports = {
 					//token is "secret"
 					"secret"
 					)
+					res.cookie('token', token);
 					next();
 				});
 			}
@@ -39,9 +40,7 @@ module.exports = {
 	login : function (req, res, next) {
 		db.query('SELECT * FROM User WHERE Email = ?', req.body.email).then(([user, _]) => {
 			if(user == ""){
-				res.status(404).json({
-	
-				});
+				res.status(401).send("Bad username/password");
 			} else {
 				//grab the specific user from database
 				bcrypt.compare(req.body.password, user[0].Password,  (err,result) =>  {
@@ -54,6 +53,8 @@ module.exports = {
 						},
 						//token is "secret"
 						"secret")
+						res.cookie('token', token);
+						console.log(token);
 						next();
 					}
 				});

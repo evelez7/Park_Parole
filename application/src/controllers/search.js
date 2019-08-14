@@ -23,12 +23,12 @@ module.exports = {
         var category = req.query.category;
 
         let query = 'SELECT * FROM Issue INNER JOIN Park ON Issue.Park = Park.Id INNER JOIN Category ON Issue.Category = Category.Id';
-        if (searchTerm != null && category != null) {
+        if (searchTerm != "" && category != "") {
             query = query.concat(` WHERE Category.Category_Name= '` + category + `' AND (Issue.Description LIKE '%` + searchTerm + `%' OR Park.Location LIKE '%` + searchTerm + `%')`);
-        } else if (searchTerm != null && category == null) {
+        } else if (searchTerm != "" && category == "") {
             console.log("Empty cat but search term present")
             query = query.concat(` WHERE Issue.Description LIKE '%` + searchTerm + `%' OR Park.Location LIKE '%` + searchTerm + `%'`)
-        } else if (searchTerm == null && category != null) {
+        } else if (searchTerm == "" && category != "") {
             query = query.concat(` WHERE Category.Category_Name = '` + category + `'`);
         }
 

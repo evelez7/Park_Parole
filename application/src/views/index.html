@@ -27,7 +27,7 @@ The page also displays a navigation bar, disclaimer and logo.
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>HOMEPAGE</title>
-    <link href="/stylesheets/style.css" rel="stylesheet" /></link>
+    <link href="/stylesheets/style.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <!--==============================================================================================
 **************************************************************************************************
@@ -47,7 +47,6 @@ The page also displays a navigation bar, disclaimer and logo.
         }
     }
 </script>
-
 <!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
@@ -92,21 +91,19 @@ SIGN UP, and a search bar with categories and a button.
             <a href="signUp">Sign Up</a>
         </div>
         <div class="navBar" id="search">
-            <form method="post" action="/">
-                <input id="search" name="search" placeholder="Search.." type="text" value="">
+            <form method="get" action="/results">
                 <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
                     <option value="">All Categories</option>
-                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %>>Fire</option>
-                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %>>Oil spill</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Waste Managment
-                    </option>
+                    <option value="1" <% if (category == "1") { %> selected <% } %> >Fire</option>
+                    <option value="2" <% if (category == "2") { %> selected <% } %> >Oil spill</option>
+                    <option value="3" <% if (category == "3") { %> selected <% } %> >Waste Managment</option>
                 </select>
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <button type="submit" id="searchButton">Search</button>
             </form>
         </div>
     </div>
 </head>
-
 <body>
 <!--==============================================================================================
 **************************************************************************************************

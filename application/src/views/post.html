@@ -20,20 +20,20 @@ submit/cancel buttons. The page also contains a navigaton bar, disclaimer and a 
     <title>POST</title>
     <link href="/stylesheets/style.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <!--==============================================================================================
+<!--==============================================================================================
 **************************************************************************************************
-*Author: "Empty Template for comments"
-*Class:
-*Date Updated:
-*Description:
+*Author: Kevin Paredes
+*Class: CSC 648
+*Date Updated: 8/11/2019
+*Description: Sends an alert for the user once the post has been submitted.
 **************************************************************************************************
 ================================================================================================-->
     <script>
         function myFunction() {
-            alert("The form was submitted");
+            alert("The form was submitted.");
         }
     </script>
-    <!--==============================================================================================
+<!--==============================================================================================
 **************************************************************************************************
 *Author: Jackie Shan
 *Class: CSC 648
@@ -77,22 +77,19 @@ that this is only a school project and not a real envairmental website.
             <a href="signUp">Sign Up</a>
         </div>
         <div class="navBar" id="search">
-            <form method="post" action="/">
-                <input id="search" name="search" placeholder="Search.." type="text" value="">
+            <form method="get" action="/results">
                 <select name="category" id="dropDownNavBar" onchange="this.form.submit()">
                     <option value="">All Categories</option>
-                    <option value="Category1" <% if (category == "Category1") { %> selected <% } %>>Debris</option>
-                    <option value="Category2" <% if (category == "Category2") { %> selected <% } %>>Fire</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Flood</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Oil spill</option>
-                    <option value="Category3" <% if (category == "Category3") { %> selected <% } %>>Waste</option>
+                    <option value="1" <% if (category == "1") { %> selected <% } %> >Fire</option>
+                    <option value="2" <% if (category == "2") { %> selected <% } %> >Oil spill</option>
+                    <option value="3" <% if (category == "3") { %> selected <% } %> >Waste Managment</option>
                 </select>
+                <input id="search" name="search" placeholder="Search.." type="text" value="">
                 <button type="submit" id="searchButton">Search</button>
             </form>
         </div>
     </div>
 </head>
-
 <body>
 <!--==============================================================================================
 **************************************************************************************************
@@ -107,11 +104,11 @@ Description: this class has a calendar, dropdown, upload image option and cancel
             <h3>POST</h3>
         </div>
         <div id="postForm">
-            <form method="post" action="/post/submit" onsubmit="myFunction()">
+            <form method="post" action="/post/submit" onsubmit="myFunction()" enctype="multipart/form-data">
                 <table align="left">
                     <tr>
                         <td>Select a Park: </td>
-                        <td><select name="category" id="dropDownPost" required>
+                        <td><select name="park" id="dropDownPost" required>
                             <option value="0" >Brooks Park</option>
                             <option value="1" >Golden Gate Park</option>
                             <option value="2" >Buena Vista Park</option>
@@ -132,20 +129,18 @@ Description: this class has a calendar, dropdown, upload image option and cancel
                     <tr>
                         <td>Type of issue: </td>
                         <td><select name="category" id="postDropDown">
-                                <option value="Category1">Debris</option>
-                                <option value="Category2">Fire</option>
-                                <option value="Category3">Flood</option>
-                                <option value="Category3">Oil Spill</option>
-                                <option value="Category3">Waste</option>
+                                <option value="1">Fire</option>
+                                <option value="2">Oil Spill</option>
+                                <option value="3">Waste</option>
                             </select></td>
                     </tr>
                     <tr>
-                        <td><input type="file" name="picture" accept="image/*"></td>
+                        <td><input type="file" name="image" accept="image/*"></td>
                     </tr>
                     <td>Enter a description of the Issue:</td>
                 </table>
                 <div id="description">
-                    <textarea style="resize: none" name="descrption" id="info" cols="60" rows="10" maxlength="400" placeholder="Maximum 400 characters..."></textarea>
+                    <textarea style="resize: none" name="description" id="info" cols="60" rows="10" maxlength="400" placeholder="Maximum 400 characters..."></textarea>
                 </div>
                 <button type="cancel" id="cancelButton"> Cancel</button>
                 <button type="submit" id="submitButton"> Finish</button>
