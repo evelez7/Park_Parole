@@ -3,8 +3,23 @@
  */
 const router = require('express').Router();
 
+const postIssue = require('../controllers/postIssue');
+
+const auth = require('../middleware/cookieAuth');
+
+const multer = require('multer');
+const upload = multer({dest: 'uploads/'});
+
 router.get('/', function(req, res) {
-    res.sendFile('public/pages/post.html', {root: './'});
+    let authenticated = false;
+    if (req.session.userEmail) {
+        authenticated = true;
+    }
+
+    res.render('post.html', {
+        authenticated: authenticated,
+        category: "" //Must render something for category, make it blank
+    });
 });
 
 /** POST function for search */
@@ -13,8 +28,9 @@ router.post('/', function(req, res) {
 });
 
 /** POST function for submitting post */
-router.post('/submit', function (req, res) {
+router.post('/submit', auth.authenticatePost, upload.single('image') , postIssue.post, function (req, res) {
     console.log("submitted post");
+    res.redirect(302, '/');
 });
 
 module.exports = router;

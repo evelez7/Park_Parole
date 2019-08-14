@@ -17,6 +17,7 @@ module.exports = {
 				return res.status(500).json({
 					error: err
 				});
+				next();
 			} else {
 				//put name, email, and password into database
 				db.query('INSERT INTO User SET ?', {First_Name: req.body.firstName, Last_Name: req.body.lastName, Email: req.body.email, Password: hash}).then(([result, _]) => {
@@ -24,16 +25,14 @@ module.exports = {
 						Id: req.body.id,
 						First_Name: req.body.firstName,
 						Last_Name: req.body.lastName,
-						Email: req.body.Email,
+						Email: req.body.email,
 					},
 					//token is "secret"
 					"secret"
 					)
-					res.status(200).json({
-						Id: result.insertId,
-						token: token,
-					});
-				})
+					res.cookie('token', token);
+					next();
+				});
 			}
 		});	
 	}, 
@@ -41,9 +40,7 @@ module.exports = {
 	login : function (req, res, next) {
 		db.query('SELECT * FROM User WHERE Email = ?', req.body.email).then(([user, _]) => {
 			if(user == ""){
-				res.status(404).json({
-	
-				});
+				res.status(401).send("Bad username/password");
 			} else {
 				//grab the specific user from database
 				bcrypt.compare(req.body.password, user[0].Password,  (err,result) =>  {
@@ -52,14 +49,13 @@ module.exports = {
 							Id: user[0].id,
 							firstName: user[0].First_Name,
 							lastName: user[0].Last_Name,
-							Email: user[0].Email,
+							email: user[0].Email,
 						},
 						//token is "secret"
 						"secret")
-						res.status(200).json({
-							Id: user[0].id,
-							token: token,
-						});
+						res.cookie('token', token);
+						console.log(token);
+						next();
 					}
 				});
 			}

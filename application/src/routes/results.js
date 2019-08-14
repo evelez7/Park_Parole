@@ -4,7 +4,7 @@
 const router = require('express').Router();
 
 /** Import issues module */
-const issues = require('../controllers/issues');
+const search = require('../controllers/search');
 
 /**
  * The GET mehtod for results.html
@@ -13,13 +13,20 @@ const issues = require('../controllers/issues');
  * search.issues, which will take the search term from the request's body and 
  * query the database. The relevant search result is then rendered to results.html
  */
-router.get('/', issues.search, function(req, res) {
-    let searchResult = req.body.searchResult;
+router.get('/', search.issues, function(req, res) {
+    let searchResults = req.body.searchResults;
+    let authenticated = false;
+    if (req.session.userEmail) {
+        authenticated = true;
+    }
+
+    
     res.render('results.html', {
-        results : searchResult.length,
+        searchResultsLength : searchResults.length,
         searchTerm : req.searchTerm,
-        searchResult : searchResult,
-        category : req.category
+        searchResults : searchResults,
+        category : req.category,
+        authenticated: authenticated
     });
 });
 

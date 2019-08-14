@@ -6,7 +6,15 @@
 const router = require('express').Router();
 
 router.get('/', function(req, res) {
-    res.sendFile('public/pages/about.html', {root: './' })
+    let authenticated = false;
+    if (req.session.userEmail) {
+        authenticated = true;
+    }
+
+    res.render('about.html', {
+        authenticated: authenticated,
+        category: "" //Must render something for category, make it blank
+    });
 });
 
 router.get('/Erick', function(req, res) {

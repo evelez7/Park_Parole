@@ -4,11 +4,13 @@
  * Author: Erick Velez
  */
 const router = require('express').Router();
-
+const auth = require('../middleware/cookieAuth');
 const user = require('../controllers/user');
 
-router.get('/', function(req, res){
-    res.sendFile('public/pages/signup.html', {root: './'});
+router.get('/', auth.authenticateUser, function(req, res) {
+    res.render('signUp.html', {
+        category: "" //Must render something for category, make it blank
+    });
 });
 
 /** POST function for search */
