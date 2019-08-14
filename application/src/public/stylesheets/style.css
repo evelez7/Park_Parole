@@ -570,7 +570,7 @@ Tablet/Laptops scaling css
     }
     #map {
         width: 15%;
-        margin-left: 48%;
+        margin-left: 42%;
         margin-top: 240px;
         margin-right: 10%;
         position: absolute;
@@ -608,7 +608,7 @@ Tablet/Laptops scaling css
     }
     #containerIndex
     {
-        width: 950px;
+        width: 1050px;
         height: 780px;
         margin-top: -250px;
         margin-left: 10%;
@@ -679,7 +679,7 @@ Tablet/Laptops scaling css
     }
     #containerIndex
     {
-        width: 960px;
+        width: 1050px;
         height: 780px;
         margin-top: -250px;
         margin-left: 10%;
@@ -760,7 +760,7 @@ Cell phone scaling css
     }
     #containerIndex
     {
-        width: 950px;
+        width: 850px;
         height: 900px;
         margin-top: -250px;
         margin-left: 10%;
