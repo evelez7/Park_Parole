@@ -61,6 +61,7 @@ app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 app.use('/images', express.static(__dirname + '/images'));
 app.use('/stylesheets', express.static(__dirname + '/stylesheets'));
+app.use('/scripts', express.static(__dirname + '/scripts'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 /** template engine config */

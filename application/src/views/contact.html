@@ -65,11 +65,9 @@ SIGN UP, and a search bar with categories and a button.
         <form method="post" action="/">
             <select name="category" id="dropDownNavBar" action="/submit" onsubmit="myFunction()" style="width: 250px">
                 <option value="">All Categories</option>
-                <option value="Category1" <% if (category == "Category1") { %> Debris</option>
-                <option value="Category2" <% if (category == "Category2") { %> Fire</option>
-                <option value="Category3" <% if (category == "Category3") { %> Flood</option>
-                <option value="Category3" <% if (category == "Category3") { %> Oil spill</option>
-                <option value="Category3" <% if (category == "Category3") { %> Waste</option>
+                <option value="1" <% if (category == "1") { %> selected <% } %> > Fire</option>
+                <option value="2" <% if (category == "2") { %> selected <% } %> > Oil spill</option>
+                <option value="3" <% if (category == "3") { %> selected <% } %> > Waste</option>
             </select>
             <input id="search" name="search" placeholder="Search.." type="text" value="">
             <button type="submit" id="searchButton">Search</button>

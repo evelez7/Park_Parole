@@ -19,10 +19,6 @@ module.exports = {
 				//put name, email, and password into database
 				let data = req.file;
 
-				console.log(req.body);
-				console.log(req.body.description);
-				console.log(data);
-
     			data = new Buffer(String(data), 'base64')
     			let filename = new Date().toISOString().replace(/:/g, '-') + '.jpeg';
 
